@@ -1,0 +1,18 @@
+PWD: /home/alex/agent-dev/proj_memory_arch
+TIMESTAMP: 2026-06-16_1305
+---
+./adr
+./adr/000-project-history.md
+./adr/001-reject-cli-agents.md
+./adr/002-filestate-fsm-v1.3.md
+./adr/003-knowledge-supremacy.md
+./adr/004-pure-router.md
+./adr/005-lean-memory-architecture.md
+./adr/INDEX.md
+./ARCHITECTURE.md
+./CODE_INDEX.md
+./CURRENT_CONTEXT.md
+./evidence
+./evidence/2026-06-16_1305_filesystem_snapshot.log
+./INFRASTRUCTURE.md
+./README.md
