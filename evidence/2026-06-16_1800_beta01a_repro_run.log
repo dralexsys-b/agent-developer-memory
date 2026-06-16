@@ -1,0 +1,37 @@
+🚀 Запуск Orchestrator v2 Beta-0.1a
+============================================================
+[init_node] Инициализация. pending -> generating
+[coder_node] Генерация кода. retries: 0
+[write_and_validate_node] Вызов execute_write_and_compile для: /tmp/agent_dev_beta01a_test.py
+[write_and_validate_node] ❌ Ошибка (PyCompileError):   File "/tmp/agent_dev_beta01a_test.py", line 1
+    def broken_function(
+                       ^
+SyntaxError: '(' was never closed
+
+[write_and_validate_node] 🔄 Возврат к генерации. retries -> 1
+[router_node] Маршрутизация из состояния: generating
+[coder_node] Генерация кода. retries: 1
+[write_and_validate_node] Вызов execute_write_and_compile для: /tmp/agent_dev_beta01a_test.py
+[write_and_validate_node] ✅ Компиляция успешна.
+[router_node] Маршрутизация из состояния: completed
+[summary_node] Финальная агрегация. Глобальный статус: completed
+============================================================
+📊 РЕЗУЛЬТАТ ВЫПОЛНЕНИЯ:
+Глобальный статус: completed
+Статус файла:      completed
+Попыток сделано:   1
+
+🔍 ПОЛНЫЙ FINAL_STATE (проверка мерджа TypedDict):
+{'file': {'file_path': '/tmp/agent_dev_beta01a_test.py',
+          'content': "def fixed_function():\n    return 'success'",
+          'status': 'completed',
+          'retries': 1,
+          'max_retries': 2,
+          'error_message': None},
+ 'global_status': 'completed'}
+
+📄 СОДЕРЖИМОЕ ФАЙЛА:
+----------------------------------------
+def fixed_function():
+    return 'success'----------------------------------------
+============================================================

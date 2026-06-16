@@ -1,0 +1,189 @@
+PWD: /home/alex/agent-dev/proj_memory_arch
+TIMESTAMP: 2026-06-16_1330
+AUDIT_TYPE: infrastructure_audit
+========================================
+
+=== HARDWARE ===
+
+--- System Info ---
+Linux serverllc 6.8.0-124-generic #124-Ubuntu SMP PREEMPT_DYNAMIC Tue May 26 13:00:45 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+ Static hostname: serverllc
+       Icon name: computer-desktop
+         Chassis: desktop 🖥️
+      Machine ID: da5dacf2162f468ba69e7eb6510f8887
+         Boot ID: c4e780fab89d4efc8b61c7fe09941935
+Operating System: Ubuntu 24.04.4 LTS
+          Kernel: Linux 6.8.0-124-generic
+    Architecture: x86-64
+ Hardware Vendor: MACHINIST
+  Hardware Model: E5-MR9S
+Firmware Version: 5.11
+   Firmware Date: Fri 2023-11-10
+    Firmware Age: 2y 7month 6d
+
+--- GPU ---
+WARNING: AMD GPU device(s) is/are in a low-power state. Check power control/runtime_status
+
+
+
+============================ ROCm System Management Interface ============================
+====================================== Product Info ======================================
+GPU[0]		: Card Series: 		AMD Radeon VII
+GPU[0]		: Card Model: 		0x66af
+GPU[0]		: Card Vendor: 		Advanced Micro Devices, Inc. [AMD/ATI]
+GPU[0]		: Card SKU: 		D3600200
+GPU[0]		: Subsystem ID: 	0x081e
+GPU[0]		: Device Rev: 		0xc1
+GPU[0]		: Node ID: 		1
+GPU[0]		: GUID: 		3879
+GPU[0]		: GFX Version: 		gfx906
+GPU[1]		: Card Series: 		AMD Radeon VII
+GPU[1]		: Card Model: 		0x66af
+GPU[1]		: Card Vendor: 		Advanced Micro Devices, Inc. [AMD/ATI]
+GPU[1]		: Card SKU: 		D3600200
+GPU[1]		: Subsystem ID: 	0x081e
+GPU[1]		: Device Rev: 		0xc1
+GPU[1]		: Node ID: 		2
+GPU[1]		: GUID: 		59785
+GPU[1]		: GFX Version: 		gfx906
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+
+--- CPU ---
+Architecture:                            x86_64
+CPU(s):                                  28
+On-line CPU(s) list:                     0-27
+Model name:                              Intel(R) Xeon(R) CPU E5-2690 v4 @ 2.60GHz
+Thread(s) per core:                      2
+CPU(s) scaling MHz:                      44%
+NUMA node0 CPU(s):                       0-27
+
+--- RAM ---
+Mem:            31Gi       3,8Gi       698Mi        22Mi        27Gi        27Gi
+Swap:          8,0Gi       512Ki       8,0Gi
+
+========================================
+
+=== SOFTWARE STACK ===
+
+--- Python ---
+Python 3.12.3
+
+--- ROCm ---
+rocm-cmake/noble,now 0.14.0.70101-38~24.04 amd64 [установлен, автоматически]
+rocm-core/noble,now 7.1.1.70101-38~24.04 amd64 [установлен, автоматически]
+rocm-dbgapi/noble,now 0.77.4.70101-38~24.04 amd64 [установлен, автоматически]
+rocm-debug-agent/noble,now 2.1.0.70101-38~24.04 amd64 [установлен, автоматически]
+rocm-dev/noble,now 7.1.1.70101-38~24.04 amd64 [установлен]
+
+--- llama.cpp binary ---
+-rwxrwxr-x 1 alex alex 7,5M июн 14 14:48 /home/alex/llama.cpp/build/bin/llama-server
+
+--- llama.cpp version ---
+ggml_cuda_init: found 2 ROCm devices:
+  Device 0: AMD Radeon VII, gfx906:sramecc+:xnack- (0x906), VMM: no, Wave Size: 64
+  Device 1: AMD Radeon VII, gfx906:sramecc+:xnack- (0x906), VMM: no, Wave Size: 64
+
+========================================
+
+=== DEPENDENCIES ===
+
+Name: langgraph
+Version: 1.2.0
+Location: /home/alex/.local/lib/python3.12/site-packages
+
+Name: langchain-openai
+Version: 1.2.1
+Location: /home/alex/.local/lib/python3.12/site-packages
+
+Name: requests
+Version: 2.31.0
+Location: /usr/lib/python3/dist-packages
+
+========================================
+
+=== VERIFIED ASSETS ===
+
+--- GGUF Models (ls) ---
+/opt/models/gguf/DeepSeek-R1-Distill-Llama-8B-Q8_0.gguf                8,0G
+/opt/models/gguf/DeepSeek-R1-Distill-Qwen-14B-Q5_K_M.gguf              9,8G
+/opt/models/gguf/DeepSeek-R1-Distill-Qwen-14B-Q6_K.gguf                12G
+/opt/models/gguf/gemma-4-E4B-it-UD-Q8_K_XL.gguf                        8,2G
+/opt/models/gguf/medpsy-4b-q8_0.gguf                                   4,4G
+/opt/models/gguf/Qwen2.5-14B-Instruct-Q5_K_M.gguf                      9,8G
+/opt/models/gguf/Qwen2.5-14B-Instruct-Q6_K.gguf                        12G
+/opt/models/gguf/Qwen2.5-14B-Instruct-Q8_0.gguf                        15G
+/opt/models/gguf/Qwen2.5-Coder-14B-Instruct-Q4_K_M.gguf                8,4G
+/opt/models/gguf/Qwen2.5-Coder-14B-Instruct-Q5_K_M.gguf                9,8G
+/opt/models/gguf/Qwen2.5-Coder-14B-Instruct-Q6_K.gguf                  12G
+/opt/models/gguf/qwen2.5-coder-7b-instruct-q6_k.gguf                   5,9G
+/opt/models/gguf/Qwen3-14B-UD-Q5_K_XL.gguf                             9,9G
+/opt/models/gguf/Qwen3-8B-Q6_K.gguf                                    6,3G
+/opt/models/gguf/Qwen3-Embedding-8B-Q8_0.gguf                          7,5G
+/opt/models/gguf/T-lite-it-2.1-Q8_0.gguf                               8,2G
+/opt/models/gguf/Vikhr-Nemo-12B-Instruct-R-21-09-24-Q6_K_L.gguf        9,7G
+
+--- GGUF Models (du) ---
+8,0G	/opt/models/gguf/DeepSeek-R1-Distill-Llama-8B-Q8_0.gguf
+9,8G	/opt/models/gguf/DeepSeek-R1-Distill-Qwen-14B-Q5_K_M.gguf
+12G	/opt/models/gguf/DeepSeek-R1-Distill-Qwen-14B-Q6_K.gguf
+8,2G	/opt/models/gguf/gemma-4-E4B-it-UD-Q8_K_XL.gguf
+4,4G	/opt/models/gguf/medpsy-4b-q8_0.gguf
+9,8G	/opt/models/gguf/Qwen2.5-14B-Instruct-Q5_K_M.gguf
+12G	/opt/models/gguf/Qwen2.5-14B-Instruct-Q6_K.gguf
+15G	/opt/models/gguf/Qwen2.5-14B-Instruct-Q8_0.gguf
+8,4G	/opt/models/gguf/Qwen2.5-Coder-14B-Instruct-Q4_K_M.gguf
+9,8G	/opt/models/gguf/Qwen2.5-Coder-14B-Instruct-Q5_K_M.gguf
+12G	/opt/models/gguf/Qwen2.5-Coder-14B-Instruct-Q6_K.gguf
+5,9G	/opt/models/gguf/qwen2.5-coder-7b-instruct-q6_k.gguf
+9,9G	/opt/models/gguf/Qwen3-14B-UD-Q5_K_XL.gguf
+6,3G	/opt/models/gguf/Qwen3-8B-Q6_K.gguf
+7,5G	/opt/models/gguf/Qwen3-Embedding-8B-Q8_0.gguf
+8,2G	/opt/models/gguf/T-lite-it-2.1-Q8_0.gguf
+9,7G	/opt/models/gguf/Vikhr-Nemo-12B-Instruct-R-21-09-24-Q6_K_L.gguf
+
+--- Model count ---
+17
+
+========================================
+
+=== SERVICES ===
+
+--- Docker version ---
+Docker version 29.4.1, build 055a478
+
+--- Docker containers (all) ---
+CONTAINER ID   IMAGE                                       COMMAND                   CREATED       STATUS                      PORTS                                                                          NAMES
+6cd8b9eac547   nginx:latest                                "sh -c 'cp /docker-e…"    4 hours ago   Up 4 hours                  0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp   docker-nginx-1
+ed489678f564   langgenius/dify-api:1.13.3                  "/bin/bash /entrypoi…"    4 hours ago   Up 4 hours                  5001/tcp                                                                       docker-worker-1
+0ec65e08f002   langgenius/dify-api:1.13.3                  "/bin/bash /entrypoi…"    4 hours ago   Up 4 hours                  5001/tcp                                                                       docker-worker_beat-1
+31103568515e   langgenius/dify-api:1.13.3                  "/bin/bash /entrypoi…"    4 hours ago   Up 4 hours (healthy)        5001/tcp                                                                       docker-api-1
+888114b2e206   langgenius/dify-plugin-daemon:0.5.3-local   "/bin/bash -c /app/e…"    4 hours ago   Up 4 hours                  0.0.0.0:5003->5003/tcp, [::]:5003->5003/tcp                                    docker-plugin_daemon-1
+2bba05d664dd   postgres:15-alpine                          "docker-entrypoint.s…"    4 hours ago   Up 4 hours (healthy)        5432/tcp                                                                       docker-db_postgres-1
+3faed6e13230   redis:6-alpine                              "docker-entrypoint.s…"    4 hours ago   Up 4 hours (healthy)        6379/tcp                                                                       docker-redis-1
+aa212c82b8de   busybox:latest                              "sh -c 'FLAG_FILE=\"/…"   4 hours ago   Exited (0) 4 hours ago                                                                                     docker-init_permissions-1
+6a6eb858f041   langgenius/dify-web:1.13.3                  "/bin/sh ./entrypoin…"    4 hours ago   Up 4 hours                  3000/tcp                                                                       docker-web-1
+d4adf2882a35   langgenius/dify-sandbox:0.2.14              "/entrypoint.sh"          4 hours ago   Up 4 hours (healthy)                                                                                       docker-sandbox-1
+828199bc3266   semitechnologies/weaviate:1.27.0            "/bin/weaviate --hos…"    4 hours ago   Up 4 hours                                                                                                 docker-weaviate-1
+0c55944aa7a7   ubuntu/squid:latest                         "sh -c 'cp /docker-e…"    4 hours ago   Up 4 hours                  3128/tcp                                                                       docker-ssrf_proxy-1
+5f4a10a813b2   qdrant/qdrant:latest                        "./entrypoint.sh"         4 weeks ago   Exited (143) 40 hours ago                                                                                  agent-qdrant
+12054b355c71   ghcr.io/open-webui/open-webui:latest        "bash start.sh"           5 weeks ago   Up 5 hours (healthy)                                                                                       open-webui
+
+--- LLM Server (port 8081) ---
+curl: (7) Failed to connect to 127.0.0.1 port 8081 after 0 ms: Couldn't connect to server
+
+--- LLM Server (port 8082) ---
+curl: (7) Failed to connect to 127.0.0.1 port 8082 after 0 ms: Couldn't connect to server
+
+========================================
+
+=== GIT STATUS ===
+
+?? evidence/2026-06-16_1330_infrastructure_audit.log
+
+1d08ccd docs: bootstrap v1.0, ADR 000-005 (002/003/004 as AGREED_DESIGN)
+
+========================================
+
+AUDIT COMPLETED
