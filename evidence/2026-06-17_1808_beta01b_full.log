@@ -1,0 +1,132 @@
+==========================================
+PYTHON VERSION
+==========================================
+Python 3.12.3
+
+==========================================
+ACTIVE MODEL
+==========================================
+{"models":[{"name":"Qwen2.5-Coder-14B-Instruct-Q5_K_M.gguf","model":"Qwen2.5-Coder-14B-Instruct-Q5_K_M.gguf","modified_at":"","size":"","digest":"","type":"model","description":"","tags":[""],"capabilities":["completion"],"parameters":"","details":{"parent_model":"","format":"gguf","family":"","families":[""],"parameter_size":"","quantization_level":""}}],"object":"list","data":[{"id":"Qwen2.5-Coder-14B-Instruct-Q5_K_M.gguf","object":"model","created":1781719685,"owned_by":"llamacpp","meta":{"vocab_type":2,"n_vocab":152064,"n_ctx_train":32768,"n_embd":5120,"n_params":14770033664,"size":10502905856}}]}
+==========================================
+RUNTIME COMPONENTS
+==========================================
+
+==========================================
+ORCHESTRATOR EXECUTION
+==========================================
+🚀 Запуск Orchestrator v2 Beta-0.1b (LLM Integration)
+
+======================================================================
+Request ID: bf5a022a-476a-448d-9230-87f092521392
+Request: Write a Python function that calculates the factorial of a number
+======================================================================
+
+[coder_node] Request ID: bf5a022a-476a-448d-9230-87f092521392
+[coder_node] Вызов execute_llm_call для: Write a Python function that calculates the factor...
+[coder_node] ✅ LLM вызов успешен
+[coder_node] Переход: pending → completed
+[summary_node] Request ID: bf5a022a-476a-448d-9230-87f092521392
+[summary_node] Финальный статус: completed
+[summary_node] ✅ Запрос успешно выполнен
+[summary_node] Ответ (первые 200 символов):
+Certainly! Below is a Python function that calculates the factorial of a given non-negative integer using an iterative approach:
+
+```python
+def factorial(n):
+    """
+    Calculate the factorial of a n
+
+======================================================================
+📊 ФИНАЛЬНЫЙ РЕЗУЛЬТАТ:
+Request ID: bf5a022a-476a-448d-9230-87f092521392
+Status: completed
+
+🔍 ПОЛНЫЙ FINAL_STATE:
+{'request_id': 'bf5a022a-476a-448d-9230-87f092521392',
+ 'request': 'Write a Python function that calculates the factorial of a number',
+ 'response': 'Certainly! Below is a Python function that calculates the factorial of a given '
+             'non-negative integer using an iterative approach:\n'
+             '\n'
+             '```python\n'
+             'def factorial(n):\n'
+             '    """\n'
+             '    Calculate the factorial of a non-negative integer n.\n'
+             '\n'
+             '    Parameters:\n'
+             '    n (int): A non-negative integer whose factorial is to be calculated.\n'
+             '\n'
+             '    Returns:\n'
+             '    int: The factorial of the given number n.\n'
+             '    """\n'
+             '    if n < 0:\n'
+             '        raise ValueError("Factorial is not defined for negative numbers.")\n'
+             '    result = 1\n'
+             '    for i in range(2, n + 1):\n'
+             '        result *= i\n'
+             '    return result\n'
+             '\n'
+             '# Example usage:\n'
+             'print(factorial(5))  # Output: 120\n'
+             '```\n'
+             '\n'
+             'This function first checks if the input `n` is a non-negative integer. If `n` is '
+             'negative, it raises a `ValueError`. Otherwise, it calculates the factorial by '
+             'multiplying all integers from 2 to `n` and returns the result.',
+ 'raw_response': {'choices': [{'finish_reason': 'stop',
+                               'index': 0,
+                               'message': {'role': 'assistant',
+                                           'content': 'Certainly! Below is a Python function that '
+                                                      'calculates the factorial of a given '
+                                                      'non-negative integer using an iterative '
+                                                      'approach:\n'
+                                                      '\n'
+                                                      '```python\n'
+                                                      'def factorial(n):\n'
+                                                      '    """\n'
+                                                      '    Calculate the factorial of a '
+                                                      'non-negative integer n.\n'
+                                                      '\n'
+                                                      '    Parameters:\n'
+                                                      '    n (int): A non-negative integer whose '
+                                                      'factorial is to be calculated.\n'
+                                                      '\n'
+                                                      '    Returns:\n'
+                                                      '    int: The factorial of the given number '
+                                                      'n.\n'
+                                                      '    """\n'
+                                                      '    if n < 0:\n'
+                                                      '        raise ValueError("Factorial is not '
+                                                      'defined for negative numbers.")\n'
+                                                      '    result = 1\n'
+                                                      '    for i in range(2, n + 1):\n'
+                                                      '        result *= i\n'
+                                                      '    return result\n'
+                                                      '\n'
+                                                      '# Example usage:\n'
+                                                      'print(factorial(5))  # Output: 120\n'
+                                                      '```\n'
+                                                      '\n'
+                                                      'This function first checks if the input `n` '
+                                                      'is a non-negative integer. If `n` is '
+                                                      'negative, it raises a `ValueError`. '
+                                                      'Otherwise, it calculates the factorial by '
+                                                      'multiplying all integers from 2 to `n` and '
+                                                      'returns the result.'}}],
+                  'created': 1781719692,
+                  'model': 'Qwen2.5-Coder-14B-Instruct-Q5_K_M.gguf',
+                  'system_fingerprint': 'b7974-b1e010e3a',
+                  'object': 'chat.completion',
+                  'usage': {'completion_tokens': 199, 'prompt_tokens': 40, 'total_tokens': 239},
+                  'id': 'chatcmpl-B9IH1IGwfP7HcB0uXw9hk8tkLxYBsIod',
+                  'timings': {'cache_n': 28,
+                              'prompt_n': 12,
+                              'prompt_ms': 106.768,
+                              'prompt_per_token_ms': 8.897333333333334,
+                              'prompt_per_second': 112.39322643488686,
+                              'predicted_n': 199,
+                              'predicted_ms': 5393.164,
+                              'predicted_per_token_ms': 27.10132663316583,
+                              'predicted_per_second': 36.89856269900192}},
+ 'status': 'completed',
+ 'error_message': None}
+======================================================================

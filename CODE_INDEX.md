@@ -7,6 +7,7 @@
 | File Path | Purpose | Status | Evidence Link |
 | :--- | :--- | :--- | :--- |
 | `agent-developer-runtime/src/orchestrator_v2_beta_0_1a.py` | Beta-0.1a vertical slice (LangGraph 1.2.0) | EXISTS | `evidence/2026-06-16_1425_beta01a_run.log`, `evidence/2026-06-16_1800_beta01a_repro_run.log` |
+| `agent-developer-runtime/src/orchestrator_v2_beta_0_1b.py` | Beta-0.1b LLM integration (OpenAI-compatible API) | EXISTS | `evidence/2026-06-17_1808_beta01b_full.log` |
 
 ## 🟡 Planned Files (PLANNED)
 | File Path | Purpose | Status |
