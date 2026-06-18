@@ -1,0 +1,164 @@
+==========================================
+PYTHON VERSION
+==========================================
+Python 3.12.3
+
+==========================================
+LLAMA SERVER HEALTHCHECK
+==========================================
+OK
+
+==========================================
+ORCHESTRATOR EXECUTION
+==========================================
+🚀 Запуск Orchestrator v2 Beta-0.2.r1 (Generate → Validate → Retry → Success)
+================================================================================
+VERSION: Beta-0.2.r1
+FORCE_INVALID_CODE_ON_FIRST_ATTEMPT: True
+================================================================================
+
+Request ID: 9eb0e473-8d28-43f3-9274-da0a8ffde76d
+User Request: calculates the factorial of a number
+================================================================================
+
+[coder_node] Request ID: 9eb0e473-8d28-43f3-9274-da0a8ffde76d
+[coder_node] retry_count=0
+[coder_node] Первый вызов, retry_count=0
+[coder_node] ⚠️  FORCE_INVALID_CODE_ON_FIRST_ATTEMPT=True, возвращаю битый код
+[coder_node] ✅ Код сгенерирован (status=coding, retry_count=0)
+[coder_node] Код (первые 100 символов): def broken_function(
+...
+
+[validator_node] Request ID: 9eb0e473-8d28-43f3-9274-da0a8ffde76d
+[validator_node] retry_count=0
+[validator_node] Временный файл: /tmp/tmpz638b7dr.py
+[validator_node] ❌ Ошибка компиляции:   File "/tmp/tmpz638b7dr.py", line 1
+    def broken_function(
+                       ^
+SyntaxError: '(' was never closed
+
+
+[router_function] Request ID: 9eb0e473-8d28-43f3-9274-da0a8ffde76d
+[router_function] retry_count=0
+[router_function] validation_success=False
+[router_function] → coder_node (retry)
+
+[coder_node] Request ID: 9eb0e473-8d28-43f3-9274-da0a8ffde76d
+[coder_node] retry_count=0
+[coder_node] Retry режим, retry_count: 0 → 1
+[coder_node] Вызов execute_llm_call...
+[coder_node] ✅ Код сгенерирован (status=retrying, retry_count=1)
+[coder_node] Код (первые 100 символов): def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)...
+
+[validator_node] Request ID: 9eb0e473-8d28-43f3-9274-da0a8ffde76d
+[validator_node] retry_count=1
+[validator_node] 🗑️  Старый временный файл удалён: /tmp/tmpz638b7dr.py
+[validator_node] Временный файл: /tmp/tmpslwo8iof.py
+[validator_node] ✅ Компиляция успешна
+
+[router_function] Request ID: 9eb0e473-8d28-43f3-9274-da0a8ffde76d
+[router_function] retry_count=1
+[router_function] validation_success=True
+[router_function] → summary_node (успех)
+
+[summary_node] Request ID: 9eb0e473-8d28-43f3-9274-da0a8ffde76d
+[summary_node] retry_count=1
+[summary_node] ✅ Запрос успешно выполнен
+[summary_node] 🗑️  Временный файл удалён: /tmp/tmpslwo8iof.py
+
+🔍 Final state type: dict
+
+================================================================================
+📊 ФИНАЛЬНЫЙ РЕЗУЛЬТАТ:
+VERSION: Beta-0.2.r1
+Request ID: 9eb0e473-8d28-43f3-9274-da0a8ffde76d
+Status: completed
+Retry Count: 1
+
+⏱️  Timings:
+{'cache_n': 24,
+ 'prompt_n': 87,
+ 'prompt_ms': 444.617,
+ 'prompt_per_token_ms': 5.110540229885058,
+ 'prompt_per_second': 195.6740295580241,
+ 'predicted_n': 33,
+ 'predicted_ms': 880.563,
+ 'predicted_per_token_ms': 26.68372727272727,
+ 'predicted_per_second': 37.47602386200647}
+
+🔍 ПОЛНЫЙ FINAL_STATE:
+{'request_id': '9eb0e473-8d28-43f3-9274-da0a8ffde76d',
+ 'user_request': 'calculates the factorial of a number',
+ 'generated_code': 'def factorial(n):\n'
+                   '    if n == 0:\n'
+                   '        return 1\n'
+                   '    else:\n'
+                   '        return n * factorial(n-1)',
+ 'temp_file_path': '/tmp/tmpslwo8iof.py',
+ 'validation_result': {'success': True, 'error': None},
+ 'retry_count': 1,
+ 'max_retries': 2,
+ 'status': 'completed',
+ 'error_message': None,
+ 'raw_response': {'choices': [{'finish_reason': 'stop',
+                               'index': 0,
+                               'message': {'role': 'assistant',
+                                           'content': '```python\n'
+                                                      'def factorial(n):\n'
+                                                      '    if n == 0:\n'
+                                                      '        return 1\n'
+                                                      '    else:\n'
+                                                      '        return n * factorial(n-1)\n'
+                                                      '```'}}],
+                  'created': 1781732294,
+                  'model': 'Qwen2.5-Coder-14B-Instruct-Q5_K_M.gguf',
+                  'system_fingerprint': 'b7974-b1e010e3a',
+                  'object': 'chat.completion',
+                  'usage': {'completion_tokens': 33, 'prompt_tokens': 111, 'total_tokens': 144},
+                  'id': 'chatcmpl-nVWCKJjx1mEdPx2IiCYgs8c1wPg96AQh',
+                  'timings': {'cache_n': 24,
+                              'prompt_n': 87,
+                              'prompt_ms': 444.617,
+                              'prompt_per_token_ms': 5.110540229885058,
+                              'prompt_per_second': 195.6740295580241,
+                              'predicted_n': 33,
+                              'predicted_ms': 880.563,
+                              'predicted_per_token_ms': 26.68372727272727,
+                              'predicted_per_second': 37.47602386200647}},
+ 'timings': {'cache_n': 24,
+             'prompt_n': 87,
+             'prompt_ms': 444.617,
+             'prompt_per_token_ms': 5.110540229885058,
+             'prompt_per_second': 195.6740295580241,
+             'predicted_n': 33,
+             'predicted_ms': 880.563,
+             'predicted_per_token_ms': 26.68372727272727,
+             'predicted_per_second': 37.47602386200647},
+ 'last_prompt': 'The previous code had a syntax error. Please fix it.\n'
+                '\n'
+                'User request: calculates the factorial of a number\n'
+                '\n'
+                'Previous code:\n'
+                '```python\n'
+                'def broken_function(\n'
+                '\n'
+                '```\n'
+                '\n'
+                'Error message:\n'
+                '  File "/tmp/tmpz638b7dr.py", line 1\n'
+                '    def broken_function(\n'
+                '                       ^\n'
+                "SyntaxError: '(' was never closed\n"
+                '\n'
+                '\n'
+                'Return ONLY the fixed code inside ```python ... ``` block.'}
+================================================================================
+
+==========================================
+EXIT CODE
+==========================================
+0
