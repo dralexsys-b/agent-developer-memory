@@ -302,41 +302,6 @@ For the authoritative registry of project repositories, see `REPOSITORIES.md` (p
 Each repository has a specific purpose and is managed according to the principles defined in this protocol.
 
 
-## Documentation Map
-
-The project follows the information architecture defined in `INFORMATION_ARCHITECTURE.md` (Layer 0).
-
-For a complete registry of all project documents, see `DOCUMENTS.md` (planned document, Layer 2).
-
-### Document Types
-
-Every document belongs to one of the following types:
-
-- **Protocol** — defines rules of interaction and responsibilities
-- **Standard** — defines requirements for artifacts
-- **Playbook** — defines sequence of actions
-- **Architecture** — defines system structure
-- **Index** — helps find information (navigation)
-- **Registry** — authoritative inventory of project entities
-- **History** — records past events
-- **Context** — describes current state
-
-When creating a new document, first determine its type, then assign a name.
-
----
-
-## Repositories
-
-For the authoritative registry of project repositories, see `REPOSITORIES.md` (planned document, Layer 2).
-
-### Current Repositories
-
-- **agent-developer-memory** — documentation, ADR, evidence, protocols
-- **agent-developer-runtime** — source code, orchestrators, tools
-
-Each repository has a specific purpose and is managed according to the principles defined in this protocol.
-
-
 ## Document Lifecycle
 
 This document (PROJECT_PROTOCOL.md) is classified as **Static** according to the Knowledge Lifecycle defined in INFORMATION_ARCHITECTURE.md.
