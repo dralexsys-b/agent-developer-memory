@@ -10,6 +10,9 @@
 | `agent-developer-runtime/src/orchestrator_v2_beta_0_1b.py` | Beta-0.1b LLM integration (OpenAI-compatible API) | EXISTS | `evidence/2026-06-17_1808_beta01b_full.log` |
 | `agent-developer-runtime/src/orchestrator_v2_beta_0_2.py` | Beta-0.2.r1 Generate → Validate → Retry → Success | EXISTS | `evidence/2026-06-17_2138_beta02r1_full.log` |
 | `INFORMATION_ARCHITECTURE.md` | Meta Architecture — фундамент системы знаний проекта | EXISTS | N/A (Root document) |
+| `PROJECT_PROTOCOL.md` | Project Protocol — роли, принципы, источники истины | EXISTS | Based on: INFORMATION_ARCHITECTURE.md |
+| `DOCUMENTS.md` | Documents Registry — единый каталог документов | EXISTS | Based on: INFORMATION_ARCHITECTURE.md |
+| `REPOSITORIES.md` | Repositories Registry — каталог репозиториев | EXISTS | Based on: INFORMATION_ARCHITECTURE.md |
 
 ## 🟡 Planned Files (PLANNED)
 | File Path | Purpose | Status |

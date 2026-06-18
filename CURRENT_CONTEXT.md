@@ -41,6 +41,11 @@
 - 8 типов документов (Protocol / Standard / Playbook / Architecture / Index / Registry / History / Context)
 - Knowledge Lifecycle (Static / Semi-static / Dynamic / Immutable)
 - Authority & Maintainer (роли, не люди)
-
-Следующий шаг: создание PROJECT_PROTOCOL.md (Layer 1)
 - **PROJECT_PROTOCOL.md v1.0** — утверждён 2026-06-18 (Layer 1: Project Identity)
+
+Следующий этап: Layer 3 — Engineering Knowledge
+- ENGINEERING_PLAYBOOK.md
+- DOC_STANDARD.md
+- RELEASE_PROCESS.md
+- AUTOMATION.md
+- ENGINEERING_HISTORY.md
