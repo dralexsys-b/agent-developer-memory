@@ -43,3 +43,4 @@
 - Authority & Maintainer (роли, не люди)
 
 Следующий шаг: создание PROJECT_PROTOCOL.md (Layer 1)
+- **PROJECT_PROTOCOL.md v1.0** — утверждён 2026-06-18 (Layer 1: Project Identity)
