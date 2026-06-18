@@ -30,3 +30,16 @@
   - Защита от пустого generated_code в retry-промпте
   - Добавление request_id в имя временного файла
   - Счётчик LLM-вызовов
+
+## 📐 Архитектура документации
+
+**INFORMATION_ARCHITECTURE.md v1.0** — утверждена 2026-06-18
+
+Мета-документ, определяющий:
+- Пятислойную модель знаний (Meta Architecture → Project Identity → Operational Knowledge → Engineering Knowledge → Verification)
+- 12 Information Invariants
+- 8 типов документов (Protocol / Standard / Playbook / Architecture / Index / Registry / History / Context)
+- Knowledge Lifecycle (Static / Semi-static / Dynamic / Immutable)
+- Authority & Maintainer (роли, не люди)
+
+Следующий шаг: создание PROJECT_PROTOCOL.md (Layer 1)
