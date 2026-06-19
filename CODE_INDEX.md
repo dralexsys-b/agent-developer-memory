@@ -14,6 +14,7 @@
 | `DOCUMENTS.md` | Documents Registry — единый каталог документов | EXISTS | Based on: INFORMATION_ARCHITECTURE.md |
 | `REPOSITORIES.md` | Repositories Registry — каталог репозиториев | EXISTS | Based on: INFORMATION_ARCHITECTURE.md |
 | `ENGINEERING_PLAYBOOK.md` | Engineering Playbook — procedures, workflow, best practices | EXISTS | Based on: PROJECT_PROTOCOL.md |
+| `DOC_STANDARD.md` | Documentation Standard — formatting, structure, quality requirements | EXISTS | Based on: ENGINEERING_PLAYBOOK.md |
 
 ## 🟡 Planned Files (PLANNED)
 | File Path | Purpose | Status |
