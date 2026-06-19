@@ -48,6 +48,7 @@
 **Completed:**
 - ENGINEERING_PLAYBOOK.md v1.0
 - DOC_STANDARD.md v1.0
+- RELEASE_PROCESS.md v1.0
 
 **Next:**
-- RELEASE_PROCESS.md
+- AUTOMATION.md
