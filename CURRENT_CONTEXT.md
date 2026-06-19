@@ -50,6 +50,7 @@
 - DOC_STANDARD.md v1.0
 - RELEASE_PROCESS.md v1.0
 - AUTOMATION.md v1.0
+- ENGINEERING_HISTORY.md v1.0
 
 **Next:**
-- ENGINEERING_HISTORY.md
+- Layer 4 — Implementation Knowledge (future)

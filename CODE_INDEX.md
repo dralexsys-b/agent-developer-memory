@@ -17,6 +17,7 @@
 | `DOC_STANDARD.md` | Documentation Standard — formatting, structure, quality requirements | EXISTS | Based on: ENGINEERING_PLAYBOOK.md |
 | `RELEASE_PROCESS.md` | Release Process — release procedures, versioning, deployment | EXISTS | Based on: ENGINEERING_PLAYBOOK.md, DOC_STANDARD.md |
 | `AUTOMATION.md` | Automation — scripts, registry, structure, triggers | EXISTS | Based on: ENGINEERING_PLAYBOOK.md, RELEASE_PROCESS.md |
+| `ENGINEERING_HISTORY.md` | Engineering History — lessons learned, post-mortems, retrospectives | EXISTS | Based on: ENGINEERING_PLAYBOOK.md |
 
 ## 🟡 Planned Files (PLANNED)
 | File Path | Purpose | Status |
