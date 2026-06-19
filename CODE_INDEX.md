@@ -16,6 +16,7 @@
 | `ENGINEERING_PLAYBOOK.md` | Engineering Playbook — procedures, workflow, best practices | EXISTS | Based on: PROJECT_PROTOCOL.md |
 | `DOC_STANDARD.md` | Documentation Standard — formatting, structure, quality requirements | EXISTS | Based on: ENGINEERING_PLAYBOOK.md |
 | `RELEASE_PROCESS.md` | Release Process — release procedures, versioning, deployment | EXISTS | Based on: ENGINEERING_PLAYBOOK.md, DOC_STANDARD.md |
+| `AUTOMATION.md` | Automation — scripts, registry, structure, triggers | EXISTS | Based on: ENGINEERING_PLAYBOOK.md, RELEASE_PROCESS.md |
 
 ## 🟡 Planned Files (PLANNED)
 | File Path | Purpose | Status |
