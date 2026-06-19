@@ -43,9 +43,10 @@
 - Authority & Maintainer (роли, не люди)
 - **PROJECT_PROTOCOL.md v1.0** — утверждён 2026-06-18 (Layer 1: Project Identity)
 
-Следующий этап: Layer 3 — Engineering Knowledge
-- ENGINEERING_PLAYBOOK.md
+**Current engineering focus:** Layer 3 — Engineering Knowledge
+
+**Completed:**
+- ENGINEERING_PLAYBOOK.md v1.0
+
+**Next:**
 - DOC_STANDARD.md
-- RELEASE_PROCESS.md
-- AUTOMATION.md
-- ENGINEERING_HISTORY.md
