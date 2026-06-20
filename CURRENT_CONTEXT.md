@@ -9,26 +9,19 @@
 
 ## Current engineering focus
 
-**Current engineering focus:** Layer 2 — Operational Knowledge
-
-**Completed:**
-- PROJECT_PROTOCOL.md v1.0
-- DOMAIN_ARCHITECTURE.md v1.0
-- SYSTEM_BOUNDARIES.md v1.0
-
 **Next:**
-- TASK_LIFECYCLE.md
+- Layer 3 — Runtime Implementation (FSM, LangGraph, Memory Engine)
 
 ## Architecture Overview
 
 ### Layer 1 — Meta Architecture (COMPLETED ✅)
 - INFORMATION_ARCHITECTURE.md v1.0
 
-### Layer 2 — Operational Knowledge (IN PROGRESS 🔄)
+### Layer 2 — Operational Knowledge (COMPLETED ✅)
 - PROJECT_PROTOCOL.md v1.0 ✅
 - DOMAIN_ARCHITECTURE.md v1.0 ✅
-- SYSTEM_BOUNDARIES.md ⏳
-- TASK_LIFECYCLE.md ⏳
+- SYSTEM_BOUNDARIES.md ✅
+- TASK_LIFECYCLE.md ✅
 
 ### Layer 3 — Engineering Knowledge (COMPLETED ✅)
 - ENGINEERING_PLAYBOOK.md v1.0 ✅
