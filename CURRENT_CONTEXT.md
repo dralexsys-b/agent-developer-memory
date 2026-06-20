@@ -14,9 +14,10 @@
 **Completed:**
 - PROJECT_PROTOCOL.md v1.0
 - DOMAIN_ARCHITECTURE.md v1.0
+- SYSTEM_BOUNDARIES.md v1.0
 
 **Next:**
-- SYSTEM_BOUNDARIES.md
+- TASK_LIFECYCLE.md
 
 ## Architecture Overview
 

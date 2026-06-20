@@ -19,6 +19,7 @@
 | `AUTOMATION.md` | Automation — scripts, registry, structure, triggers | EXISTS | Based on: ENGINEERING_PLAYBOOK.md, RELEASE_PROCESS.md |
 | `ENGINEERING_HISTORY.md` | Engineering History — lessons learned, post-mortems, retrospectives | EXISTS | Based on: ENGINEERING_PLAYBOOK.md |
 | `DOMAIN_ARCHITECTURE.md` | Domain Architecture — entities, contracts, relationships, state models, event model | EXISTS | Based on: INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md |
+| `SYSTEM_BOUNDARIES.md` | System Boundaries — services, runtime, storage, projections, agent implementations | EXISTS | Based on: DOMAIN_ARCHITECTURE.md |
 
 ## 🟡 Planned Files (PLANNED)
 | File Path | Purpose | Status |
