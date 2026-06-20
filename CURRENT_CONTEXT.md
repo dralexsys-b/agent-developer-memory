@@ -1,59 +1,13 @@
-# Current Context: Agent Developer
+# Current Context
 
-**Last Verified:** 2026-06-18
+## Project Status
 
-> **Resume Prompt:** Прочитайте этот файл, затем INFRASTRUCTURE.md и CODE_INDEX.md.
+**Project:** Agent Developer
+**Repository:** agent-developer-memory
+**Layer:** Layer 2 — Operational Knowledge
+**Date:** 2026-06-21
 
-## 🎯 Current Milestone
-
-**Beta-0.2.r1**
-
-**Status:** STABLE
-
-**Evidence:** `evidence/2026-06-17_2138_beta02r1_full.log`
-
-**Next Target:** Beta-0.2.r2 (локальные улучшения)
-
-## 📊 Завершённые этапы
-
-| Версия | Статус | Ключевое достижение |
-|---|---|---|
-| Beta-0.1a | STABLE | Первый LangGraph вертикальный срез |
-| Beta-0.1b | STABLE | Первый реальный LLM-вызов |
-| Beta-0.2.r1 | STABLE | Полный цикл Generate → Validate → Retry → Success |
-
-## 🚧 Активные блокеры и открытые вопросы
-
-- **Архитектура:** Следующая итерация (Beta-0.2.r2) — локальные улучшения без архитектурных изменений
-- **Возможные направления:**
-  - Вынос max_tokens/temperature в константы
-  - Защита от пустого generated_code в retry-промпте
-  - Добавление request_id в имя временного файла
-  - Счётчик LLM-вызовов
-
-## 📐 Архитектура документации
-
-**INFORMATION_ARCHITECTURE.md v1.0** — утверждена 2026-06-18
-
-Мета-документ, определяющий:
-- Пятислойную модель знаний (Meta Architecture → Project Identity → Operational Knowledge → Engineering Knowledge → Verification)
-- 12 Information Invariants
-- 8 типов документов (Protocol / Standard / Playbook / Architecture / Index / Registry / History / Context)
-- Knowledge Lifecycle (Static / Semi-static / Dynamic / Immutable)
-- Authority & Maintainer (роли, не люди)
-- **PROJECT_PROTOCOL.md v1.0** — утверждён 2026-06-18 (Layer 1: Project Identity)
-
-**Current engineering focus:** Layer 3 — Engineering Knowledge
-
-**Completed:**
-- ENGINEERING_PLAYBOOK.md v1.0
-- DOC_STANDARD.md v1.0
-- RELEASE_PROCESS.md v1.0
-- AUTOMATION.md v1.0
-- ENGINEERING_HISTORY.md v1.0
-
-**Next:**
-- Layer 4 — Implementation Knowledge (future)
+## Current engineering focus
 
 **Current engineering focus:** Layer 2 — Operational Knowledge
 
@@ -63,3 +17,38 @@
 
 **Next:**
 - SYSTEM_BOUNDARIES.md
+
+## Architecture Overview
+
+### Layer 1 — Meta Architecture (COMPLETED ✅)
+- INFORMATION_ARCHITECTURE.md v1.0
+
+### Layer 2 — Operational Knowledge (IN PROGRESS 🔄)
+- PROJECT_PROTOCOL.md v1.0 ✅
+- DOMAIN_ARCHITECTURE.md v1.0 ✅
+- SYSTEM_BOUNDARIES.md ⏳
+- TASK_LIFECYCLE.md ⏳
+
+### Layer 3 — Engineering Knowledge (COMPLETED ✅)
+- ENGINEERING_PLAYBOOK.md v1.0 ✅
+- DOC_STANDARD.md v1.0 ✅
+- RELEASE_PROCESS.md v1.0 ✅
+- AUTOMATION.md v1.0 ✅
+- ENGINEERING_HISTORY.md v1.0 ✅
+
+## Recent Changes
+
+- 2026-06-21: DOMAIN_ARCHITECTURE.md v1.0 created (domain model foundation)
+- 2026-06-18: ENGINEERING_HISTORY.md v1.0 created (lessons learned repository)
+- 2026-06-18: AUTOMATION.md v1.0 created (automation inventory)
+- 2026-06-18: RELEASE_PROCESS.md v1.0 created (release procedures)
+- 2026-06-18: DOC_STANDARD.md v1.0 created (documentation standards)
+- 2026-06-18: ENGINEERING_PLAYBOOK.md v1.0 created (development workflow)
+- 2026-06-18: PROJECT_PROTOCOL.md v1.0 created (project identity)
+- 2026-06-18: INFORMATION_ARCHITECTURE.md v1.0 created (meta architecture)
+
+## Next Steps
+
+1. Create SYSTEM_BOUNDARIES.md (services, runtime, storage, projections)
+2. Create TASK_LIFECYCLE.md (task lifecycle stages)
+3. Begin runtime implementation (LangGraph, FSM, memory, agents, tools)
