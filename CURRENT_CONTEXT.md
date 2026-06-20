@@ -54,3 +54,12 @@
 
 **Next:**
 - Layer 4 — Implementation Knowledge (future)
+
+**Current engineering focus:** Layer 2 — Operational Knowledge
+
+**Completed:**
+- PROJECT_PROTOCOL.md v1.0
+- DOMAIN_ARCHITECTURE.md v1.0
+
+**Next:**
+- SYSTEM_BOUNDARIES.md

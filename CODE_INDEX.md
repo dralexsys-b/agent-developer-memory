@@ -18,6 +18,7 @@
 | `RELEASE_PROCESS.md` | Release Process — release procedures, versioning, deployment | EXISTS | Based on: ENGINEERING_PLAYBOOK.md, DOC_STANDARD.md |
 | `AUTOMATION.md` | Automation — scripts, registry, structure, triggers | EXISTS | Based on: ENGINEERING_PLAYBOOK.md, RELEASE_PROCESS.md |
 | `ENGINEERING_HISTORY.md` | Engineering History — lessons learned, post-mortems, retrospectives | EXISTS | Based on: ENGINEERING_PLAYBOOK.md |
+| `DOMAIN_ARCHITECTURE.md` | Domain Architecture — entities, contracts, relationships, state models, event model | EXISTS | Based on: INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md |
 
 ## 🟡 Planned Files (PLANNED)
 | File Path | Purpose | Status |
