@@ -1,0 +1,11 @@
+# Runtime logs (не относятся к документации)
+evidence/*.log
+
+# Временные файлы
+*.tmp
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
