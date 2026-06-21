@@ -1,0 +1,23 @@
+<!-- Generated from docs/DECISIONS.md.template -->
+# Architectural Decisions
+
+This document records local architectural decisions for {PROJECT_NAME}.
+
+## Format
+
+Each decision should follow a lightweight ADR (Architectural Decision Record) format:
+- **Title**: Short descriptive title
+- **Date**: YYYY-MM-DD
+- **Status**: Proposed | Accepted | Deprecated | Superseded
+- **Context**: What is the issue that we're seeing?
+- **Decision**: What is the change that we're proposing and/or doing?
+- **Consequences**: What becomes easier or more difficult to do because of this change?
+
+## Decisions
+
+### Decision 001: {Title}
+- **Date:** {YYYY-MM-DD}
+- **Status:** Accepted
+- **Context:** {Context}
+- **Decision:** {Decision}
+- **Consequences:** {Consequences}

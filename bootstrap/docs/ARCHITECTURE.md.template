@@ -1,0 +1,20 @@
+<!-- Generated from docs/ARCHITECTURE.md.template -->
+# Architecture
+
+This document describes the architecture of {PROJECT_NAME}.
+
+## Overview
+
+{PROJECT_DESCRIPTION}
+
+## Layers
+
+{Describe the architectural layers here, e.g., Application, Runtime, Contracts, Domain, Kernel}
+
+## Key Components
+
+{List the main components and their responsibilities}
+
+## Dependencies
+
+{Describe external dependencies and internal layer dependencies}

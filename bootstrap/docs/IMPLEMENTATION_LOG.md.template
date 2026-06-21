@@ -1,0 +1,24 @@
+<!-- Generated from docs/IMPLEMENTATION_LOG.md.template -->
+# Implementation Log
+
+This document tracks the implementation progress and lessons learned for {PROJECT_NAME}.
+
+## Format
+
+Each phase or iteration should include:
+- **Goal**: What we aimed to achieve
+- **Decisions**: Key decisions made during implementation
+- **Problems**: Issues encountered and how they were resolved
+- **Refactoring**: Changes made to the original plan
+- **Lessons**: What we learned
+- **Next Steps**: What to do next
+
+## Log
+
+### Phase 0 — Foundation
+- **Date:** {YYYY-MM-DD}
+- **Goal:** {Goal}
+- **Decisions:** {Decisions}
+- **Problems:** {Problems}
+- **Lessons:** {Lessons}
+- **Next Steps:** {Next Steps}
