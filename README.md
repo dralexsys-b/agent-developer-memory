@@ -14,9 +14,14 @@
 
 ## 🏗️ Архитектура
 
-Документация организована в три слоя:
+Документация организована в четыре слоя:
 
-### Layer 1 — Information Architecture
+### Layer 0 — Governance ✅ COMPLETED
+Определяет правила развития системы, конституцию проекта и стратегические цели.
+
+- **PROJECT_GOVERNANCE.md** — конституция проекта, vision, продукты, цели, фазы, инварианты, принципы, процесс управления, классификация изменений
+
+### Layer 1 — Information Architecture ✅ COMPLETED
 Определяет организацию информации и структуру памяти.
 
 - **INFORMATION_ARCHITECTURE.md** — мета-архитектура всей системы
@@ -42,6 +47,17 @@
 - Event Bus
 
 ## 📚 Основные документы
+
+### PROJECT_GOVERNANCE.md
+Конституция проекта, определяющая правила развития системы Agent Developer. Включает:
+- **Vision:** инженерная система, объединяющая память, исполнение, инструменты и агентов
+- **Supreme Law:** Agent Developer максимально автоматизирует инженерную деятельность, сохраняя за человеком ответственность за стратегические решения
+- **Three Products:** agent-developer-memory, agent-developer-runtime, Agent Developer
+- **Architectural Invariants:** 7 неизменяемых законов проекта
+- **Operating Principles:** 7 принципов развития
+- **Change Classification:** Class A (Implementation), Class B (Architecture), Class C (Governance)
+
+**Ключевой принцип:** Memory — это самостоятельный продукт-платформа, пригодный для использования другими инженерными системами.
 
 ### PROJECT_PROTOCOL.md
 Определяет идентичность проекта, роли (Project Architect, Engineering Maintainer), правила работы с документацией и процесс принятия решений.
@@ -102,10 +118,11 @@
 Это обеспечивает независимость доменной модели от реализации и позволяет заменять компоненты без изменения архитектуры.
 
 ### Four-Level Architecture
-1. **Domain Architecture** — вечные сущности (не меняются)
-2. **System Boundaries** — сервисы (могут меняться)
-3. **Runtime** — исполнение (может меняться)
-4. **Storage** — носители (могут меняться)
+1. **Governance** — конституция и правила развития (не меняется)
+2. **Domain Architecture** — вечные сущности (не меняются)
+3. **System Boundaries** — сервисы (могут меняться)
+4. **Runtime** — исполнение (может меняться)
+5. **Storage** — носители (могут меняться)
 
 ### Continuous Documentation
 Документация обновляется после каждого этапа жизненного цикла задачи, обеспечивая непрерывное обновление памяти проекта.
@@ -113,6 +130,9 @@
 ## 🗺️ Roadmap
 
 ### ✅ Completed
+
+**Layer 0 — Governance**
+- [x] PROJECT_GOVERNANCE.md
 
 **Layer 1 — Information Architecture**
 - [x] INFORMATION_ARCHITECTURE.md
@@ -139,15 +159,16 @@
 
 ## 📊 Статус проекта
 
-**Текущий этап:** Layer 2 — Operational Architecture ✅ COMPLETED
+**Текущий этап:** Layer 0 — Governance ✅ COMPLETED
 
 **Завершённые документы:**
+- PROJECT_GOVERNANCE.md (конституция проекта, ~800 строк)
 - PROJECT_PROTOCOL.md (протокол проекта)
 - DOMAIN_ARCHITECTURE.md (доменная модель, ~1100 строк)
 - SYSTEM_BOUNDARIES.md (границы системы, ~1070 строк)
 - TASK_LIFECYCLE.md (жизненный цикл задачи, ~1200 строк)
 
-**Следующий шаг:** Layer 3 — Runtime Implementation
+**Следующий шаг:** LAYER3_ROADMAP.md (план реализации Runtime)
 
 ## 🔧 Технологии
 
@@ -155,7 +176,7 @@
 - **Runtime:** Dual AMD Radeon VII (ROCm)
 - **Storage:** Markdown, JSON, SQLite, Qdrant
 - **Version Control:** Git
-- **Repository Structure:** Layered architecture (Layer 1 → Layer 2 → Layer 3)
+- **Repository Structure:** Layered architecture (Layer 0 → Layer 1 → Layer 2 → Layer 3)
 
 ## 📝 Лицензия
 
@@ -168,4 +189,4 @@
 ---
 
 **Последнее обновление:** 2026-06-21  
-**Статус:** Layer 2 Completed, Layer 3 Planned
+**Статус:** Layer 0 Completed, Layer 3 Planned
