@@ -14,7 +14,7 @@
 
 ## 🏗️ Архитектура
 
-Документация организована в четыре слоя:
+Документация организована в пять слоев:
 
 ### Layer 0 — Governance ✅ COMPLETED
 Определяет правила развития системы, конституцию проекта и стратегические цели.
@@ -34,17 +34,30 @@
 - **SYSTEM_BOUNDARIES.md** — границы системы (сервисы, runtime, storage, проекции)
 - **TASK_LIFECYCLE.md** — жизненный цикл задачи (13 этапов от Input до Learning)
 
-### Layer 3 — Runtime Implementation 🚧 PLANNED
+### Layer 3 — Runtime Implementation 🚧 IN PROGRESS
 Определяет реализацию исполняемой системы.
 
+- **LAYER3_ROADMAP.md** — план реализации Runtime, итерации, Vertical Slice
 - Runtime Engine
 - FSM / State Machine
+- Event Bus
 - Agent Runtime
 - Memory Engine
 - Execution Engine
 - Context Manager
 - Capability Resolver
-- Event Bus
+- Orchestrator
+
+**Текущий статус:** Реализация Iteration 1 (Core Foundation + Event Bus)
+
+### Layer 4 — Engineering Knowledge ✅ COMPLETED
+Определяет инженерные практики, стандарты и процессы.
+
+- **ENGINEERING_PLAYBOOK.md** — процедуры, workflow, best practices
+- **DOC_STANDARD.md** — стандарты документации
+- **RELEASE_PROCESS.md** — процесс релизов
+- **AUTOMATION.md** — автоматизация
+- **ENGINEERING_HISTORY.md** — история инженерных решений
 
 ## 📚 Основные документы
 
@@ -58,6 +71,16 @@
 - **Change Classification:** Class A (Implementation), Class B (Architecture), Class C (Governance)
 
 **Ключевой принцип:** Memory — это самостоятельный продукт-платформа, пригодный для использования другими инженерными системами.
+
+### LAYER3_ROADMAP.md
+Практический план реализации Runtime — мост между архитектурой (Layer 2) и кодом. Включает:
+- **Начальная декомпозиция Runtime** — 11 компонентов с ответственностью
+- **Vertical Slice** — минимальная задача, проходящая Stage 0→12 и создающая артефакт
+- **6 итераций реализации** с Definition of Done
+- **Production Features** — Checkpoint Manager, Recovery Manager (после Vertical Slice)
+- **Event Bus** — введен рано для decoupling компонентов
+
+**Ключевые принципы:** Практичность, итеративность, Vertical Slice First, гибкость состава компонентов
 
 ### PROJECT_PROTOCOL.md
 Определяет идентичность проекта, роли (Project Architect, Engineering Maintainer), правила работы с документацией и процесс принятия решений.
@@ -117,12 +140,13 @@
 
 Это обеспечивает независимость доменной модели от реализации и позволяет заменять компоненты без изменения архитектуры.
 
-### Four-Level Architecture
+### Five-Level Architecture
 1. **Governance** — конституция и правила развития (не меняется)
-2. **Domain Architecture** — вечные сущности (не меняются)
-3. **System Boundaries** — сервисы (могут меняться)
-4. **Runtime** — исполнение (может меняться)
-5. **Storage** — носители (могут меняться)
+2. **Information Architecture** — мета-архитектура (не меняется)
+3. **Domain Architecture** — вечные сущности (не меняются)
+4. **System Boundaries** — сервисы (могут меняться)
+5. **Runtime** — исполнение (может меняться)
+6. **Engineering Knowledge** — практики и стандарты (эволюционируют)
 
 ### Continuous Documentation
 Документация обновляется после каждого этапа жизненного цикла задачи, обеспечивая непрерывное обновление памяти проекта.
@@ -143,23 +167,28 @@
 - [x] SYSTEM_BOUNDARIES.md
 - [x] TASK_LIFECYCLE.md
 
+**Layer 4 — Engineering Knowledge**
+- [x] ENGINEERING_PLAYBOOK.md
+- [x] DOC_STANDARD.md
+- [x] RELEASE_PROCESS.md
+- [x] AUTOMATION.md
+- [x] ENGINEERING_HISTORY.md
+
 ### 🚧 In Progress
 
 **Layer 3 — Runtime Implementation**
-- [ ] LAYER3_ROADMAP.md
-- [ ] Runtime Engine
-- [ ] FSM / State Machine
-- [ ] Agent Runtime
-- [ ] Context Manager
-- [ ] Memory Engine
-- [ ] Execution Engine
-- [ ] Capability Resolver
-- [ ] Orchestrator
-- [ ] Event Bus
+- [x] LAYER3_ROADMAP.md (план реализации)
+- [ ] Runtime Engine + FSM + Event Bus + Context Manager (Iteration 1)
+- [ ] Memory Engine (Iteration 2)
+- [ ] Execution Engine (Iteration 3)
+- [ ] Capability Resolver (Iteration 4)
+- [ ] Agent Runtime (Iteration 5)
+- [ ] Orchestrator (Iteration 6 — Vertical Slice)
+- [ ] Production Features: Checkpoint Manager, Recovery Manager
 
 ## 📊 Статус проекта
 
-**Текущий этап:** Layer 0 — Governance ✅ COMPLETED
+**Текущий этап:** Layer 3 — Runtime Implementation 🚧 IN PROGRESS
 
 **Завершённые документы:**
 - PROJECT_GOVERNANCE.md (конституция проекта, ~800 строк)
@@ -167,8 +196,13 @@
 - DOMAIN_ARCHITECTURE.md (доменная модель, ~1100 строк)
 - SYSTEM_BOUNDARIES.md (границы системы, ~1070 строк)
 - TASK_LIFECYCLE.md (жизненный цикл задачи, ~1200 строк)
+- LAYER3_ROADMAP.md (план реализации Runtime, ~730 строк)
 
-**Следующий шаг:** LAYER3_ROADMAP.md (план реализации Runtime)
+**Текущая работа:**
+- Реализация Iteration 1: Core Foundation + Event Bus
+- Компоненты: Runtime Engine, FSM, Event Bus, Context Manager
+
+**Следующий шаг:** Реализация Iteration 2: Memory Integration
 
 ## 🔧 Технологии
 
@@ -176,7 +210,7 @@
 - **Runtime:** Dual AMD Radeon VII (ROCm)
 - **Storage:** Markdown, JSON, SQLite, Qdrant
 - **Version Control:** Git
-- **Repository Structure:** Layered architecture (Layer 0 → Layer 1 → Layer 2 → Layer 3)
+- **Repository Structure:** Layered architecture (Layer 0 → Layer 1 → Layer 2 → Layer 3 → Layer 4)
 
 ## 📝 Лицензия
 
@@ -189,4 +223,4 @@
 ---
 
 **Последнее обновление:** 2026-06-21  
-**Статус:** Layer 0 Completed, Layer 3 Planned
+**Статус:** Layer 3 Runtime Implementation In Progress (Iteration 1)

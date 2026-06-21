@@ -23,12 +23,7 @@
 | `DOMAIN_ARCHITECTURE.md` | Domain Architecture — entities, contracts, relationships, state models, event model | EXISTS | Based on: INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md |
 | `SYSTEM_BOUNDARIES.md` | System Boundaries — services, runtime, storage, projections, agent implementations | EXISTS | Based on: DOMAIN_ARCHITECTURE.md |
 | `TASK_LIFECYCLE.md` | Task Lifecycle — stages, transitions, quality gates, failure paths | EXISTS | Based on: DOMAIN_ARCHITECTURE.md, SYSTEM_BOUNDARIES.md |
-
-## 🟡 Planned Files (PLANNED)
-
-| File Path | Purpose | Status |
-| :-- | :-- | :-- |
-| `LAYER3_ROADMAP.md` | Layer 3 Roadmap — план реализации Runtime | PLANNED |
+| `LAYER3_ROADMAP.md` | Layer 3 Roadmap — план реализации Runtime, итерации, Vertical Slice | EXISTS | Based on: DOMAIN_ARCHITECTURE.md, SYSTEM_BOUNDARIES.md, TASK_LIFECYCLE.md, PROJECT_GOVERNANCE.md |
 
 ## 🟠 Candidates (CANDIDATES)
 

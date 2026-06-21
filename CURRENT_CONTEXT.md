@@ -4,14 +4,14 @@
 
 **Project:** Agent Developer
 **Repository:** agent-developer-memory
-**Layer:** Layer 0 — Governance (COMPLETED ✅)
+**Layer:** Layer 3 — Runtime Implementation (IN PROGRESS 🚧)
 **Date:** 2026-06-21
 
 ## Current engineering focus
 
-**Next:**
+**Current:**
 
-- LAYER3_ROADMAP.md (план реализации Runtime)
+- Implementation Iteration 1: Core Foundation + Event Bus (Runtime Engine, FSM, Event Bus, Context Manager)
 
 ## Architecture Overview
 
@@ -30,17 +30,18 @@
 - SYSTEM_BOUNDARIES.md v1.0 ✅
 - TASK_LIFECYCLE.md v1.0 ✅
 
-### Layer 3 — Runtime Implementation (🚧 PLANNED)
+### Layer 3 — Runtime Implementation (🚧 IN PROGRESS)
 
-- LAYER3_ROADMAP.md (следующий документ)
-- Runtime Engine
-- FSM / State Machine
-- Agent Runtime
-- Memory Engine
-- Execution Engine
-- Context Manager
-- Capability Resolver
-- Event Bus
+- LAYER3_ROADMAP.md v1.0 ✅ (план реализации)
+- Runtime Engine (🚧 planned)
+- FSM / State Machine (🚧 planned)
+- Event Bus (🚧 planned)
+- Context Manager (🚧 planned)
+- Memory Engine (🚧 planned)
+- Execution Engine (🚧 planned)
+- Capability Resolver (🚧 planned)
+- Agent Runtime (🚧 planned)
+- Orchestrator (🚧 planned)
 
 ### Layer 4 — Engineering Knowledge (COMPLETED ✅)
 
@@ -52,6 +53,7 @@
 
 ## Recent Changes
 
+- 2026-06-21: LAYER3_ROADMAP.md v1.0 created (план реализации Runtime)
 - 2026-06-21: PROJECT_GOVERNANCE.md v1.0 created (project constitution)
 - 2026-06-21: TASK_LIFECYCLE.md v1.0 created (task lifecycle definition)
 - 2026-06-21: SYSTEM_BOUNDARIES.md v1.0 created (system boundaries)
@@ -66,5 +68,7 @@
 
 ## Next Steps
 
-1. Create LAYER3_ROADMAP.md (план реализации Runtime)
-2. Begin runtime implementation (FSM, Memory Engine, Execution Engine, Agents)
+1. Создать агент-репозиторий `agent-developer-runtime`
+2. Реализовать Iteration 1: Core Foundation + Event Bus
+3. Написать базовые тесты для Runtime Engine, FSM, Event Bus, Context Manager
+4. Перейти к Iteration 2: Memory Integration
