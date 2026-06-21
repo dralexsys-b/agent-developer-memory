@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+# Generated from scripts/bootstrap-layout.sh.template
+#
+# Bootstrap layout — создаёт базовую структуру нового репозитория
+# из шаблонов bootstrap/.
+#
+# Важно: этот скрипт НЕ инициализирует Git.
+# Пользователь должен самостоятельно решить, нужно ли инициализировать
+# Git, клонировать существующий репозиторий, или использовать другую VCS.
+#
+# Usage:
+#   ./scripts/bootstrap-layout.sh <target-directory>
+#
+# Example:
+#   ./scripts/bootstrap-layout.sh ~/agent-dev/new-project
+#
+# Rule 3: Bootstrap never imports Runtime.
+#         Runtime may use Bootstrap only during repository creation.
+
+set -euo pipefail
+
+die() {
+    echo "❌ $1" >&2
+    exit 1
+}
+
+# === 1. Проверка аргументов ===
+if [ $# -lt 1 ]; then
+    die "Usage: $0 <target-directory>"
+fi
+
+TARGET_DIR="$1"
+
+# === 2. Проверка наличия шаблонов ===
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BOOTSTRAP_DIR="$(dirname "$SCRIPT_DIR")"
+TEMPLATES_DIR="$BOOTSTRAP_DIR/templates"
+
+if [ ! -d "$TEMPLATES_DIR" ]; then
+    die "Templates directory not found: $TEMPLATES_DIR"
+fi
+
+echo "=== Bootstrap Layout ==="
+echo "Target directory: $TARGET_DIR"
+echo "Templates source: $TEMPLATES_DIR"
+echo ""
+
+# === 3. Проверка целевой директории ===
+if [ -d "$TARGET_DIR" ] && [ "$(ls -A "$TARGET_DIR" 2>/dev/null)" ]; then
+    die "Target directory already exists and is not empty: $TARGET_DIR"
+fi
+
+# === 4. Создание структуры ===
+echo "→ Creating directory structure..."
+mkdir -p "$TARGET_DIR/src"
+mkdir -p "$TARGET_DIR/tests"
+mkdir -p "$TARGET_DIR/docs"
+mkdir -p "$TARGET_DIR/scripts"
+echo "  ✓ Base directories created"
+
+# === 5. Копирование шаблонов ===
+echo "→ Copying templates..."
+cp "$TEMPLATES_DIR/README.md.template" "$TARGET_DIR/README.md"
+cp "$TEMPLATES_DIR/.gitignore.template" "$TARGET_DIR/.gitignore"
+echo "  ✓ README.md and .gitignore copied"
+
+echo ""
+echo "✓ Bootstrap layout complete"
+echo ""
+echo "Next steps:"
+echo "  1. cd $TARGET_DIR"
+echo "  2. (Optional) git init"
+echo "  3. Customize README.md"
+echo "  4. Create src/<package_name>/ structure"
+echo "  5. git add . && git commit -m 'chore(bootstrap): initialize repository layout'"

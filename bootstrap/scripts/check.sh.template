@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+# Generated from scripts/check.sh.template
+#
+# Full check — полная проверка качества кода.
+# Запускается перед коммитом и в CI.
+#
+# Usage:
+#   ./scripts/check.sh
+#   bash scripts/check.sh
+
+set -euo pipefail
+
+die() {
+    echo "❌ $1" >&2
+    exit 1
+}
+
+echo "=== Full Quality Check ==="
+echo ""
+
+# Проверка 1: ruff (линтер + форматтер)
+echo "→ Running ruff check..."
+if command -v ruff &> /dev/null; then
+    ruff check .
+    echo "  ✓ ruff check passed"
+else
+    echo "  ⚠️  ruff not installed. Run: pip install ruff"
+    die "ruff is required"
+fi
+
+# Проверка 2: mypy (статическая типизация)
+echo "→ Running mypy..."
+if command -v mypy &> /dev/null; then
+    mypy src
+    echo "  ✓ mypy passed"
+else
+    echo "  ⚠️  mypy not installed. Run: pip install mypy"
+    die "mypy is required"
+fi
+
+# Проверка 3: pytest (тесты)
+echo "→ Running pytest..."
+if command -v pytest &> /dev/null; then
+    pytest
+    echo "  ✓ pytest passed"
+else
+    echo "  ⚠️  pytest not installed. Run: pip install pytest"
+    die "pytest is required"
+fi
+
+echo ""
+echo "✓ All quality checks passed"

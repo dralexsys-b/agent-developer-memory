@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Generated from scripts/smoke.sh.template
+#
+# Smoke test — быстрая проверка после каждого коммита.
+# Должен выполняться за < 5 секунд.
+#
+# Usage:
+#   ./scripts/smoke.sh
+#   bash scripts/smoke.sh
+
+set -euo pipefail
+
+echo "=== Smoke Test ==="
+echo ""
+
+# Проверка 1: компиляция всех Python файлов
+echo "→ Checking Python syntax..."
+python3 -m compileall -q src
+echo "  ✓ All Python files compile successfully"
+
+# Проверка 2: базовый импорт пакета
+echo "→ Checking package import..."
+PYTHONPATH=src python3 -c "
+import agent_runtime
+import agent_runtime.kernel
+import agent_runtime.domain
+import agent_runtime.domain.events
+from agent_runtime import domain
+from agent_runtime import kernel
+print('  ✓ All core packages import successfully')
+print(f'  ✓ agent_runtime located at: {agent_runtime.__file__}')
+"
+
+echo ""
+echo "✓ Smoke test passed"
