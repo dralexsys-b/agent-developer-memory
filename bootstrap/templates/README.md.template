@@ -1,0 +1,48 @@
+<!-- Generated from templates/README.md.template -->
+# {PROJECT_NAME}
+
+{PROJECT_DESCRIPTION}
+
+## Status
+
+**{PHASE_NAME}** ({PHASE_STATUS})
+
+Current milestone: **{MILESTONE_NAME}**
+
+## Requirements
+
+- Python 3.11+
+- Git
+
+## Installation
+
+    # Clone the repository
+    git clone <repo-url>
+    cd {PROJECT_NAME}
+    
+    # Create virtual environment
+    python3 -m venv .venv
+    source .venv/bin/activate
+    
+    # Install in development mode
+    pip install -e .[dev]
+
+## Getting Started
+
+    # Run tests
+    pytest
+    
+    # Run linters
+    ruff check .
+    mypy src
+
+## Documentation
+
+See `docs/` for architecture and implementation logs.
+
+Architecture documents live in the sibling repository `agent-developer-memory`.
+
+## Legacy
+
+Historical prototypes are preserved in `legacy/` for reference.
+The legacy state is tagged as `{LEGACY_TAG}`.

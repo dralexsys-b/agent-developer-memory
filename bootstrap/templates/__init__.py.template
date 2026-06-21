@@ -1,0 +1,4 @@
+# Generated from templates/__init__.py.template
+"""{MODULE_DOCSTRING}"""
+
+__all__ = ()
