@@ -1,0 +1,16 @@
+<!-- Generated from docs/README.md.template -->
+# {PROJECT_NAME} Documentation
+
+This directory contains architecture and implementation documentation for {PROJECT_NAME}.
+
+## Documents
+
+- `ARCHITECTURE.md` — Architecture overview
+- `ENGINEERING_RULES.md` — Engineering standards (from bootstrap)
+- `DECISIONS.md` — Architectural decisions log
+- `IMPLEMENTATION_LOG.md` — Implementation progress and lessons learned
+
+## Updates
+
+Documentation is added incrementally during implementation.
+See `IMPLEMENTATION_LOG.md` for current progress.
