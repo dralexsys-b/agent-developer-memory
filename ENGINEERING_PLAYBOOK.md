@@ -120,6 +120,19 @@ The composition of the verification pipeline is defined by the project and may e
 
 **Engineering Invariant:** Verification is mandatory. No exceptions.
 
+### Smoke Testing
+
+Smoke tests validate the public contract of the system:
+
+1. **Test public interface** — validate external behavior, not internal implementation
+2. **Protect public contract** — breaking changes require explicit approval
+3. **Ensure isolation** — tests must not modify system state
+4. **Use realistic scenarios** — test with actual project artifacts
+
+Smoke testing verifies that externally observable behavior remains consistent after change. The concrete implementation of smoke tests is project-specific.
+
+**Engineering Invariant:** Public contract is protected by smoke tests.
+
 ### Testing Levels
 
 **Unit Testing:**
