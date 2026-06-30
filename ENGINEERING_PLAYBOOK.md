@@ -108,6 +108,18 @@ All changes must be verified before merging:
 3. **Small verified steps** — verify each step before proceeding (Principle #10)
 4. **Facts over assumptions** — trust evidence, not expectations (Principle #5)
 
+### Verification Pipeline
+
+The verification pipeline is a mandatory process executed before every commit:
+
+1. **Execute pipeline** — run all verification stages defined for the project
+2. **Verify success** — all stages must pass; partial success is not acceptable
+3. **Treat as mandatory** — verification cannot be skipped or bypassed
+
+The composition of the verification pipeline is defined by the project and may evolve over time. This playbook defines the requirement to perform verification, while project-specific engineering documents define the concrete verification stages.
+
+**Engineering Invariant:** Verification is mandatory. No exceptions.
+
 ### Testing Levels
 
 **Unit Testing:**
