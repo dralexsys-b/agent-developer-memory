@@ -34,24 +34,28 @@ The development workflow follows a structured process from idea to deployment:
 
 ### Phase 2: Implementation
 
-5. **Follow PROJECT_PROTOCOL principles** — all 12 principles apply
-6. **Make small changes** — one logical change per commit (Principle #3)
-7. **Prefer local patches** — minimize change surface area (Principle #4)
-8. **Generate evidence** — logs, test results, benchmarks (Principle #1)
+1. **Follow PROJECT_PROTOCOL principles** — all 12 principles apply
+2. **Write tests first** — TDD Red Phase: failing tests define expected behavior
+3. **Make small changes** — one logical change per commit (Principle #3)
+4. **Prefer local patches** — minimize change surface area (Principle #4)
+5. **Implement minimal solution** — TDD Green Phase: simplest code that passes tests
+6. **Refactor** — TDD Refactor Phase: improve code while keeping tests green
+7. **Generate evidence** — logs, test results, benchmarks (Principle #1)
 
 ### Phase 3: Verification
 
-9. **Test the changes** — verify correctness (Principle #9: Reproducibility)
-10. **Update documentation** — if needed (see Documentation Updates section)
-11. **Create commit** — clear message, atomic change
-12. **Push to repository** — with evidence attached
+1. **Run verification pipeline** — execute the project's mandatory verification process
+2. **Verify all checks pass** — implementation must satisfy verification requirements
+3. **Update affected documentation**
+4. **Create commit** — record the verified implementation
+5. **Push to repository** — after successful verification
 
 ### Phase 4: Review
 
-13. **Request review** — from Architect or peer (detailed procedures are defined in the applicable project standards)
-14. **Address feedback** — make corrections if needed
-15. **Merge to main** — after approval
-16. **Update CURRENT_CONTEXT.md** — if operational state changed
+1. **Request review** — from Architect or peer (detailed procedures are defined in the applicable project standards)
+2. **Address feedback** — make corrections if needed
+3. **Merge to main** — after approval
+4. **Update CURRENT_CONTEXT.md** — if operational state changed
 
 
 ---
