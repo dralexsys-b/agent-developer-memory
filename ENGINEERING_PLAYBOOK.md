@@ -120,6 +120,21 @@ The composition of the verification pipeline is defined by the project and may e
 
 **Engineering Invariant:** Verification is mandatory. No exceptions.
 
+### Verification Stages
+
+Verification is composed of one or more stages defined by the project.
+
+Typical stages include:
+
+1. Code quality verification
+2. Static analysis
+3. Automated testing
+4. Public contract validation
+
+The exact set of stages is project-specific and may evolve over time.
+
+**Engineering Invariant:** Every verification stage defined by the project must complete successfully before changes are accepted.
+
 ### Smoke Testing
 
 Smoke tests validate the public contract of the system:
