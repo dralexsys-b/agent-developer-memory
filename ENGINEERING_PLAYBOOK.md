@@ -18,6 +18,13 @@
 
 The development workflow follows a structured process from idea to deployment:
 
+### Phase 0: Documentation First
+
+1. **Create specification** — document requirements before implementation
+2. **Define acceptance criteria** — what does "done" look like?
+3. **Identify dependencies** — what documents need updates?
+4. **Get approval** — Architect reviews specification before implementation begins
+
 ### Phase 1: Planning
 
 1. **Identify the need** — what problem are we solving?
