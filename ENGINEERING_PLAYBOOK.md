@@ -264,6 +264,19 @@ AI assistants are part of the engineering workflow and must be used responsibly.
 
 **Engineering Invariant:** AI accelerates engineering work; responsibility and verification always remain with the engineer.
 
+### Root Cause Analysis
+
+When problems occur, investigate the underlying cause before implementing a fix.
+
+1. **Reproduce the problem** — establish a reliable reproduction scenario.
+2. **Collect evidence** — gather logs, outputs, benchmarks and observable facts.
+3. **Form hypotheses** — identify possible causes without assuming correctness.
+4. **Validate hypotheses** — eliminate incorrect explanations using evidence.
+5. **Fix the confirmed cause** — implement the smallest change that removes the verified root cause.
+6. **Prevent recurrence** — update tests, documentation or engineering practices when appropriate.
+
+**Engineering Invariant:** Engineering decisions are based on verified causes, not on assumptions or symptoms.
+
 ### Tools & Automation
 
 **Use:**
