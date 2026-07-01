@@ -32,6 +32,19 @@ The following principles guide automation decisions (see ENGINEERING_PLAYBOOK Pr
 3. **Decision-dependent operations** — requiring human judgment
 4. **Architectural decisions** — ADR creation, protocol changes
 
+### Verification Automation
+
+Verification automation defines how project verification is executed as a repeatable engineering process.
+
+1. **Provide a unified verification process** — verification is executed through a consistent automation workflow.
+2. **Coordinate verification stages** — automation runs the verification stages defined by the project.
+3. **Produce engineering evidence** — verification generates evidence for engineering decisions.
+4. **Fail predictably** — verification stops when a required stage fails.
+5. **Remain deterministic** — repeated execution produces consistent results.
+
+The concrete automation scripts, verification stages and execution order are documented in the corresponding sections of this document.
+
+**Engineering Invariant:** Verification automation must produce reproducible engineering evidence.
 
 ---
 
