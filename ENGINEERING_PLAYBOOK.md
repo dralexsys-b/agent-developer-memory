@@ -251,6 +251,19 @@ Project-specific branching strategies and release procedures are documented in P
 
 **Engineering Invariant:** Git history must clearly communicate the evolution of the project.
 
+### AI-Assisted Development
+
+AI assistants are part of the engineering workflow and must be used responsibly.
+
+1. **Engineer owns decisions** — AI proposes, engineer reviews, approves and remains accountable.
+2. **Verify all AI output** — every AI-generated artifact must pass the project's verification process.
+3. **Document AI involvement when relevant** — if AI-assisted work establishes a new engineering practice or architectural decision, record it in the engineering knowledge base.
+4. **Maintain project context** — provide AI with sufficient architectural and engineering context before requesting changes.
+5. **Apply incremental integration** — integrate AI-generated changes through small, reviewable steps.
+6. **Challenge AI conclusions** — treat AI output as a proposal requiring engineering validation, not as authoritative truth.
+
+**Engineering Invariant:** AI accelerates engineering work; responsibility and verification always remain with the engineer.
+
 ### Tools & Automation
 
 **Use:**
@@ -264,6 +277,8 @@ Project-specific branching strategies and release procedures are documented in P
 - Unverified assumptions (generate evidence)
 - Complex workflows (keep it simple)
 
+---
+
 ## References
 
 For detailed engineering procedures, see the following Layer 3 documents:
@@ -274,6 +289,8 @@ For detailed engineering procedures, see the following Layer 3 documents:
 - **ENGINEERING_HISTORY.md** — lessons learned, post-mortems, retrospectives
 
 These documents are defined in INFORMATION_ARCHITECTURE.md and will be created according to the project roadmap.
+
+---
 
 ## End of Document
 
