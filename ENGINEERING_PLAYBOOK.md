@@ -237,6 +237,20 @@ Before creating a heredoc, determine the type of artifact being produced:
 
 Formatting rules apply to the generated artifact, not to the heredoc syntax itself.
 
+### Git Workflow
+
+Git history is part of the engineering documentation and must remain understandable over time.
+
+1. **One engineering concept per commit** — each commit introduces one coherent engineering idea
+2. **Keep commits atomic** — changes should be reviewable and reversible
+3. **Write meaningful commit messages** — explain why the change exists, not only what changed
+4. **Review before publishing** — verify the working tree and review the diff before commit
+5. **Keep history clean** — avoid unrelated changes within the same commit
+
+Project-specific branching strategies and release procedures are documented in PROJECT_PROTOCOL.md and RELEASE_PROCESS.md.
+
+**Engineering Invariant:** Git history must clearly communicate the evolution of the project.
+
 ### Tools & Automation
 
 **Use:**
@@ -250,9 +264,6 @@ Formatting rules apply to the generated artifact, not to the heredoc syntax itse
 - Unverified assumptions (generate evidence)
 - Complex workflows (keep it simple)
 
-
----
-
 ## References
 
 For detailed engineering procedures, see the following Layer 3 documents:
@@ -263,8 +274,6 @@ For detailed engineering procedures, see the following Layer 3 documents:
 - **ENGINEERING_HISTORY.md** — lessons learned, post-mortems, retrospectives
 
 These documents are defined in INFORMATION_ARCHITECTURE.md and will be created according to the project roadmap.
-
----
 
 ## End of Document
 
