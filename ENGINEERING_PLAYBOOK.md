@@ -277,6 +277,23 @@ When problems occur, investigate the underlying cause before implementing a fix.
 
 **Engineering Invariant:** Engineering decisions are based on verified causes, not on assumptions or symptoms.
 
+### Engineering Invariants
+
+Engineering Invariants are fundamental rules that cannot be violated or negotiated. They form the foundation of the engineering process.
+
+1. **Documentation First** — no implementation without documentation update
+2. **One Concept Per Commit** — each commit introduces one coherent engineering idea
+3. **Evidence Required** — every claim needs proof (tests, logs, benchmarks)
+4. **Verification Pipeline Must Pass** — all verification stages must complete successfully
+5. **Review Before Merge** — no changes merged without approval
+6. **Small Verified Steps** — prefer incremental changes over large batches
+7. **Root Cause Over Symptoms** — fix the underlying cause, not visible effects
+8. **Engineer Accountable** — AI accelerates work, but engineer owns decisions
+
+These invariants apply to all engineering work regardless of scope, complexity, or timeline.
+
+**Engineering Invariant:** Invariants are non-negotiable. They define what engineering means in this project.
+
 ### Tools & Automation
 
 **Use:**
