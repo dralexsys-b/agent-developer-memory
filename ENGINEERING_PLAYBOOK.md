@@ -211,6 +211,32 @@ Smoke testing verifies that externally observable behavior remains consistent af
 - Clear commit messages over vague ones
 - Consistent formatting over creative styles
 
+### Shell Scripting Standards
+
+Shell scripts should follow consistent engineering practices to ensure reliability, readability, and maintainability.
+
+1. **Use an appropriate interpreter** — declare the required shell explicitly.
+2. **Fail predictably** — scripts should stop on unrecoverable errors.
+3. **Quote variable expansions** — avoid unintended word splitting and glob expansion.
+4. **Handle errors explicitly** — provide meaningful diagnostics for failures.
+5. **Design for idempotence** — repeated execution should produce a predictable result.
+6. **Manage temporary resources safely** — create and clean up temporary files reliably.
+7. **Document script purpose** — describe usage, dependencies, inputs and outputs.
+
+Project-specific implementation details (strict mode, shellcheck configuration, verify.sh, etc.) are documented in AUTOMATION.md.
+
+**Engineering Invariant:** Shell scripting practices must be applied consistently across the project.
+
+#### Heredoc Usage
+
+Before creating a heredoc, determine the type of artifact being produced:
+
+1. **Code heredoc** — formatting follows the target programming language (e.g., indentation belongs to the generated code, not to the heredoc mechanism).
+2. **Text heredoc** — formatting follows the target document format (commit messages, Markdown, YAML, plain text).
+3. **The heredoc mechanism must never influence the formatting of the generated artifact.**
+
+Formatting rules apply to the generated artifact, not to the heredoc syntax itself.
+
 ### Tools & Automation
 
 **Use:**
