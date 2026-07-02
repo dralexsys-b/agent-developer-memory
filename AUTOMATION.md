@@ -149,6 +149,22 @@ Every automation script must:
 5. **Be testable** — can be run independently
 6. **Follow DOC_STANDARD** — documentation in header
 
+### Verification Script Requirements
+
+Verification scripts are one implementation of verification automation. Regardless of implementation, verification automation must remain deterministic, reproducible, and evidence-based.
+
+Verification scripts should:
+
+1. Execute verification stages in deterministic order.
+2. Stop immediately after a failed mandatory stage.
+3. Generate engineering evidence.
+4. Report clear diagnostics.
+5. Preserve reproducibility.
+6. Preserve project integrity — verification must not modify project artifacts except for explicitly defined verification outputs.
+
+Concrete implementations of verification automation belong to the runtime repository.
+
+**Engineering Invariant:** Verification automation must be deterministic, reproducible, and generate engineering evidence.
 
 ---
 
