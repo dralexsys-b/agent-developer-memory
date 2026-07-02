@@ -78,6 +78,19 @@ The following automations exist in the project:
 |------------|---------|---------|------------|
 | Evidence collection | Collect runtime logs | Post-test | Runtime |
 
+### Engineering Automations
+
+| Automation | Purpose | Trigger | Repository |
+|------------|---------|---------|------------|
+| Verification Pipeline | Validate project integrity before commits | Manual or pre-commit | Runtime |
+| Publish Workflow | Publish verified changes to remote | Post-verification | Runtime |
+| Shell Smoke Tests | Quick validation of script syntax and structure | Part of Verification Pipeline | Runtime |
+
+These automations implement the engineering principles defined in ENGINEERING_PLAYBOOK.md.
+
+Implementation details belong to the runtime repository.
+This document defines the engineering concepts rather than specific implementations.
+
 ### Implementation Note
 
 Each automation may consist of one or more scripts whose names may change over time.
