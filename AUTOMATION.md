@@ -197,6 +197,20 @@ Every automation script must include this header:
     # Author: [role]
     # Date: [creation date]
 
+### Automation Verification
+
+Before a new automation is accepted into the project, verify that it:
+
+1. Satisfies the automation principles defined in this document.
+2. Produces reproducible engineering evidence.
+3. Fails predictably with clear diagnostics.
+4. Preserves project integrity.
+5. Is registered in the Automation Registry.
+6. Is documented according to DOC_STANDARD.
+
+Verification is part of the engineering acceptance process rather than a property of any specific implementation.
+
+**Engineering Invariant:** No automation is considered complete until it has been verified and documented.
 
 ---
 
