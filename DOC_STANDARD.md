@@ -14,6 +14,25 @@
 
 ---
 
+## Documentation Principles
+
+Documentation standards ensure that engineering knowledge remains consistent, maintainable, and verifiable throughout the project lifecycle.
+
+Core principles:
+
+1. **Canonical Source** — every engineering fact has exactly one authoritative location; other documents reference it rather than duplicate
+2. **Living documents** — documentation must reflect current state of the project; outdated documentation is worse than missing documentation
+3. **Explicit scope** — each document answers a specific primary question and declares its boundaries
+4. **Declared dependencies** — relationships between documents are explicit (Dependencies and Dependents fields), not assumed
+5. **Verification friendly** — documentation should be structured to enable automated verification where practical
+6. **Minimal duplication** — derived information references canonical source rather than copying; changes propagate through references
+
+Documentation is versioned, reviewed, maintained, and verified with the same engineering rigor as code.
+
+**Engineering Invariant:** Documentation is an engineering artifact, not a byproduct.
+
+
+
 ## Document Requirements
 
 Every document in the project must satisfy the following requirements:
