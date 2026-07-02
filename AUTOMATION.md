@@ -225,6 +225,35 @@ Automations can be triggered by different mechanisms:
 - Used for: build, test, evidence collection
 - Requires: user knowledge of script location and usage
 
+### Verification Triggers
+
+Verification automation can be triggered through multiple mechanisms, each serving a distinct engineering purpose:
+
+**Manual verification:**
+- Engineer runs verification workflow explicitly before commit or push
+- Used for: ad-hoc validation, debugging, pre-release checks
+- Provides: full control over timing and scope
+
+**Pre-commit verification:**
+- Verification may execute before a commit is created
+- Purpose: prevent broken or undocumented changes from entering history
+- Scope: fast validation (syntax, structure, documentation)
+
+**Pre-push verification:**
+- Verification may execute before changes are published to remote
+- Purpose: ensure remote repository only receives verified changes
+- Scope: comprehensive validation including publish workflow
+
+**CI verification:**
+- Verification may execute in continuous integration environment
+- Purpose: validate changes in clean, reproducible environment
+- Scope: full regression including cross-component checks
+
+Trigger selection depends on verification scope and engineering risk. Manual triggers suit exploratory work; automated triggers enforce invariants on critical paths.
+
+**Engineering Invariant:** Engineering artifacts progress only after successful verification.
+
+
 ### Planned Triggers
 
 The following trigger mechanisms are planned but not yet implemented:
