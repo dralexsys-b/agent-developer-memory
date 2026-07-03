@@ -88,6 +88,44 @@ The following rules are specific to this project. Basic Markdown syntax is assum
 
 ---
 
+## Shell Command Documentation
+
+Engineering documentation frequently contains shell commands. Such commands must be documented so they can be executed safely, reproduced consistently, and understood without additional context.
+
+### Reproducibility
+
+- Commands must be deterministic: given the same initial state, they produce the same result
+- Document prerequisites explicitly (required tools, environment variables, directory structure)
+- Avoid commands that depend on transient state (timestamps, random values, external services) unless explicitly noted
+- Reference the canonical document instead of duplicating long command sequences when appropriate
+
+### Safety
+
+- Potentially destructive or system-modifying commands should explicitly state their effects
+- Commands requiring elevated privileges must explicitly indicate this (e.g., `sudo`, `#` prompt)
+- Commands that may modify or remove data, system state, or infrastructure should be clearly identified and accompanied by appropriate warnings
+
+### Command Presentation
+
+- When prompts are shown, use consistent prompt indicators: `$` for user commands, `#` for root commands
+- For copy/paste blocks, omit prompt prefixes to prevent execution errors
+- Use `\` for line continuation with 2-space indentation on continuation lines
+- Use `bash` as the default language identifier for shell command blocks; use `sh` only when shell portability is intentional
+
+### Copy/Paste Considerations
+
+- Replace user-specific values with explicit placeholders (e.g., `<PROJECT_DIR>`, `<BRANCH_NAME>`)
+- Document any required manual or interactive steps explicitly
+- If a command requires interactive input, document this explicitly before the command block
+
+### Relationship to Documentation Standards
+
+Shell command documentation is an engineering artifact. It is subject to the same documentation standards, verification practices, and quality requirements as every other part of the document.
+
+**Engineering Invariant:** Documented shell commands must be reproducible, understandable, and safe to execute within their documented context.
+
+---
+
 ## Metadata Requirements
 
 Every document must include the following metadata in the header:
