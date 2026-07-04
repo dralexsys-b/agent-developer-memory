@@ -118,6 +118,17 @@ Engineering documentation frequently contains shell commands. Such commands must
 - Document any required manual or interactive steps explicitly
 - If a command requires interactive input, document this explicitly before the command block
 
+### Executability
+
+Executability is a property of instructional documentation, not a universal requirement for all documents. When documentation contains executable instructions intended to be followed by the reader:
+
+- The sequence must form a complete procedure with no implicit steps or unstated assumptions
+- Each instruction must be valid in the documented context (working directory, environment, system state)
+- Transitions between steps must preserve the expected state without requiring undocumented manual actions
+- Document the expected outcome so successful execution can be verified
+
+Executability complements reproducibility and copy/paste safety by ensuring that executable procedures are complete, self-contained, and verifiable.
+
 ### Relationship to Documentation Standards
 
 Shell command documentation is an engineering artifact. It is subject to the same documentation standards, verification practices, and quality requirements as every other part of the document.
