@@ -126,6 +126,36 @@ Shell command documentation is an engineering artifact. It is subject to the sam
 
 ---
 
+## Heredoc Documentation
+
+Heredoc syntax is used when documentation embeds another artifact (configuration file, script, data structure) whose formatting and structure are significant to the resulting engineering artifact.
+
+### When to Use Heredoc
+
+- Use heredoc when embedding multi-line content whose structure or readability should be preserved
+- Use heredoc when the content will be written to a file or passed as input to a command
+
+### Delimiter Selection
+
+- Prefer descriptive delimiters when they improve readability (e.g., `YAML_EOF`, `CONFIG_EOF`, `SCRIPT_EOF`)
+- Use quoted delimiters (`'EOF'`) when the content must not undergo variable expansion
+- Use unquoted delimiters (`EOF`) only when variable expansion is intentional and documented
+
+### Embedded Content
+
+- Preserve the formatting of the embedded artifact exactly as it is intended to appear after execution
+- Document the content type and expected format before the heredoc block
+- Use explicit placeholders for sensitive values (passwords, tokens, secrets) and document the substitution requirement
+- Ensure the closing delimiter appears on its own line with no trailing content
+
+### Relationship to Shell Command Documentation
+
+Heredoc documentation is a specialized form of shell command documentation used for embedded engineering artifacts. The same engineering principles apply: reproducibility, safety, and clarity. Heredocs are subject to the same verification and quality requirements as shell commands.
+
+**Engineering Invariant:** A documented heredoc must preserve the intended content of the embedded engineering artifact and remain reproducible within its documented execution context.
+
+---
+
 ## Metadata Requirements
 
 Every document must include the following metadata in the header:
