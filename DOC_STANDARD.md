@@ -88,6 +88,42 @@ The following rules are specific to this project. Basic Markdown syntax is assum
 
 ---
 
+## Engineering Statement Properties
+
+Engineering documentation is composed of engineering statements that describe systems, processes, requirements, constraints, decisions, or other engineering knowledge. High-quality engineering statements exhibit the following properties.
+
+### Explicit
+
+- All assumptions, constraints, and conditions should be stated explicitly
+- Statements that depend on external context should reference that context
+
+### Consistent
+
+- Engineering statements should not contradict canonical sources or other statements within their declared scope
+
+### Verifiable
+
+- Engineering statements should be stated in a way that allows verification whenever verification is reasonably applicable
+- When a statement is not directly verifiable, its nature (for example, an assumption or planned change) should be stated explicitly
+
+### Scoped
+
+- Every engineering statement operates within a declared scope
+- Statements must not make claims beyond their documented scope without explicit qualification
+
+### Referenced
+
+- Engineering statements should reference the canonical source whenever the statement is derived from another engineering artifact
+- Derived statements should reference rather than duplicate canonical content
+
+### Relationship to Documentation Principles
+
+Engineering Statement Properties support the Documentation Principles by improving clarity, consistency, and verification of engineering documentation.
+
+**Engineering Invariant:** Engineering statements are explicit, consistent, and verifiable within their documented scope.
+
+---
+
 ## Shell Command Documentation
 
 Engineering documentation frequently contains shell commands. Such commands must be documented so they can be executed safely, reproduced consistently, and understood without additional context.
