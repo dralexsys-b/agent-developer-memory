@@ -319,6 +319,35 @@ Before committing any document, verify the following:
 
 ---
 
+## Documentation Conformance
+
+A document conforms to this standard when it satisfies all mandatory requirements defined by this document.
+
+### Conformance Criteria
+
+Conformance requires all of the following:
+
+- Required structural elements are present (metadata, headings, sections)
+- Metadata is complete and follows the specified format
+- Formatting follows the rules defined in this standard
+- Cross-references conform to project naming and linking rules
+- Engineering statements satisfy the documented statement properties
+- Specialized documentation elements (for example, shell commands and heredocs) satisfy their applicable documentation rules
+
+### Non-conformance
+
+If any mandatory requirement defined by this standard is violated, the document is non-conforming until the violation is corrected.
+
+### Relationship to Other Documents
+
+Documentation Conformance defines the expected state of documentation.
+
+The processes used to assess or enforce conformance are defined by their own canonical documents and are intentionally outside the scope of this standard.
+
+**Engineering Invariant:** A document either conforms to this standard or is identified as non-conforming.
+
+---
+
 ## Examples
 
 ### Example 1: Correct Document Header
