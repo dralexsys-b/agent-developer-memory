@@ -14,6 +14,25 @@
 
 ---
 
+## Documentation Principles
+
+Documentation standards ensure that engineering knowledge remains consistent, maintainable, and verifiable throughout the project lifecycle.
+
+Core principles:
+
+1. **Canonical Source** — every engineering fact has exactly one authoritative location; other documents reference it rather than duplicate
+2. **Living documents** — documentation must reflect current state of the project; outdated documentation is worse than missing documentation
+3. **Explicit scope** — each document answers a specific primary question and declares its boundaries
+4. **Declared dependencies** — relationships between documents are explicit (Dependencies and Dependents fields), not assumed
+5. **Verification friendly** — documentation should be structured to enable automated verification where practical
+6. **Minimal duplication** — derived information references canonical source rather than copying; changes propagate through references
+
+Documentation is versioned, reviewed, maintained, and verified with the same engineering rigor as code.
+
+**Engineering Invariant:** Documentation is an engineering artifact, not a byproduct.
+
+
+
 ## Document Requirements
 
 Every document in the project must satisfy the following requirements:
@@ -66,6 +85,121 @@ The following rules are specific to this project. Basic Markdown syntax is assum
 - Specify language after triple backticks (e.g., ```bash, ```python)
 - Use inline code with single backticks for short snippets
 
+
+---
+
+## Engineering Statement Properties
+
+Engineering documentation is composed of engineering statements that describe systems, processes, requirements, constraints, decisions, or other engineering knowledge. High-quality engineering statements exhibit the following properties.
+
+### Explicit
+
+- All assumptions, constraints, and conditions should be stated explicitly
+- Statements that depend on external context should reference that context
+
+### Consistent
+
+- Engineering statements should not contradict canonical sources or other statements within their declared scope
+
+### Verifiable
+
+- Engineering statements should be stated in a way that allows verification whenever verification is reasonably applicable
+- When a statement is not directly verifiable, its nature (for example, an assumption or planned change) should be stated explicitly
+
+### Scoped
+
+- Every engineering statement operates within a declared scope
+- Statements must not make claims beyond their documented scope without explicit qualification
+
+### Referenced
+
+- Engineering statements should reference the canonical source whenever the statement is derived from another engineering artifact
+- Derived statements should reference rather than duplicate canonical content
+
+### Relationship to Documentation Principles
+
+Engineering Statement Properties support the Documentation Principles by improving clarity, consistency, and verification of engineering documentation.
+
+**Engineering Invariant:** Engineering statements are explicit, consistent, and verifiable within their documented scope.
+
+---
+
+## Shell Command Documentation
+
+Engineering documentation frequently contains shell commands. Such commands must be documented so they can be executed safely, reproduced consistently, and understood without additional context.
+
+### Reproducibility
+
+- Commands must be deterministic: given the same initial state, they produce the same result
+- Document prerequisites explicitly (required tools, environment variables, directory structure)
+- Avoid commands that depend on transient state (timestamps, random values, external services) unless explicitly noted
+- Reference the canonical document instead of duplicating long command sequences when appropriate
+
+### Safety
+
+- Potentially destructive or system-modifying commands should explicitly state their effects
+- Commands requiring elevated privileges must explicitly indicate this (e.g., `sudo`, `#` prompt)
+- Commands that may modify or remove data, system state, or infrastructure should be clearly identified and accompanied by appropriate warnings
+
+### Command Presentation
+
+- When prompts are shown, use consistent prompt indicators: `$` for user commands, `#` for root commands
+- For copy/paste blocks, omit prompt prefixes to prevent execution errors
+- Use `\` for line continuation with 2-space indentation on continuation lines
+- Use `bash` as the default language identifier for shell command blocks; use `sh` only when shell portability is intentional
+
+### Copy/Paste Considerations
+
+- Replace user-specific values with explicit placeholders (e.g., `<PROJECT_DIR>`, `<BRANCH_NAME>`)
+- Document any required manual or interactive steps explicitly
+- If a command requires interactive input, document this explicitly before the command block
+
+### Executability
+
+Executability is a property of instructional documentation, not a universal requirement for all documents. When documentation contains executable instructions intended to be followed by the reader:
+
+- The sequence must form a complete procedure with no implicit steps or unstated assumptions
+- Each instruction must be valid in the documented context (working directory, environment, system state)
+- Transitions between steps must preserve the expected state without requiring undocumented manual actions
+- Document the expected outcome so successful execution can be verified
+
+Executability complements reproducibility and copy/paste safety by ensuring that executable procedures are complete, self-contained, and verifiable.
+
+### Relationship to Documentation Standards
+
+Shell command documentation is an engineering artifact. It is subject to the same documentation standards, verification practices, and quality requirements as every other part of the document.
+
+**Engineering Invariant:** Documented shell commands must be reproducible, understandable, and safe to execute within their documented context.
+
+---
+
+## Heredoc Documentation
+
+Heredoc syntax is used when documentation embeds another artifact (configuration file, script, data structure) whose formatting and structure are significant to the resulting engineering artifact.
+
+### When to Use Heredoc
+
+- Use heredoc when embedding multi-line content whose structure or readability should be preserved
+- Use heredoc when the content will be written to a file or passed as input to a command
+
+### Delimiter Selection
+
+- Prefer descriptive delimiters when they improve readability (e.g., `YAML_EOF`, `CONFIG_EOF`, `SCRIPT_EOF`)
+- Use quoted delimiters (`'EOF'`) when the content must not undergo variable expansion
+- Use unquoted delimiters (`EOF`) only when variable expansion is intentional and documented
+
+### Embedded Content
+
+- Preserve the formatting of the embedded artifact exactly as it is intended to appear after execution
+- Document the content type and expected format before the heredoc block
+- Use explicit placeholders for sensitive values (passwords, tokens, secrets) and document the substitution requirement
+- Ensure the closing delimiter appears on its own line with no trailing content
+
+### Relationship to Shell Command Documentation
+
+Heredoc documentation is a specialized form of shell command documentation used for embedded engineering artifacts. The same engineering principles apply: reproducibility, safety, and clarity. Heredocs are subject to the same verification and quality requirements as shell commands.
+
+**Engineering Invariant:** A documented heredoc must preserve the intended content of the embedded engineering artifact and remain reproducible within its documented execution context.
 
 ---
 
@@ -182,6 +316,35 @@ Before committing any document, verify the following:
 - [ ] Evidence paths follow project naming convention (YYYY-MM-DD_HHMM_description.log)
 - [ ] Section anchors follow naming rules (lowercase, hyphens, no special chars)
 
+
+---
+
+## Documentation Conformance
+
+A document conforms to this standard when it satisfies all mandatory requirements defined by this document.
+
+### Conformance Criteria
+
+Conformance requires all of the following:
+
+- Required structural elements are present (metadata, headings, sections)
+- Metadata is complete and follows the specified format
+- Formatting follows the rules defined in this standard
+- Cross-references conform to project naming and linking rules
+- Engineering statements satisfy the documented statement properties
+- Specialized documentation elements (for example, shell commands and heredocs) satisfy their applicable documentation rules
+
+### Non-conformance
+
+If any mandatory requirement defined by this standard is violated, the document is non-conforming until the violation is corrected.
+
+### Relationship to Other Documents
+
+Documentation Conformance defines the expected state of documentation.
+
+The processes used to assess or enforce conformance are defined by their own canonical documents and are intentionally outside the scope of this standard.
+
+**Engineering Invariant:** A document either conforms to this standard or is identified as non-conforming.
 
 ---
 

@@ -32,6 +32,19 @@ The following principles guide automation decisions (see ENGINEERING_PLAYBOOK Pr
 3. **Decision-dependent operations** — requiring human judgment
 4. **Architectural decisions** — ADR creation, protocol changes
 
+### Verification Automation
+
+Verification automation defines how project verification is executed as a repeatable engineering process.
+
+1. **Provide a unified verification process** — verification is executed through a consistent automation workflow.
+2. **Coordinate verification stages** — automation runs the verification stages defined by the project.
+3. **Produce engineering evidence** — verification generates evidence for engineering decisions.
+4. **Fail predictably** — verification stops when a required stage fails.
+5. **Remain deterministic** — repeated execution produces consistent results.
+
+The concrete automation scripts, verification stages and execution order are documented in the corresponding sections of this document.
+
+**Engineering Invariant:** Verification automation must produce reproducible engineering evidence.
 
 ---
 
@@ -64,6 +77,19 @@ The following automations exist in the project:
 | Automation | Purpose | Trigger | Repository |
 |------------|---------|---------|------------|
 | Evidence collection | Collect runtime logs | Post-test | Runtime |
+
+### Engineering Automations
+
+| Automation | Purpose | Trigger | Repository |
+|------------|---------|---------|------------|
+| Verification Pipeline | Validate project integrity before commits | Manual or pre-commit | Runtime |
+| Publish Workflow | Publish verified changes to remote | Post-verification | Runtime |
+| Shell Smoke Tests | Quick validation of script syntax and structure | Part of Verification Pipeline | Runtime |
+
+These automations implement the engineering principles defined in ENGINEERING_PLAYBOOK.md.
+
+Implementation details belong to the runtime repository.
+This document defines the engineering concepts rather than specific implementations.
 
 ### Implementation Note
 
@@ -123,6 +149,22 @@ Every automation script must:
 5. **Be testable** — can be run independently
 6. **Follow DOC_STANDARD** — documentation in header
 
+### Verification Script Requirements
+
+Verification scripts are one implementation of verification automation. Regardless of implementation, verification automation must remain deterministic, reproducible, and evidence-based.
+
+Verification scripts should:
+
+1. Execute verification stages in deterministic order.
+2. Stop immediately after a failed mandatory stage.
+3. Generate engineering evidence.
+4. Report clear diagnostics.
+5. Preserve reproducibility.
+6. Preserve project integrity — verification must not modify project artifacts except for explicitly defined verification outputs.
+
+Concrete implementations of verification automation belong to the runtime repository.
+
+**Engineering Invariant:** Verification automation must be deterministic, reproducible, and generate engineering evidence.
 
 ---
 
@@ -155,6 +197,20 @@ Every automation script must include this header:
     # Author: [role]
     # Date: [creation date]
 
+### Automation Verification
+
+Before a new automation is accepted into the project, verify that it:
+
+1. Satisfies the automation principles defined in this document.
+2. Produces reproducible engineering evidence.
+3. Fails predictably with clear diagnostics.
+4. Preserves project integrity.
+5. Is registered in the Automation Registry.
+6. Is documented according to DOC_STANDARD.
+
+Verification is part of the engineering acceptance process rather than a property of any specific implementation.
+
+**Engineering Invariant:** No automation is considered complete until it has been verified and documented.
 
 ---
 
@@ -168,6 +224,35 @@ Automations can be triggered by different mechanisms:
 - User runs script directly
 - Used for: build, test, evidence collection
 - Requires: user knowledge of script location and usage
+
+### Verification Triggers
+
+Verification automation can be triggered through multiple mechanisms, each serving a distinct engineering purpose:
+
+**Manual verification:**
+- Engineer runs verification workflow explicitly before commit or push
+- Used for: ad-hoc validation, debugging, pre-release checks
+- Provides: full control over timing and scope
+
+**Pre-commit verification:**
+- Verification may execute before a commit is created
+- Purpose: prevent broken or undocumented changes from entering history
+- Scope: fast validation (syntax, structure, documentation)
+
+**Pre-push verification:**
+- Verification may execute before changes are published to remote
+- Purpose: ensure remote repository only receives verified changes
+- Scope: comprehensive validation including publish workflow
+
+**CI verification:**
+- Verification may execute in continuous integration environment
+- Purpose: validate changes in clean, reproducible environment
+- Scope: full regression including cross-component checks
+
+Trigger selection depends on verification scope and engineering risk. Manual triggers suit exploratory work; automated triggers enforce invariants on critical paths.
+
+**Engineering Invariant:** Engineering artifacts progress only after successful verification.
+
 
 ### Planned Triggers
 
