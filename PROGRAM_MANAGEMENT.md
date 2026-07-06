@@ -230,4 +230,20 @@ Critical errors discovered during execution do not invalidate the Frozen Plan ru
 
 New ideas discovered during execution of a Frozen Program Plan are not incorporated into the current plan. They are recorded in the Backlog for future programs.
 
+---
+
+## Single Active Program
+
+### Purpose
+
+Restricting execution to a single active program ensures that engineering effort remains focused and that architectural changes are completed before new work begins.
+
+### Rule
+
+At any given time, only one program may be in the **In Progress** state.
+
+### Engineering Invariant
+
+The project shall not execute more than one active program simultaneously.
+
 ## End of Document
