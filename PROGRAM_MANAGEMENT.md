@@ -210,4 +210,24 @@ Transitions that bypass one or more required lifecycle states are prohibited.
 
 No transitions are permitted from the Archived state.
 
+---
+
+## Frozen Plan Rule
+
+### Purpose
+
+Freezing a Program Plan ensures that planning and execution remain separate engineering activities. Once frozen, the Program Plan governs execution for the remainder of the program lifecycle.
+
+### Modification Rule
+
+A Frozen Program Plan is protected from modification throughout program execution. Its scope, phases, milestones, and exit criteria cannot be changed.
+
+### Critical Errors
+
+Critical errors discovered during execution do not invalidate the Frozen Plan rule. Their handling is governed by separate engineering rules.
+
+### New Ideas
+
+New ideas discovered during execution of a Frozen Program Plan are not incorporated into the current plan. They are recorded in the Backlog for future programs.
+
 ## End of Document
