@@ -71,7 +71,79 @@ PROGRAMS.md   Individual Program Plans
 - **PROGRAMS.md** is the registry of all programs (governed by this document)
 - **Individual Program Plans** are governed by the rules defined here
 
-**Engineering Invariant:** Every engineering program follows a defined lifecycle and is governed exclusively by the rules in this document.
+**Engineering Invariant:** Every engineering program follows the lifecycle defined in this document.
+
+---
+
+## Terminology
+
+### Program
+
+**Definition:**
+A Program is the highest-level planning unit used to organize a bounded engineering effort toward a single architectural goal.
+
+**Role:**
+Programs are the primary organizational unit used to plan, execute and evaluate engineering work. Every program operates under the governance rules defined in this document.
+
+---
+
+### Program Plan
+
+**Definition:**
+A Program Plan is the authoritative execution plan that defines how a program will be delivered, including its phases, milestones, commits, and exit criteria.
+
+**Role:**
+The Program Plan serves as the authoritative engineering plan that defines how a program will be executed.
+
+---
+
+### Phase
+
+**Definition:**
+A Phase divides a program into sequential engineering stages, each with a clear objective that must be completed before the next phase begins unless explicitly defined otherwise.
+
+**Role:**
+Phases provide structure within a program, allowing work to be organized into coherent units with distinct objectives and deliverables.
+
+---
+
+### Milestone
+
+**Definition:**
+A Milestone represents a formal engineering decision point or completion point that changes the state or progress of a program.
+
+**Role:**
+Milestones provide visibility into program progress and trigger state transitions. They represent binary achievements that mark significant points in the program lifecycle.
+
+---
+
+### Backlog
+
+**Definition:**
+A Backlog is a collection of potential future programs and ideas that have not yet been committed to execution.
+
+**Role:**
+The Backlog serves as the input source for future programs, capturing ideas that may become programs in subsequent planning cycles. It is distinct from active programs.
+
+---
+
+### Review
+
+**Definition:**
+A Review is a formal evaluation conducted at specific points in a program's lifecycle to assess progress, quality, and alignment with goals.
+
+**Role:**
+Reviews provide governance checkpoints where decisions are made about program execution, scope adjustments, and risk management.
+
+---
+
+### Retrospective
+
+**Definition:**
+A Retrospective is a structured reflection conducted after program completion to capture lessons learned and improve future programs.
+
+**Role:**
+Retrospectives answer the question "What did we learn?" by systematically analyzing what went well, what could be improved, and what recommendations should inform future programs.
 
 ---
 
