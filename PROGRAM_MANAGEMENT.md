@@ -186,4 +186,28 @@ Completed
     ↓
 Archived
 
+---
+
+## Transition Rules
+
+Programs may transition only through explicitly permitted lifecycle transitions.
+
+### Permitted Transitions
+
+The following transitions are permitted:
+
+- Draft → Architecture Review
+- Architecture Review → Frozen
+- Frozen → In Progress
+- In Progress → Review
+- Review → Completed
+- Review → In Progress
+- Completed → Archived
+
+### Prohibited Transitions
+
+Transitions that bypass one or more required lifecycle states are prohibited.
+
+No transitions are permitted from the Archived state.
+
 ## End of Document
