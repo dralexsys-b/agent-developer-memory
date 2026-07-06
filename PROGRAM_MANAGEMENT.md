@@ -147,4 +147,43 @@ Retrospectives answer the question "What did we learn?" by systematically analyz
 
 ---
 
+
+---
+
+## Program Lifecycle
+
+Every program progresses through a defined sequence of states from conception to completion.
+
+### Lifecycle States
+
+**Draft** — the program is being prepared.
+
+**Architecture Review** — the program is under architectural evaluation.
+
+**Frozen** — the program plan has been approved and frozen.
+
+**In Progress** — the program is being executed.
+
+**Review** — the completed execution is being evaluated.
+
+**Completed** — the program has completed its execution.
+
+**Archived** — the program is retained for historical reference.
+
+### Lifecycle Flow
+
+Draft
+    ↓
+Architecture Review
+    ↓
+Frozen
+    ↓
+In Progress
+    ↓
+Review
+    ↓
+Completed
+    ↓
+Archived
+
 ## End of Document
