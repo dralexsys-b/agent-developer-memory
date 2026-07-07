@@ -246,4 +246,20 @@ At any given time, only one program may be in the **In Progress** state.
 
 The project shall not execute more than one active program simultaneously.
 
+---
+
+## Backlog Management
+
+### Purpose
+
+The Backlog preserves engineering ideas without disrupting the execution of the active program. It separates future planning from current execution.
+
+### Rule
+
+Ideas that are not part of the current Program Plan shall be managed through the Backlog.
+
+### Engineering Invariant
+
+Every engineering idea outside the active Program Plan shall be managed through the Backlog.
+
 ## End of Document
