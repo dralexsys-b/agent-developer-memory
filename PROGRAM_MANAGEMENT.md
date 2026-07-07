@@ -262,4 +262,24 @@ Ideas that are not part of the current Program Plan shall be managed through the
 
 Every engineering idea outside the active Program Plan shall be managed through the Backlog.
 
+---
+
+## Program Evaluation
+
+### Purpose
+
+Formal evaluation points ensure that program progress and outcomes are assessed throughout the program lifecycle.
+
+### Rule
+
+Every program shall undergo a Review before transitioning to the Completed state.
+
+Every completed program shall undergo a Retrospective before transitioning to the Archived state.
+
+### Engineering Invariant
+
+A program shall not transition to Completed without a Review.
+
+A program shall not transition to Archived without a Retrospective.
+
 ## End of Document
