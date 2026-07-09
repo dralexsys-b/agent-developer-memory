@@ -282,4 +282,13 @@ A program shall not transition to Completed without a Review.
 
 A program shall not transition to Archived without a Retrospective.
 
+---
+
+## Engineering Invariants
+
+The following invariants govern program management at the project level. Invariants specific to individual policies are defined within their respective sections.
+
+1. **One Program Per Goal** — every program shall have exactly one defined goal.
+2. **Review Informs Future Planning** — every completed Review shall produce findings that are recorded in the Backlog for future programs.
+
 ## End of Document
