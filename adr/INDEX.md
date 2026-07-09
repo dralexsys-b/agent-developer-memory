@@ -10,3 +10,4 @@
 | 005 | Lean Project Memory Architecture v1.0 | ACCEPTED | - |
 | 006 | Стратегия Tool Layer для Beta-0.1a | ACCEPTED | - |
 | 007 | Стратегия доступа к LLM | ACCEPTED | - |
+| 008 | Exclude Program Portfolio and Program Registry from Program Recovery | ACCEPTED | - |
