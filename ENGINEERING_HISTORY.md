@@ -30,6 +30,14 @@ The goal is to:
 3. Improve processes over time
 4. Build institutional memory
 
+This document is the authoritative reference for:
+- Purpose of engineering history documentation
+- Entry structure (required and optional fields)
+- Categories (lessons learned, post-mortems, retrospectives)
+- Writing guidelines (specific, actionable, honest, concise, timely)
+- Review process (draft, review, approval, update)
+
+All engineering lessons must be documented according to the structure defined herein.
 
 ---
 
@@ -263,16 +271,21 @@ ENGINEERING_PLAYBOOK.md (Development Workflow), AUTOMATION.md (Verification Auto
 
 ---
 
+### 2026-07-09 Retrospective: Program Management Completion
+
+**Context:**
+Program Management Completion was executed from 2026-07-07 to 2026-07-09, establishing the program governance framework and closing administrative debt.
+
+**Lesson:**
+Incremental architecture review during program execution allows discovery of scope errors (such as unnecessary Portfolio and Registry commits) before they are implemented, preventing waste and maintaining document quality.
+
+**Action:**
+Apply the same incremental review approach to future programs, particularly Runtime Phase 1.
+
+**Related:**
+PROGRAM_MANAGEMENT.md, ADR 008 (Exclude Portfolio and Registry), decisions/016-closure.md
+
+---
+
 ## End of Document
-
-This document defines the structure and process for capturing engineering lessons learned in the Agent Developer project.
-
-It is the authoritative reference for:
-- Purpose of engineering history documentation
-- Entry structure (required and optional fields)
-- Categories (lessons learned, post-mortems, retrospectives)
-- Writing guidelines (specific, actionable, honest, concise, timely)
-- Review process (draft, review, approval, update)
-
-All engineering lessons must be documented according to the structure defined herein.
 
