@@ -31,7 +31,185 @@ Documentation is versioned, reviewed, maintained, and verified with the same eng
 
 **Engineering Invariant:** Documentation is an engineering artifact, not a byproduct.
 
+---
 
+## Localization Rules
+
+### Purpose (Назначение)
+
+This section defines the requirements for localizing engineering documentation into other languages while preserving engineering meaning. 
+
+Engineering documents translated into other languages shall comply with this section.
+
+**Core Principle:** Translation Never Changes Meaning.
+
+Localization shall not alter the engineering meaning of any statement, rule, invariant, or definition. If ambiguity is introduced during localization, it shall be resolved by preserving the engineering meaning defined by the canonical document.
+
+---
+
+### Scope (Область применения)
+
+This section applies to:
+
+- Translation of engineering documentation into other languages
+- Maintenance of multilingual documentation
+- Verification of localized documentation
+
+Localization shall not introduce architectural, editorial, or structural changes unless explicitly required to preserve the original engineering meaning.
+
+Localization shall not change document ownership. Canonical Source relationships remain identical across all language editions.
+
+**Note:** GLOSSARY.md is introduced by Commit 2 of Engineering Knowledge Localization v1. Until GLOSSARY.md is created, technical terms shall remain in their original English form.
+
+---
+
+### Presentation Model (Модель представления)
+
+The bilingual presentation model applies to all documentation headings (##, ###, ####).
+
+**Format:** `## English Title (Русский перевод)`
+
+**Examples:**
+
+    ## Purpose (Назначение)
+    ### Scope (Область применения)
+    #### Related Documents (Связанные документы)
+    ## Engineering Invariants (Инженерные инварианты)
+
+Table column headers shall follow the same bilingual presentation model whenever translation is applied.
+
+This convention provides:
+- Consistent Markdown anchors matching the original
+- Easier comparison between language editions
+- English remains the primary engineering identifier
+- Russian ensures readability for Russian-speaking engineers
+
+---
+
+### Translation Rules (Правила перевода)
+
+#### Body Text
+
+All narrative text, explanations, rationale, and procedural descriptions shall be translated into Russian.
+
+#### Technical Terms
+
+All technical terms shall remain in English. When defined, terminology shall comply with GLOSSARY.md.
+
+#### Metadata
+
+All metadata fields remain in English:
+- Status, Version, Date, Authority, Maintainer
+- Type, Primary Question, Canonical Source for
+- Dependencies, Dependents
+
+#### Tables
+
+- Column headers shall be translated using the bilingual presentation model
+- Technical values, identifiers, and status codes remain unchanged
+
+#### Lists
+
+List structure shall be preserved. Content shall be translated according to these rules.
+
+#### Examples
+
+- Explanatory text within examples shall be translated
+- Code, commands, and technical identifiers remain unchanged
+
+#### Notes and Warnings
+
+Shall be translated while preserving their semantic meaning.
+
+---
+
+### Non-Translatable Elements (Непереводимые элементы)
+
+The following elements remain in English in all language editions:
+
+#### Engineering Elements
+
+- Program
+- Phase
+- Milestone
+- Backlog
+- Review
+- Retrospective
+- Task
+- Artifact
+- Knowledge Item
+- Workspace
+- Release
+- Canonical Source
+- Primary Question
+- Engineering Invariant
+- Lifecycle
+- Dependencies
+- Dependents
+- Frozen Plan
+- Architecture Review
+
+#### Technical Elements
+
+- JSON structures
+- YAML structures
+- XML structures
+- SQL queries
+- Regular expressions
+- CLI options and flags
+- API names and endpoints
+
+#### Markdown Elements
+
+- File names
+- Metadata field names
+- Markdown anchors
+- Links
+- Code blocks
+- Shell commands
+- Heredoc content
+
+---
+
+### First Mention Rule (Правило первого упоминания)
+
+The first occurrence of a key English term in a translated document should include a Russian explanation:
+
+    Canonical Source (канонический источник)
+
+Subsequent occurrences may use only the English term when the meaning remains clear. This allows long documents to reintroduce the Russian explanation whenever additional clarification improves readability.
+
+---
+
+### Glossary Compliance (Соответствие глоссарию)
+
+All translated documents must use terminology consistently with GLOSSARY.md. If a term is not defined in the glossary, the English original must be used.
+
+GLOSSARY.md is the Canonical Source for engineering terminology used throughout the project.
+
+---
+
+### Consistency Requirements (Требования согласованности)
+
+A localized document is considered correct if:
+
+- Engineering meaning is preserved
+- All links and references remain valid
+- Document structure is preserved
+- Terminology is consistent with GLOSSARY.md
+- Presentation Model is followed
+- All non-translatable elements remain unchanged
+- Canonical Source ownership and relationships remain unchanged
+
+---
+
+### Relationship to Documentation Principles (Связь с принципами документации)
+
+Localization Rules support the Documentation Principles by ensuring that translations maintain Canonical Source integrity, preserve Explicit scope, and enable Verification across language editions.
+
+**Engineering Invariant:** Localization shall preserve engineering meaning, document ownership, document structure, and terminology consistency across all language editions.
+
+---
 
 ## Document Requirements
 
