@@ -100,6 +100,14 @@ Terms inside each category shall be ordered alphabetically by English term unles
 
 **Canonical Source:** INFORMATION_ARCHITECTURE.md
 
+### Benchmark (Бенчмарк)
+
+**Category:** Core Engineering
+
+**Definition:** Стандартизированное измерение характеристик системы, используемое для сравнения между реализациями, версиями или конфигурациями.
+
+**Canonical Source:** ENGINEERING_PLAYBOOK.md
+
 ### Canonical Source (Канонический источник)
 
 **Category:** Core Engineering
@@ -132,7 +140,7 @@ Terms inside each category shall be ordered alphabetically by English term unles
 
 **Canonical Source:** DOC_STANDARD.md
 
-### Evidence (Evidence)
+### Evidence (Доказательство)
 
 **Category:** Core Engineering
 
@@ -600,6 +608,14 @@ Terms inside each category shall be ordered alphabetically by English term unles
 
 **Canonical Source:** ENGINEERING_PLAYBOOK.md
 
+### Local Patch (Локальный патч)
+
+**Category:** Engineering Process
+
+**Definition:** Минимальное изменение, ограниченное необходимой областью системы и не затрагивающее несвязанные компоненты.
+
+**Canonical Source:** ENGINEERING_PLAYBOOK.md
+
 ### Red-Green-Refactor (Red-Green-Refactor)
 
 **Category:** Engineering Process
@@ -954,7 +970,7 @@ Terms inside each category shall be ordered alphabetically by English term unles
 
 1. Все документы должны использовать терминологию, согласованную с настоящим реестром и соответствующими Canonical Source.
 2. Если термин отсутствует в данном реестре, используется оригинальное английское написание до его официального добавления.
-3. При переводе допускается добавление пояснения на русском при первом упоминании, но английский термин остаётся основным.
+3. При первом упоминании инженерного термина применяется правило First Mention Rule, определённое в DOC_STANDARD.md. Последующее использование терминологии должно соответствовать зарегистрированным English–Russian соответствиям настоящего реестра.
 4. Изменения в терминологии должны сохранять согласованность с каноническим документом, определяющим соответствующее понятие.
 5. New engineering terminology shall be registered in this registry before its first normative use in project documentation.
 6. Removing a term from the registry requires review of all dependent documentation.
