@@ -1,71 +1,71 @@
-# Documentation Standard
+# Documentation Standard (Стандарт документации)
 
-**Status:** ACCEPTED  
-**Version:** 1.0  
-**Date:** 2026-06-18  
-**Authority:** Documentation Lead  
-**Maintainer:** Documentation Maintainer  
+**Status:** ACCEPTED
+**Version:** 1.0
+**Date:** 2026-06-18
+**Authority:** Documentation Lead
+**Maintainer:** Documentation Maintainer
 
-**Type:** Standard (Layer 3: Engineering Knowledge)  
-**Primary Question:** "How do we write documentation?"  
-**Canonical Source for:** Documentation formatting, structure, naming conventions, quality requirements  
-**Dependencies:** INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md, ENGINEERING_PLAYBOOK.md  
-**Dependents:** RELEASE_PROCESS.md, AUTOMATION.md, ENGINEERING_HISTORY.md  
-
----
-
-## Documentation Principles
-
-Documentation standards ensure that engineering knowledge remains consistent, maintainable, and verifiable throughout the project lifecycle.
-
-Core principles:
-
-1. **Canonical Source** — every engineering fact has exactly one authoritative location; other documents reference it rather than duplicate
-2. **Living documents** — documentation must reflect current state of the project; outdated documentation is worse than missing documentation
-3. **Explicit scope** — each document answers a specific primary question and declares its boundaries
-4. **Declared dependencies** — relationships between documents are explicit (Dependencies and Dependents fields), not assumed
-5. **Verification friendly** — documentation should be structured to enable automated verification where practical
-6. **Minimal duplication** — derived information references canonical source rather than copying; changes propagate through references
-
-Documentation is versioned, reviewed, maintained, and verified with the same engineering rigor as code.
-
-**Engineering Invariant:** Documentation is an engineering artifact, not a byproduct.
+**Type:** Standard (Layer 3: Engineering Knowledge)
+**Primary Question:** "How do we write documentation?"
+**Canonical Source for:** Documentation formatting, structure, naming conventions, quality requirements
+**Dependencies:** INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md, ENGINEERING_PLAYBOOK.md
+**Dependents:** RELEASE_PROCESS.md, AUTOMATION.md, ENGINEERING_HISTORY.md
 
 ---
 
-## Localization Rules
+## Documentation Principles (Принципы документации)
+
+Стандарты документации обеспечивают, что инженерные знания остаются согласованными, поддерживаемыми и верифицируемыми на протяжении всего жизненного цикла проекта.
+
+Основные принципы:
+
+1. **Canonical Source** — каждый инженерный факт имеет ровно одно авторитетное местоположение; другие документы ссылаются на него, а не дублируют
+2. **Living documents** — документация должна отражать текущее состояние проекта; устаревшая документация хуже отсутствующей документации
+3. **Explicit scope** — каждый документ отвечает на конкретный primary question и объявляет свои границы
+4. **Declared dependencies** — отношения между документами явные (поля Dependencies и Dependents), а не предполагаемые
+5. **Verification friendly** — документация должна быть структурирована для обеспечения автоматизированной верификации, где это практично
+6. **Minimal duplication** — производная информация ссылается на canonical source, а не копирует; изменения распространяются через ссылки
+
+Документация версионируется, рецензируется, поддерживается и верифицируется с той же инженерной строгостью, что и код.
+
+**Engineering Invariant:** Документация — это инженерный артефакт, а не побочный продукт.
+
+---
+
+## Localization Rules (Правила локализации)
 
 ### Purpose (Назначение)
 
-This section defines the requirements for localizing engineering documentation into other languages while preserving engineering meaning. 
+Этот раздел определяет требования к локализации инженерной документации на другие языки с сохранением инженерного смысла.
 
-Engineering documents translated into other languages shall comply with this section.
+Инженерные документы, переведённые на другие языки, должны соответствовать этому разделу.
 
 **Core Principle:** Translation Never Changes Meaning.
 
-Localization shall not alter the engineering meaning of any statement, rule, invariant, or definition. If ambiguity is introduced during localization, it shall be resolved by preserving the engineering meaning defined by the canonical document.
+Локализация не должна изменять инженерный смысл любого утверждения, правила, инварианта или определения. Если при локализации возникает неоднозначность, она должна быть разрешена путём сохранения инженерного смысла, определённого каноническим документом.
 
 ---
 
 ### Scope (Область применения)
 
-This section applies to:
+Этот раздел применяется к:
 
-- Translation of engineering documentation into other languages
-- Maintenance of multilingual documentation
-- Verification of localized documentation
+- Переводу инженерной документации на другие языки
+- Поддержке многоязычной документации
+- Верификации локализованной документации
 
-Localization shall not introduce architectural, editorial, or structural changes unless explicitly required to preserve the original engineering meaning.
+Локализация не должна вносить архитектурные, редакционные или структурные изменения, если это явно не требуется для сохранения оригинального инженерного смысла.
 
-Localization shall not change document ownership. Canonical Source relationships remain identical across all language editions.
+Локализация не должна изменять владение документом. Отношения Canonical Source остаются идентичными во всех языковых редакциях.
 
-**Note:** GLOSSARY.md is introduced by Commit 2 of Engineering Knowledge Localization v1. Until GLOSSARY.md is created, technical terms shall remain in their original English form.
+**Note:** GLOSSARY.md вводится Commit 2 программы Engineering Knowledge Localization v1. До создания GLOSSARY.md технические термины должны оставаться в их оригинальной английской форме.
 
 ---
 
 ### Presentation Model (Модель представления)
 
-The bilingual presentation model applies to all documentation headings (##, ###, ####).
+Двуязычная модель представления применяется ко всем заголовкам документации (##, ###, ####).
 
 **Format:** `## English Title (Русский перевод)`
 
@@ -76,13 +76,13 @@ The bilingual presentation model applies to all documentation headings (##, ###,
     #### Related Documents (Связанные документы)
     ## Engineering Invariants (Инженерные инварианты)
 
-Table column headers shall follow the same bilingual presentation model whenever translation is applied.
+Заголовки столбцов таблиц должны следовать той же двуязычной модели представления, когда применяется перевод.
 
-This convention provides:
-- Consistent Markdown anchors matching the original
-- Easier comparison between language editions
-- English remains the primary engineering identifier
-- Russian ensures readability for Russian-speaking engineers
+Это соглашение обеспечивает:
+- Согласованные якоря Markdown, соответствующие оригиналу
+- Более лёгкое сравнение между языковыми редакциями
+- Английский остаётся основным инженерным идентификатором
+- Русский обеспечивает читаемость для русскоязычных инженеров
 
 ---
 
@@ -90,42 +90,42 @@ This convention provides:
 
 #### Body Text
 
-All narrative text, explanations, rationale, and procedural descriptions shall be translated into Russian.
+Весь нарративный текст, объяснения, обоснования и процедурные описания должны быть переведены на русский.
 
 #### Technical Terms
 
-All technical terms shall remain in English. When defined, terminology shall comply with GLOSSARY.md.
+Инженерная терминология должна использоваться точно так, как указано в GLOSSARY.md. Глоссарий определяет, сохраняется ли термин на английском, переводится на русский или представляется двуязычно. Термины, не определённые в GLOSSARY.md, должны быть переведены согласно этим правилам локализации, если они явно не указаны как непереводимые.
 
 #### Metadata
 
-All metadata fields remain in English:
+Все поля метаданных остаются на английском:
 - Status, Version, Date, Authority, Maintainer
 - Type, Primary Question, Canonical Source for
 - Dependencies, Dependents
 
 #### Tables
 
-- Column headers shall be translated using the bilingual presentation model
-- Technical values, identifiers, and status codes remain unchanged
+- Заголовки столбцов должны быть переведены с использованием двуязычной модели представления
+- Технические значения, идентификаторы и коды статусов остаются неизменными
 
 #### Lists
 
-List structure shall be preserved. Content shall be translated according to these rules.
+Структура списков должна быть сохранена. Содержимое должно быть переведено согласно этим правилам.
 
 #### Examples
 
-- Explanatory text within examples shall be translated
-- Code, commands, and technical identifiers remain unchanged
+- Объясняющий текст внутри примеров должен быть переведён
+- Код, команды и технические идентификаторы остаются неизменными
 
 #### Notes and Warnings
 
-Shall be translated while preserving their semantic meaning.
+Должны быть переведены с сохранением их семантического смысла.
 
 ---
 
 ### Non-Translatable Elements (Непереводимые элементы)
 
-The following elements remain in English in all language editions:
+Следующие элементы остаются на английском во всех языковых редакциях:
 
 #### Engineering Elements
 
@@ -173,375 +173,375 @@ The following elements remain in English in all language editions:
 
 ### First Mention Rule (Правило первого упоминания)
 
-The first occurrence of a key English term in a translated document should include a Russian explanation:
+Первое появление инженерного термина, зарегистрированного в GLOSSARY.md, в переведённом документе должно включать русское объяснение:
 
     Canonical Source (канонический источник)
 
-Subsequent occurrences may use only the English term when the meaning remains clear. This allows long documents to reintroduce the Russian explanation whenever additional clarification improves readability.
+Последующие появления могут использовать только форму, указанную в GLOSSARY.md, когда смысл остаётся ясным. Это позволяет длинным документам повторно вводить русское объяснение, когда дополнительное уточнение улучшает читаемость.
 
 ---
 
 ### Glossary Compliance (Соответствие глоссарию)
 
-All translated documents must use terminology consistently with GLOSSARY.md. If a term is not defined in the glossary, the English original must be used.
+Все переведённые документы должны использовать терминологию согласованно с GLOSSARY.md. Если термин не определён в глоссарии, должен использоваться оригинальный английский вариант.
 
-GLOSSARY.md is the Canonical Source for engineering terminology used throughout the project.
+GLOSSARY.md является Canonical Source для инженерной терминологии, используемой на протяжении всего проекта.
 
 ---
 
 ### Consistency Requirements (Требования согласованности)
 
-A localized document is considered correct if:
+Локализованный документ считается корректным, если:
 
-- Engineering meaning is preserved
-- All links and references remain valid
-- Document structure is preserved
-- Terminology is consistent with GLOSSARY.md
-- Presentation Model is followed
-- All non-translatable elements remain unchanged
-- Canonical Source ownership and relationships remain unchanged
+- Инженерный смысл сохранён
+- Все ссылки остаются валидными
+- Структура документа сохранена
+- Терминология согласована с GLOSSARY.md
+- Двуязычная модель представления соблюдена
+- Все непереводимые элементы остаются неизменными
+- Владение Canonical Source и отношения остаются неизменными
 
 ---
 
 ### Relationship to Documentation Principles (Связь с принципами документации)
 
-Localization Rules support the Documentation Principles by ensuring that translations maintain Canonical Source integrity, preserve Explicit scope, and enable Verification across language editions.
+Правила локализации поддерживают Принципы документации, обеспечивая, что переводы поддерживают целостность Canonical Source, сохраняют Explicit scope и обеспечивают Verification на всех языковых редакциях.
 
-**Engineering Invariant:** Localization shall preserve engineering meaning, document ownership, document structure, and terminology consistency across all language editions.
-
----
-
-## Document Requirements
-
-Every document in the project must satisfy the following requirements:
-
-### Mandatory Elements
-
-1. **Metadata header** — all required fields present (see Metadata Requirements)
-2. **End of Document section** — summary and authoritative statement
-3. **Dependencies field** — list documents this document reads (even if empty)
-4. **Dependents field** — list documents that read this document (even if empty)
-
-### Scope Boundary
-
-Each document must declare its scope through Primary Question and Canonical Source fields.
-
+**Engineering Invariant:** Локализация должна сохранять инженерный смысл, владение документом, структуру документа и согласованность терминологии на всех языковых редакциях.
 
 ---
 
-## Formatting Rules
+## Document Requirements (Требования к документам)
 
-The following rules are specific to this project. Basic Markdown syntax is assumed.
+Каждый документ в проекте должен удовлетворять следующим требованиям:
 
-### Headings
+### Mandatory Elements (Обязательные элементы)
 
-- Exactly one H1 (`#`) per document — the document title
-- Do not exceed H4 (`####`) — avoid deeper nesting
-- Add blank line before and after headings
-- Use `---` separator between main sections (##)
+1. **Блок метаданных** — все обязательные поля присутствуют (см. Metadata Requirements)
+2. **Раздел End of Document** — резюме и авторитетное заявление
+3. **Поле Dependencies** — список документов, которые читает этот документ (даже если пустой)
+4. **Поле Dependents** — список документов, которые читают этот документ (даже если пустой)
 
-### Spacing
+### Scope Boundary (Границы области применения)
 
-- Mandatory blank line after metadata header
-- Mandatory blank line before and after lists, tables, code blocks
-- Mandatory blank line between paragraphs
-
-### Tables
-
-- Use consistent column alignment
-- Add blank line before and after tables
-- Keep tables readable — avoid very long cells
-
-### Lists
-
-- Use `-` for unordered lists
-- Use `1.` for ordered lists
-- Indent nested lists with 2 spaces
-
-### Code Blocks
-
-- Specify language after triple backticks (e.g., ```bash, ```python)
-- Use inline code with single backticks for short snippets
+Каждый документ должен объявлять свою область применения через поля Primary Question и Canonical Source.
 
 
 ---
 
-## Engineering Statement Properties
+## Formatting Rules (Правила форматирования)
 
-Engineering documentation is composed of engineering statements that describe systems, processes, requirements, constraints, decisions, or other engineering knowledge. High-quality engineering statements exhibit the following properties.
+Следующие правила специфичны для этого проекта. Предполагается базовый синтаксис Markdown.
 
-### Explicit
+### Headings (Заголовки)
 
-- All assumptions, constraints, and conditions should be stated explicitly
-- Statements that depend on external context should reference that context
+- Ровно один заголовок H1 (`#`) на документ — заголовок документа
+- Не превышать H4 (`####`) — избегать более глубокой вложенности
+- Добавлять пустую строку до и после заголовков
+- Использовать разделитель `---` между основными разделами (##)
 
-### Consistent
+### Spacing (Отступы)
 
-- Engineering statements should not contradict canonical sources or other statements within their declared scope
+- Обязательная пустая строка после блока метаданных
+- Обязательная пустая строка до и после списков, таблиц, блоков кода
+- Обязательная пустая строка между параграфами
 
-### Verifiable
+### Tables (Таблицы)
 
-- Engineering statements should be stated in a way that allows verification whenever verification is reasonably applicable
-- When a statement is not directly verifiable, its nature (for example, an assumption or planned change) should be stated explicitly
+- Использовать согласованное выравнивание столбцов
+- Добавлять пустую строку до и после таблиц
+- Держать таблицы читаемыми — избегать очень длинных ячеек
 
-### Scoped
+### Lists (Списки)
 
-- Every engineering statement operates within a declared scope
-- Statements must not make claims beyond their documented scope without explicit qualification
+- Использовать `-` для неупорядоченных списков
+- Использовать `1.` для упорядоченных списков
+- Отступать вложенные списки на 2 пробела
 
-### Referenced
+### Code Blocks (Блоки кода)
 
-- Engineering statements should reference the canonical source whenever the statement is derived from another engineering artifact
-- Derived statements should reference rather than duplicate canonical content
+- Указывать язык после тройных обратных кавычек (например, ```bash, ```python)
+- Использовать встроенный код с одинарными обратными кавычками для коротких фрагментов
 
-### Relationship to Documentation Principles
-
-Engineering Statement Properties support the Documentation Principles by improving clarity, consistency, and verification of engineering documentation.
-
-**Engineering Invariant:** Engineering statements are explicit, consistent, and verifiable within their documented scope.
-
----
-
-## Shell Command Documentation
-
-Engineering documentation frequently contains shell commands. Such commands must be documented so they can be executed safely, reproduced consistently, and understood without additional context.
-
-### Reproducibility
-
-- Commands must be deterministic: given the same initial state, they produce the same result
-- Document prerequisites explicitly (required tools, environment variables, directory structure)
-- Avoid commands that depend on transient state (timestamps, random values, external services) unless explicitly noted
-- Reference the canonical document instead of duplicating long command sequences when appropriate
-
-### Safety
-
-- Potentially destructive or system-modifying commands should explicitly state their effects
-- Commands requiring elevated privileges must explicitly indicate this (e.g., `sudo`, `#` prompt)
-- Commands that may modify or remove data, system state, or infrastructure should be clearly identified and accompanied by appropriate warnings
-
-### Command Presentation
-
-- When prompts are shown, use consistent prompt indicators: `$` for user commands, `#` for root commands
-- For copy/paste blocks, omit prompt prefixes to prevent execution errors
-- Use `\` for line continuation with 2-space indentation on continuation lines
-- Use `bash` as the default language identifier for shell command blocks; use `sh` only when shell portability is intentional
-
-### Copy/Paste Considerations
-
-- Replace user-specific values with explicit placeholders (e.g., `<PROJECT_DIR>`, `<BRANCH_NAME>`)
-- Document any required manual or interactive steps explicitly
-- If a command requires interactive input, document this explicitly before the command block
-
-### Executability
-
-Executability is a property of instructional documentation, not a universal requirement for all documents. When documentation contains executable instructions intended to be followed by the reader:
-
-- The sequence must form a complete procedure with no implicit steps or unstated assumptions
-- Each instruction must be valid in the documented context (working directory, environment, system state)
-- Transitions between steps must preserve the expected state without requiring undocumented manual actions
-- Document the expected outcome so successful execution can be verified
-
-Executability complements reproducibility and copy/paste safety by ensuring that executable procedures are complete, self-contained, and verifiable.
-
-### Relationship to Documentation Standards
-
-Shell command documentation is an engineering artifact. It is subject to the same documentation standards, verification practices, and quality requirements as every other part of the document.
-
-**Engineering Invariant:** Documented shell commands must be reproducible, understandable, and safe to execute within their documented context.
 
 ---
 
-## Heredoc Documentation
+## Engineering Statement Properties (Свойства инженерных утверждений)
 
-Heredoc syntax is used when documentation embeds another artifact (configuration file, script, data structure) whose formatting and structure are significant to the resulting engineering artifact.
+Инженерная документация состоит из инженерных утверждений, которые описывают системы, процессы, требования, ограничения, решения или другие инженерные знания. Высококачественные инженерные утверждения обладают следующими свойствами.
 
-### When to Use Heredoc
+### Explicit (Явные)
 
-- Use heredoc when embedding multi-line content whose structure or readability should be preserved
-- Use heredoc when the content will be written to a file or passed as input to a command
+- Все предположения, ограничения и условия должны быть явно сформулированы
+- Утверждения, зависящие от внешнего контекста, должны ссылаться на этот контекст
 
-### Delimiter Selection
+### Consistent (Согласованные)
 
-- Prefer descriptive delimiters when they improve readability (e.g., `YAML_EOF`, `CONFIG_EOF`, `SCRIPT_EOF`)
-- Use quoted delimiters (`'EOF'`) when the content must not undergo variable expansion
-- Use unquoted delimiters (`EOF`) only when variable expansion is intentional and documented
+- Инженерные утверждения не должны противоречить Canonical Source или другим утверждениям в пределах их объявленной области применения
 
-### Embedded Content
+### Verifiable (Верифицируемые)
 
-- Preserve the formatting of the embedded artifact exactly as it is intended to appear after execution
-- Document the content type and expected format before the heredoc block
-- Use explicit placeholders for sensitive values (passwords, tokens, secrets) and document the substitution requirement
-- Ensure the closing delimiter appears on its own line with no trailing content
+- Инженерные утверждения должны быть сформулированы таким образом, чтобы допускать верификацию, когда верификация разумно применима
+- Когда утверждение не является напрямую верифицируемым, его природа (например, предположение или запланированное изменение) должна быть явно указана
 
-### Relationship to Shell Command Documentation
+### Scoped (Ограниченные областью применения)
 
-Heredoc documentation is a specialized form of shell command documentation used for embedded engineering artifacts. The same engineering principles apply: reproducibility, safety, and clarity. Heredocs are subject to the same verification and quality requirements as shell commands.
+- Каждое инженерное утверждение действует в пределах объявленной области применения
+- Утверждения не должны делать заявления за пределами их документированной области применения без явной квалификации
 
-**Engineering Invariant:** A documented heredoc must preserve the intended content of the embedded engineering artifact and remain reproducible within its documented execution context.
+### Referenced (Ссылающиеся)
+
+- Инженерные утверждения должны ссылаться на Canonical Source, когда утверждение получено из другого инженерного артефакта
+- Производные утверждения должны ссылаться, а не дублировать каноническое содержимое
+
+### Relationship to Documentation Principles (Связь с принципами документации)
+
+Свойства инженерных утверждений поддерживают Принципы документации, улучшая ясность, согласованность и верификацию инженерной документации.
+
+**Engineering Invariant:** Инженерные утверждения являются явными, согласованными и верифицируемыми в пределах их документированной области применения.
 
 ---
 
-## Metadata Requirements
+## Shell Command Documentation (Документация shell команд)
 
-Every document must include the following metadata in the header:
+Инженерная документация часто содержит shell команды. Такие команды должны быть документированы так, чтобы их можно было безопасно выполнять, воспроизводить согласованно и понимать без дополнительного контекста.
 
-### Required Fields
+### Reproducibility (Воспроизводимость)
 
-| Field | Description | Example |
+- Команды должны быть детерминированными: при одинаковом начальном состоянии они производят одинаковый результат
+- Документировать предварительные требования явно (необходимые инструменты, переменные окружения, структура каталогов)
+- Избегать команд, зависящих от временного состояния (временные метки, случайные значения, внешние сервисы), если это явно не указано
+- Ссылаться на канонический документ вместо дублирования длинных последовательностей команд, когда это уместно
+
+### Safety (Безопасность)
+
+- Потенциально деструктивные или изменяющие систему команды должны явно указывать свои эффекты
+- Команды, требующие повышенных привилегий, должны явно это указывать (например, `sudo`, приглашение `#`)
+- Команды, которые могут изменять или удалять данные, состояние системы или инфраструктуру, должны быть чётко идентифицированы и сопровождаться соответствующими предупреждениями
+
+### Command Presentation (Представление команд)
+
+- Когда показываются приглашения командной строки, использовать согласованные индикаторы: `$` для пользовательских команд, `#` для root команд
+- Для блоков копирования/вставки опускать префиксы приглашений для предотвращения ошибок выполнения
+- Использовать `\` для продолжения строки с 2-пробельным отступом на строках продолжения
+- Использовать `bash` как идентификатор языка по умолчанию для блоков shell команд; использовать `sh` только когда переносимость shell является намеренной
+
+### Copy/Paste Considerations (Соображения копирования/вставки)
+
+- Заменять пользовательские значения явными заполнителями (например, `<PROJECT_DIR>`, `<BRANCH_NAME>`)
+- Документировать любые необходимые ручные или интерактивные шаги явно
+- Если команда требует интерактивного ввода, документировать это явно перед блоком команды
+
+### Executability (Исполняемость)
+
+Исполняемость — это свойство инструктивной документации, а не универсальное требование для всех документов. Когда документация содержит исполняемые инструкции, предназначенные для выполнения читателем:
+
+- Последовательность должна формировать полную процедуру без неявных шагов или не указанных предположений
+- Каждая инструкция должна быть валидной в документированном контексте (рабочий каталог, окружение, состояние системы)
+- Переходы между шагами должны сохранять ожидаемое состояние без требования недокументированных ручных действий
+- Документировать ожидаемый результат, чтобы успешное выполнение могло быть верифицировано
+
+Исполняемость дополняет воспроизводимость и безопасность копирования/вставки, обеспечивая, что исполняемые процедуры являются полными, самодостаточными и верифицируемыми.
+
+### Relationship to Documentation Standards (Связь со стандартами документации)
+
+Документация shell команд — это инженерный артефакт. Она подлежит тем же стандартам документации, практикам верификации и требованиям качества, что и каждая другая часть документа.
+
+**Engineering Invariant:** Документированные shell команды должны быть воспроизводимыми, понятными и безопасными для выполнения в пределах их документированного контекста.
+
+---
+
+## Heredoc Documentation (Документация Heredoc)
+
+Синтаксис Heredoc используется, когда документация встраивает другой артефакт (конфигурационный файл, скрипт, структуру данных), форматирование и структура которого значимы для результирующего инженерного артефакта.
+
+### When to Use Heredoc (Когда использовать Heredoc)
+
+- Использовать heredoc при встраивании многострочного содержимого, структура или читаемость которого должна быть сохранена
+- Использовать heredoc, когда содержимое будет записано в файл или передано как ввод команде
+
+### Delimiter Selection (Выбор разделителя)
+
+- Предпочитать описательные разделители, когда они улучшают читаемость (например, `YAML_EOF`, `CONFIG_EOF`, `SCRIPT_EOF`)
+- Использовать заключённые в кавычки разделители (`'EOF'`), когда содержимое не должно подвергаться расширению переменных
+- Использовать незаключённые в кавычки разделители (`EOF`) только когда расширение переменных является намеренным и документированным
+
+### Embedded Content (Встроенное содержимое)
+
+- Сохранять форматирование встроенного артефакта точно так, как он должен появиться после выполнения
+- Документировать тип содержимого и ожидаемый формат перед блоком heredoc
+- Использовать явные заполнители для чувствительных значений (пароли, токены, секреты) и документировать требование подстановки
+- Обеспечивать, что закрывающий разделитель появляется на своей строке без завершающего содержимого
+
+### Relationship to Shell Command Documentation (Связь с документацией shell команд)
+
+Документация Heredoc — это специализированная форма документации shell команд, используемая для встроенных инженерных артефактов. Применяются те же инженерные принципы: воспроизводимость, безопасность и ясность. Heredocs подлежат тем же требованиям верификации и качества, что и shell команды.
+
+**Engineering Invariant:** Документированный heredoc должен сохранять предполагаемое содержимое встроенного инженерного артефакта и оставаться воспроизводимым в пределах его документированного контекста выполнения.
+
+---
+
+## Metadata Requirements (Требования к метаданным)
+
+Каждый документ должен включать следующие метаданные в блоке метаданных:
+
+### Required Fields (Обязательные поля)
+
+| Field (Поле) | Description (Описание) | Example (Пример) |
 |-------|-------------|---------|
-| **Status** | Current status of the document | `ACCEPTED`, `DRAFT`, `DEPRECATED` |
-| **Version** | Version number | `1.0`, `2.1` |
-| **Date** | Last modification date | `2026-06-18` |
-| **Authority** | Role that approves the document | `Project Architect`, `Engineering Lead` |
-| **Maintainer** | Role that updates the document | `Documentation Maintainer`, `Engineering Maintainer` |
-| **Type** | Document type | `Protocol`, `Standard`, `Playbook`, `Architecture`, `Index`, `Registry`, `History`, `Context` |
-| **Primary Question** | Main question the document answers | `"What is this project?"`, `"How do we develop this project?"` |
-| **Canonical Source for** | What facts this document owns | `Engineering Principles, Roles, Source of Truth hierarchy` |
-| **Dependencies** | Documents this document reads | `INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md` |
-| **Dependents** | Documents that read this document | `DOC_STANDARD.md, RELEASE_PROCESS.md` |
+| **Status** | Текущий статус документа | `ACCEPTED`, `DRAFT`, `DEPRECATED` |
+| **Version** | Номер версии | `1.0`, `2.1` |
+| **Date** | Дата последней модификации | `2026-06-18` |
+| **Authority** | Роль, утверждающая документ | `Project Architect`, `Engineering Lead` |
+| **Maintainer** | Роль, обновляющая документ | `Documentation Maintainer`, `Engineering Maintainer` |
+| **Type** | Тип документа | `Protocol`, `Standard`, `Playbook`, `Architecture`, `Index`, `Registry`, `History`, `Context` |
+| **Primary Question** | Основной вопрос, на который отвечает документ | `"What is this project?"`, `"How do we develop this project?"` |
+| **Canonical Source for** | Какими фактами владеет этот документ | `Engineering Principles, Roles, Source of Truth hierarchy` |
+| **Dependencies** | Документы, которые читает этот документ | `INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md` |
+| **Dependents** | Документы, которые читают этот документ | `DOC_STANDARD.md, RELEASE_PROCESS.md` |
 
-### Optional Fields
+### Optional Fields (Необязательные поля)
 
-| Field | Description | Example |
+| Field (Поле) | Description (Описание) | Example (Пример) |
 |-------|-------------|---------|
-| **Lifecycle** | How often the document changes | `Static`, `Semi-static`, `Dynamic`, `Immutable` |
+| **Lifecycle** | Как часто изменяется документ | `Static`, `Semi-static`, `Dynamic`, `Immutable` |
 
-### Formatting
+### Formatting (Форматирование)
 
-- Use `**Field:**` format for metadata
-- Separate metadata from content with `---`
-- Use consistent order: Status, Version, Date, Authority, Maintainer, Type, Primary Question, Canonical Source, Dependencies, Dependents
-- Do not translate field names (keep in English)
+- Использовать формат `**Field:**` для метаданных
+- Разделять метаданные и содержимое с помощью `---`
+- Использовать согласованный порядок: Status, Version, Date, Authority, Maintainer, Type, Primary Question, Canonical Source, Dependencies, Dependents
+- Не переводить имена полей (держать на английском)
 
-
----
-
-## Naming Conventions
-
-### File Names
-
-- Use `UPPER_SNAKE_CASE.md` for document names
-- Examples: `PROJECT_PROTOCOL.md`, `ENGINEERING_PLAYBOOK.md`, `DOC_STANDARD.md`
-- Use lowercase for directory names: `evidence/`, `adr/`, `logs/`
-
-### Section Names
-
-- Use `Title Case` for main section headings (##)
-- Use `Sentence case` for subsection headings (###, ####)
-- Be descriptive but concise
-- Avoid special characters in headings
 
 ---
 
-## Cross-references
+## Naming Conventions (Соглашения об именовании)
 
-### Linking to Other Documents
+### File Names (Имена файлов)
 
-- Use relative paths: `[text](DOCUMENT.md)`
-- Use repository-relative paths for cross-repository links
-- Do not use absolute filesystem paths
+- Использовать `UPPER_SNAKE_CASE.md` для имён документов
+- Примеры: `PROJECT_PROTOCOL.md`, `ENGINEERING_PLAYBOOK.md`, `DOC_STANDARD.md`
+- Использовать нижний регистр для имён каталогов: `evidence/`, `adr/`, `logs/`
 
-### Linking to Sections
+### Section Names (Имена разделов)
 
-- Use anchors: `[text](#section-name)`
-- Convert section names to lowercase
-- Replace spaces with hyphens
-- Remove special characters
+- Использовать `Title Case` для заголовков основных разделов (##)
+- Использовать `Sentence case` для заголовков подразделов (###, ####)
+- Быть описательными, но краткими
+- Избегать специальных символов в заголовках
 
-Example (using 4-space indent for code block):
+---
+
+## Cross-references (Перекрёстные ссылки)
+
+### Linking to Other Documents (Ссылки на другие документы)
+
+- Использовать относительные пути: `[text](DOCUMENT.md)`
+- Использовать пути относительно репозитория для межрепозиторных ссылок
+- Не использовать абсолютные пути файловой системы
+
+### Linking to Sections (Ссылки на разделы)
+
+- Использовать якоря: `[text](#section-name)`
+- Конвертировать имена разделов в нижний регистр
+- Заменять пробелы дефисами
+- Удалять специальные символы
+
+Пример (используя 4-пробельный отступ для блока кода):
 
     ## Development Workflow
     ...
     See [Phase 1: Planning](#phase-1-planning) for details.
 
-### Linking to Evidence
+### Linking to Evidence (Ссылки на Evidence)
 
-- Use relative paths to evidence files
-- Evidence filenames follow project naming convention: `YYYY-MM-DD_HHMM_description.log`
-- Example: `[evidence/2026-06-18_1430_test.log](evidence/2026-06-18_1430_test.log)`
-
-
----
-
-## Document Quality Checklist
-
-Before committing any document, verify the following:
-
-### Structural Requirements
-
-- [ ] Metadata header complete (all required fields present)
-- [ ] Fields in correct order (Status, Version, Date, Authority, Maintainer, Type, Primary Question, Canonical Source, Dependencies, Dependents)
-- [ ] Exactly one H1 heading (document title)
-- [ ] End of Document section exists
-- [ ] Dependencies field present (even if empty)
-- [ ] Dependents field present (even if empty)
-- [ ] Primary Question field present
-- [ ] Canonical Source field present
-
-### Formatting Requirements
-
-- [ ] Heading hierarchy valid (no headings deeper than H4)
-- [ ] Blank lines present between sections
-- [ ] Tables formatted consistently (proper alignment, separators)
-- [ ] Code blocks specify language
-- [ ] Lists use consistent style (- for unordered, 1. for ordered)
-- [ ] `---` separators between main sections (##)
-
-### References Requirements
-
-- [ ] All links use relative paths (no absolute filesystem paths)
-- [ ] All internal references follow project format (lowercase, hyphens, no special chars)
-- [ ] Evidence paths follow project naming convention (YYYY-MM-DD_HHMM_description.log)
-- [ ] Section anchors follow naming rules (lowercase, hyphens, no special chars)
+- Использовать относительные пути к файлам evidence
+- Имена файлов evidence следуют соглашению об именовании проекта: `YYYY-MM-DD_HHMM_description.log`
+- Пример: `[evidence/2026-06-18_1430_test.log](evidence/2026-06-18_1430_test.log)`
 
 
 ---
 
-## Documentation Conformance
+## Document Quality Checklist (Чек-лист качества документа)
 
-A document conforms to this standard when it satisfies all mandatory requirements defined by this document.
+Перед коммитом любого документа верифицируйте следующее:
 
-### Conformance Criteria
+### Structural Requirements (Структурные требования)
 
-Conformance requires all of the following:
+- [ ] Блок метаданных полный (все обязательные поля присутствуют)
+- [ ] Поля в правильном порядке (Status, Version, Date, Authority, Maintainer, Type, Primary Question, Canonical Source, Dependencies, Dependents)
+- [ ] Ровно один заголовок H1 (заголовок документа)
+- [ ] Раздел End of Document существует
+- [ ] Поле Dependencies присутствует (даже если пустое)
+- [ ] Поле Dependents присутствует (даже если пустое)
+- [ ] Поле Primary Question присутствует
+- [ ] Поле Canonical Source присутствует
 
-- Required structural elements are present (metadata, headings, sections)
-- Metadata is complete and follows the specified format
-- Formatting follows the rules defined in this standard
-- Cross-references conform to project naming and linking rules
-- Engineering statements satisfy the documented statement properties
-- Specialized documentation elements (for example, shell commands and heredocs) satisfy their applicable documentation rules
+### Formatting Requirements (Требования форматирования)
 
-### Non-conformance
+- [ ] Иерархия заголовков валидна (нет заголовков глубже H4)
+- [ ] Пустые строки присутствуют между разделами
+- [ ] Таблицы отформатированы согласованно (правильное выравнивание, разделители)
+- [ ] Блоки кода указывают язык
+- [ ] Списки используют согласованный стиль (- для неупорядоченных, 1. для упорядоченных)
+- [ ] Разделители `---` между основными разделами (##)
 
-If any mandatory requirement defined by this standard is violated, the document is non-conforming until the violation is corrected.
+### References Requirements (Требования к ссылкам)
 
-### Relationship to Other Documents
+- [ ] Все ссылки используют относительные пути (нет абсолютных путей файловой системы)
+- [ ] Все внутренние ссылки следуют формату проекта (нижний регистр, дефисы, нет специальных символов)
+- [ ] Пути к evidence следуют соглашению об именовании проекта (YYYY-MM-DD_HHMM_description.log)
+- [ ] Якоря разделов следуют правилам именования (нижний регистр, дефисы, нет специальных символов)
 
-Documentation Conformance defines the expected state of documentation.
-
-The processes used to assess or enforce conformance are defined by their own canonical documents and are intentionally outside the scope of this standard.
-
-**Engineering Invariant:** A document either conforms to this standard or is identified as non-conforming.
 
 ---
 
-## Examples
+## Documentation Conformance (Соответствие документации)
+
+Документ соответствует этому стандарту, когда он удовлетворяет всем обязательным требованиям, определённым этим документом.
+
+### Conformance Criteria (Критерии соответствия)
+
+Соответствие требует всего следующего:
+
+- Обязательные структурные элементы присутствуют (метаданные, заголовки, разделы)
+- Метаданные полные и следуют указанному формату
+- Форматирование следует правилам, определённым в этом стандарте
+- Перекрёстные ссылки соответствуют правилам именования и связывания проекта
+- Инженерные утверждения удовлетворяют документированным свойствам утверждений
+- Специализированные элементы документации (например, shell команды и heredocs) удовлетворяют их применимым правилам документации
+
+### Non-conformance (Несоответствие)
+
+Если любое обязательное требование, определённое этим стандартом, нарушено, документ является несоответствующим, пока нарушение не будет исправлено.
+
+### Relationship to Other Documents (Связь с другими документами)
+
+Соответствие документации определяет ожидаемое состояние документации.
+
+Процессы, используемые для оценки или обеспечения соответствия, определяются их собственными каноническими документами и намеренно находятся вне области применения этого стандарта.
+
+**Engineering Invariant:** Документ либо соответствует этому стандарту, либо идентифицируется как несоответствующий.
+
+---
+
+## Examples (Примеры)
 
 ### Example 1: Correct Document Header
 
     # Documentation Standard
 
-    **Status:** ACCEPTED  
-    **Version:** 1.0  
-    **Date:** 2026-06-18  
-    **Authority:** Documentation Lead  
-    **Maintainer:** Documentation Maintainer  
+    **Status:** ACCEPTED
+    **Version:** 1.0
+    **Date:** 2026-06-18
+    **Authority:** Documentation Lead
+    **Maintainer:** Documentation Maintainer
 
-    **Type:** Standard (Layer 3: Engineering Knowledge)  
-    **Primary Question:** "How do we write documentation?"  
-    **Canonical Source for:** Documentation formatting, structure, naming conventions, quality requirements  
-    **Dependencies:** INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md  
+    **Type:** Standard (Layer 3: Engineering Knowledge)
+    **Primary Question:** "How do we write documentation?"
+    **Canonical Source for:** Documentation formatting, structure, naming conventions, quality requirements
+    **Dependencies:** INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md
     **Dependents:** RELEASE_PROCESS.md, AUTOMATION.md
 
     ---
@@ -581,17 +581,16 @@ The processes used to assess or enforce conformance are defined by their own can
 
 ---
 
-## End of Document
+## End of Document (Конец документа)
 
-This document defines the documentation standards for the Agent Developer project.
+Этот документ определяет стандарты документации для проекта Agent Developer.
 
-It is the authoritative reference for:
-- Document requirements (mandatory elements, scope boundary)
-- Formatting rules (project-specific)
-- Metadata requirements (required and optional fields)
-- Naming conventions (file names, section names)
-- Cross-reference guidelines (linking to documents, sections, evidence)
-- Document quality checklist (verifiable requirements before commit)
+Это авторитетный справочник для:
+- Требования к документам (обязательные элементы, границы области применения)
+- Правила форматирования (специфичные для проекта)
+- Требования к метаданным (обязательные и необязательные поля)
+- Соглашения об именовании (имена файлов, имена разделов)
+- Руководство по перекрёстным ссылкам (ссылки на документы, разделы, evidence)
+- Чек-лист качества документа (верифицируемые требования перед коммитом)
 
-All documentation must conform to the standards defined herein.
-
+Вся документация должна соответствовать стандартам, определённым здесь.
