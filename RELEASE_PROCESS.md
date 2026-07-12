@@ -1,243 +1,225 @@
-# Release Process
+# Release Process (Процесс релизов)
 
-**Status:** ACCEPTED  
-**Version:** 1.0  
-**Date:** 2026-06-18  
-**Authority:** Engineering Lead  
-**Maintainer:** Engineering Maintainer  
+**Status:** ACCEPTED
+**Version:** 1.0
+**Date:** 2026-06-18
+**Authority:** Engineering Lead
+**Maintainer:** Engineering Maintainer
 
-**Type:** Playbook (Layer 3: Engineering Knowledge)  
-**Primary Question:** "How do we release?"  
-**Canonical Source for:** Release procedures, versioning, deployment steps, verification  
-**Dependencies:** INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md, ENGINEERING_PLAYBOOK.md, DOC_STANDARD.md  
-**Dependents:** AUTOMATION.md, ENGINEERING_HISTORY.md  
-
----
-
-## Release Types
-
-The project uses the following release types:
-
-### Major Release (X.0.0)
-
-- Significant architectural changes
-- Breaking changes to APIs or interfaces
-- New major features that change system behavior
-- Requires full regression testing
-- Examples: 1.0.0, 2.0.0, 3.0.0
-
-### Minor Release (X.Y.0)
-
-- New features without breaking changes
-- Significant improvements to existing functionality
-- Requires integration testing
-- Examples: 1.1.0, 1.2.0, 2.1.0
-
-### Patch Release (X.Y.Z)
-
-- Bug fixes
-- Security patches
-- Performance improvements
-- Documentation updates
-- Requires unit testing
-- Examples: 1.0.1, 1.1.2, 2.0.3
-
-### Hotfix Release (X.Y.Z-hotfix.N)
-
-- Critical bug fixes requiring immediate deployment
-- Bypass normal release cycle
-- Requires minimal testing (focused on fix)
-- Must be followed by proper patch release
-- Examples: 1.0.1-hotfix.1, 2.1.3-hotfix.2
-
+**Type:** Playbook (Layer 3: Engineering Knowledge)
+**Primary Question:** "How do we release?"
+**Canonical Source for:** Release procedures, versioning, deployment steps, verification
+**Dependencies:** INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md, ENGINEERING_PLAYBOOK.md, DOC_STANDARD.md
+**Dependents:** AUTOMATION.md, ENGINEERING_HISTORY.md
 
 ---
 
-## Versioning Scheme
+## Release Types (Типы релизов)
 
-The project follows Semantic Versioning (SemVer) principles:
+Проект использует следующие типы релизов:
 
-### Version Format
+### Major Release (Major релиз) (X.0.0)
+
+- Значительные архитектурные изменения
+- Несовместимые изменения API или интерфейсов
+- Новые основные функции, изменяющие поведение системы
+- Требует полного регрессионного тестирования
+- Примеры: 1.0.0, 2.0.0, 3.0.0
+
+### Minor Release (Minor релиз) (X.Y.0)
+
+- Новые функции без несовместимых изменений
+- Значительные улучшения существующей функциональности
+- Требует интеграционного тестирования
+- Примеры: 1.1.0, 1.2.0, 2.1.0
+
+### Patch Release (Patch релиз) (X.Y.Z)
+
+- Исправления ошибок
+- Патчи безопасности
+- Улучшения производительности
+- Обновления документации
+- Требует модульного тестирования
+- Примеры: 1.0.1, 1.1.2, 2.0.3
+
+### Hotfix Release (Hotfix релиз) (X.Y.Z-hotfix.N)
+
+- Критические исправления ошибок, требующие немедленного развёртывания
+- Обходят обычный цикл релиза
+- Требует минимального тестирования (сфокусированного на исправлении)
+- Должен сопровождаться последующим Patch релизом
+- Примеры: 1.0.1-hotfix.1, 2.1.3-hotfix.2
+
+
+---
+
+## Versioning Scheme (Схема версионирования)
+
+Проект следует принципам Semantic Versioning (SemVer):
+
+### Version Format (Формат версии)
 
     MAJOR.MINOR.PATCH[-hotfix.N]
 
-### Version Components
+### Version Components (Компоненты версии)
 
-**MAJOR** — incremented when:
-- Making incompatible API changes
-- Introducing breaking changes
-- Major architectural shifts
+**MAJOR** — увеличивается, когда:
+- Вносятся несовместимые изменения API
+- Вводятся изменения, нарушающие обратную совместимость
+- Происходят крупные архитектурные изменения
 
-**MINOR** — incremented when:
-- Adding functionality in a backward-compatible manner
-- Significant feature additions
-- No breaking changes
+**MINOR** — увеличивается, когда:
+- Добавляется функциональность с обратной совместимостью
+- Происходят значительные добавления функций
+- Нет несовместимых изменений
 
-**PATCH** — incremented when:
-- Making backward-compatible bug fixes
-- Security patches
-- Performance improvements
-- Documentation updates
+**PATCH** — увеличивается, когда:
+- Вносятся обратно совместимые исправления ошибок
+- Применяются патчи безопасности
+- Улучшается производительность
+- Обновляется документация
 
-**hotfix.N** — optional suffix for:
-- Emergency fixes deployed outside normal cycle
-- N is sequential counter (1, 2, 3...)
-- Must be replaced by proper PATCH release
+**hotfix.N** — необязательный суффикс для:
+- Экстренных исправлений, развёрнутых вне обычного цикла
+- N — последовательный счётчик (1, 2, 3...)
+- Должен быть заменён правильным Patch релизом
 
-### Tagging
+### Tagging (Тегирование)
 
-- All releases must be tagged in git
-- Tag format: `vX.Y.Z` or `vX.Y.Z-hotfix.N`
-- Tags are immutable once created
-- Tags must point to stable commits on main branch
-
-
----
-
-## Release Workflow
-
-The release process follows these phases:
-
-### Phase 1: Preparation
-
-1. **Identify release scope** — what changes are included?
-2. **Verify all changes merged** — no pending PRs for this release
-3. **Update documentation** — ensure all docs reflect current state
-4. **Update release documentation** — list all changes since last release
-5. **Bump version** — update version in relevant files
-
-### Phase 2: Verification
-
-6. **Run full test suite** — all tests must pass
-7. **Generate evidence** — collect test logs, benchmarks
-8. **Verify reproducibility** — build from clean state
-9. **Review documentation** — ensure accuracy and completeness
-10. **Get approval** — Architect role approves release
-
-### Phase 3: Release
-
-11. **Create release branch** (if needed) — for major/minor releases
-12. **Create git tag** — follow versioning scheme
-13. **Build release artifacts** — compile, package, prepare
-14. **Verify artifacts** — test built artifacts
-15. **Publish release** — deploy, distribute, announce
-
-### Phase 4: Post-release
-
-16. **Update CURRENT_CONTEXT.md** — reflect new baseline
-17. **Update release documentation** — add release entry
-18. **Monitor for issues** — watch for post-release problems
-19. **Document lessons learned** — add to ENGINEERING_HISTORY.md
-20. **Plan next iteration** — identify next release scope
+- Все релизы должны быть помечены тегами в git
+- Формат тега: `vX.Y.Z` или `vX.Y.Z-hotfix.N`
+- Теги неизменяемы после создания
+- Теги должны указывать на стабильные коммиты в ветке main
 
 
 ---
 
-## Pre-release Checklist
+## Release Workflow (Рабочий процесс релиза)
 
-Before creating a release, verify the following:
+Процесс релиза следует этим фазам:
 
-### Code Quality
+### Phase 1: Preparation (Фаза 1: Подготовка)
 
-- [ ] All tests pass (unit, integration, performance)
-- [ ] No known critical bugs
-- [ ] Code review completed for all changes
-- [ ] No TODO comments blocking release
-- [ ] All evidence collected and stored
+1. **Определить область релиза** — какие изменения включены?
+2. **Убедиться, что все изменения объединены** — нет ожидающих PR для этого релиза
+3. **Обновить документацию** — убедиться, что все документы отражают текущее состояние
+4. **Обновить документацию релиза** — перечислить все изменения с последнего релиза
+5. **Увеличить версию** — обновить версию в соответствующих файлах
 
-### Documentation
+### Phase 2: Verification (Фаза 2: Верификация)
 
-- [ ] Release documentation updated with all changes
-- [ ] README reflects current state
-- [ ] All documentation conforms to DOC_STANDARD
-- [ ] Cross-references are valid
-- [ ] Version numbers updated where needed
+6. **Запустить полный набор тестов** — все тесты должны пройти
+7. **Сгенерировать доказательства** — собрать логи тестов, бенчмарки
+8. **Верифицировать воспроизводимость** — собрать из чистого состояния
+9. **Рецензировать документацию** — убедиться в точности и полноте
+10. **Получить одобрение** — роль Architect одобряет релиз
 
-### Build & Deployment
+### Phase 3: Release (Фаза 3: Релиз)
 
-- [ ] Build succeeds from clean state
-- [ ] Release artifacts created successfully
-- [ ] Artifacts verified (tested, validated)
-- [ ] Deployment procedure tested
-- [ ] Rollback procedure documented
+11. **Создать ветку релиза** (если необходимо) — для Major/Minor релизов
+12. **Создать git тег** — следовать схеме версионирования
+13. **Собрать артефакты релиза** — скомпилировать, упаковать, подготовить
+14. **Верифицировать артефакты** — протестировать собранные артефакты
+15. **Опубликовать релиз** — развернуть, распространить, анонсировать
 
-### Approval
+### Phase 4: Post-release (Фаза 4: После релиза)
 
-- [ ] Architect role approved release
-- [ ] All stakeholders notified
-- [ ] Release notes prepared
-- [ ] Communication plan ready
-
-
----
-
-## Post-release Actions
-
-After a release is published:
-
-1. **Update CURRENT_CONTEXT.md** — set new baseline
-2. **Update release documentation** — add release entry with version, date, summary, and evidence link
-3. **Monitor systems** — watch for issues in first 24 hours
-4. **Collect feedback** — gather user reports, error logs
-5. **Document lessons learned** — add to ENGINEERING_HISTORY.md
-6. **Plan next iteration** — identify scope for next release
-
----
-
-## Hotfix Procedure
-
-For critical bugs requiring immediate fix:
-
-### Hotfix Workflow
-
-1. **Identify critical issue** — must be production-blocking
-2. **Create hotfix branch** — from release tag
-3. **Implement minimal fix** — only fix the issue, no other changes
-4. **Test focused scope** — verify fix doesn't break anything
-5. **Get emergency approval** — Architect role approves
-6. **Create hotfix tag** — `vX.Y.Z-hotfix.N`
-7. **Deploy hotfix** — immediate deployment
-8. **Create proper patch release** — merge hotfix into main, create PATCH release
-9. **Document in ENGINEERING_HISTORY.md** — record what happened and why
-
-### Hotfix Rules
-
-- Hotfixes are exceptional, not routine
-- Must be followed by proper PATCH release
-- Hotfix branches are deleted after merge
-- All hotfixes require post-mortem in ENGINEERING_HISTORY.md
+16. **Обновить CURRENT_CONTEXT.md** — отразить новый Baseline (Baseline)
+17. **Обновить документацию релиза** — добавить запись о релизе
+18. **Отслеживать проблемы** — следить за проблемами после релиза
+19. **Документировать извлечённые уроки** — добавить в ENGINEERING_HISTORY.md
+20. **Планировать следующую итерацию** — определить область следующего релиза
 
 
 ---
 
-## End of Document
+## Pre-release Checklist (Чек-лист перед релизом)
 
-This document defines the release procedures for the Agent Developer project.
+Перед созданием релиза верифицировать следующее:
 
-It is the authoritative reference for:
-- Release types (major, minor, patch, hotfix)
-- Versioning scheme (Semantic Versioning)
-- Release workflow (preparation, verification, release, post-release)
-- Pre-release checklist (code quality, documentation, build, approval)
-- Post-release actions (monitoring, feedback, lessons learned)
-- Hotfix procedure (emergency fixes)
+### Code Quality (Качество кода)
 
-All releases must conform to the procedures defined herein.
+- [ ] Все тесты проходят (модульные, интеграционные, производительности)
+- [ ] Нет известных критических ошибок
+- [ ] Рецензирование кода завершено для всех изменений
+- [ ] Нет комментариев TODO, блокирующих релиз
+- [ ] Все доказательства собраны и сохранены
+
+### Documentation (Документация)
+
+- [ ] Документация релиза обновлена со всеми изменениями
+- [ ] README отражает текущее состояние
+- [ ] Вся документация соответствует DOC_STANDARD
+- [ ] Перекрёстные ссылки валидны
+- [ ] Номера версий обновлены где необходимо
+
+### Build & Deployment (Сборка и развёртывание)
+
+- [ ] Сборка успешна из чистого состояния
+- [ ] Артефакты релиза созданы успешно
+- [ ] Артефакты верифицированы (протестированы, валидированы)
+- [ ] Процедура развёртывания протестирована
+- [ ] Процедура отката документирована
+
+### Approval (Одобрение)
+
+- [ ] Роль Architect одобрила релиз
+- [ ] Все заинтересованные стороны уведомлены
+- [ ] Примечания к релизу подготовлены
+- [ ] План коммуникации готов
 
 
 ---
 
-## End of Document
+## Post-release Actions (Действия после релиза)
 
-This document defines the release procedures for the Agent Developer project.
+После публикации релиза:
 
-It is the authoritative reference for:
-- Release types (major, minor, patch, hotfix)
-- Versioning scheme (Semantic Versioning)
-- Release workflow (preparation, verification, release, post-release)
-- Pre-release checklist (code quality, documentation, build, approval)
-- Post-release actions (monitoring, feedback, lessons learned)
-- Hotfix procedure (emergency fixes)
+1. **Обновить CURRENT_CONTEXT.md** — установить новый Baseline
+2. **Обновить документацию релиза** — добавить запись о релизе с версией, датой, резюме и ссылкой на доказательства
+3. **Отслеживать состояние систем** — следить за проблемами в первые 24 часа
+4. **Собрать обратную связь** — собрать отчёты пользователей, логи ошибок
+5. **Документировать извлечённые уроки** — добавить в ENGINEERING_HISTORY.md
+6. **Планировать следующую итерацию** — определить область для следующего релиза
 
-All releases must conform to the procedures defined herein.
+---
 
+## Hotfix Procedure (Процедура Hotfix)
+
+Для критических ошибок, требующих немедленного исправления:
+
+### Hotfix Workflow (Рабочий процесс Hotfix)
+
+1. **Идентифицировать критическую проблему** — должна блокировать production-среду
+2. **Создать ветку Hotfix** — от тега релиза
+3. **Реализовать минимальное исправление** — исправить только проблему, никаких других изменений
+4. **Протестировать сфокусированную область** — убедиться, что исправление ничего не ломает
+5. **Получить экстренное одобрение** — роль Architect одобряет
+6. **Создать тег Hotfix** — `vX.Y.Z-hotfix.N`
+7. **Развернуть Hotfix** — немедленное развёртывание
+8. **Создать правильный Patch релиз** — объединить Hotfix в main, создать Patch релиз
+9. **Документировать в ENGINEERING_HISTORY.md** — записать что произошло и почему
+
+### Hotfix Rules (Правила Hotfix)
+
+- Hotfix являются исключительными, а не рутинными
+- Должны сопровождаться правильным Patch релизом
+- Ветки Hotfix удаляются после объединения
+- Все Hotfix требуют Post-mortem (Пост-мортем) в ENGINEERING_HISTORY.md
+
+
+---
+
+## End of Document (Конец документа)
+
+Этот документ определяет процедуры релиза для проекта Agent Developer.
+
+Это авторитетный справочник для:
+- Типов релизов (Major, Minor, Patch, Hotfix)
+- Схемы версионирования (SemVer)
+- Рабочего процесса релиза (подготовка, верификация, релиз, после релиза)
+- Чек-листа перед релизом (качество кода, документация, сборка, одобрение)
+- Действий после релиза (отслеживание, обратная связь, извлечённые уроки)
+- Процедуры Hotfix (экстренные исправления)
+
+Все релизы должны соответствовать процедурам, определённым здесь.
