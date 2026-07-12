@@ -299,6 +299,12 @@ GLOSSARY.md является Canonical Source для инженерной тер
 - Использовать согласованное выравнивание столбцов
 - Добавлять пустую строку до и после таблиц
 - Держать таблицы читаемыми — избегать очень длинных ячеек
+- После любого создания, изменения или локализации повторно форматировать Markdown-таблицу так, чтобы она оставалась визуально читаемой
+- Ширина столбцов и разделителей должна соответствовать самому длинному элементу соответствующего столбца
+- Вертикальные границы таблицы должны оставаться визуально выровненными
+- Выравнивание содержимого внутри столбцов допускается, если оно улучшает читаемость, но не является обязательным
+
+**Engineering Invariant:** Любая Markdown-таблица должна оставаться визуально читаемой после создания или изменения.
 
 ### Lists (Списки)
 
@@ -435,23 +441,23 @@ GLOSSARY.md является Canonical Source для инженерной тер
 
 ### Required Fields (Обязательные поля)
 
-| Field (Поле) | Description (Описание) | Example (Пример) |
-|-------|-------------|---------|
-| **Status** | Текущий статус документа | `ACCEPTED`, `DRAFT`, `DEPRECATED` |
-| **Version** | Номер версии | `1.0`, `2.1` |
-| **Date** | Дата последней модификации | `2026-06-18` |
-| **Authority** | Роль, утверждающая документ | `Project Architect`, `Engineering Lead` |
-| **Maintainer** | Роль, обновляющая документ | `Documentation Maintainer`, `Engineering Maintainer` |
-| **Type** | Тип документа | `Protocol`, `Standard`, `Playbook`, `Architecture`, `Index`, `Registry`, `History`, `Context` |
-| **Primary Question** | Основной вопрос, на который отвечает документ | `"What is this project?"`, `"How do we develop this project?"` |
-| **Canonical Source for** | Какими фактами владеет этот документ | `Engineering Principles, Roles, Source of Truth hierarchy` |
-| **Dependencies** | Документы, которые читает этот документ | `INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md` |
-| **Dependents** | Документы, которые читают этот документ | `DOC_STANDARD.md, RELEASE_PROCESS.md` |
+| Field (Поле)             | Description (Описание)                        | Example (Пример)                                                                              |
+|--------------------------|-----------------------------------------------|-----------------------------------------------------------------------------------------------|
+| **Status**               | Текущий статус документа                      | `ACCEPTED`, `DRAFT`, `DEPRECATED`                                                             |
+| **Version**              | Номер версии                                  | `1.0`, `2.1`                                                                                  |
+| **Date**                 | Дата последней модификации                    | `2026-06-18`                                                                                  |
+| **Authority**            | Роль, утверждающая документ                   | `Project Architect`, `Engineering Lead`                                                       |
+| **Maintainer**           | Роль, обновляющая документ                    | `Documentation Maintainer`, `Engineering Maintainer`                                          |
+| **Type**                 | Тип документа                                 | `Protocol`, `Standard`, `Playbook`, `Architecture`, `Index`, `Registry`, `History`, `Context` |
+| **Primary Question**     | Основной вопрос, на который отвечает документ | `"What is this project?"`, `"How do we develop this project?"`                                |
+| **Canonical Source for** | Какими фактами владеет этот документ          | `Engineering Principles, Roles, Source of Truth hierarchy`                                    |
+| **Dependencies**         | Документы, которые читает этот документ       | `INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md`                                            |
+| **Dependents**           | Документы, которые читают этот документ       | `DOC_STANDARD.md, RELEASE_PROCESS.md`                                                         |
 
 ### Optional Fields (Необязательные поля)
 
-| Field (Поле) | Description (Описание) | Example (Пример) |
-|-------|-------------|---------|
+| Field (Поле)  | Description (Описание)        | Example (Пример)                                |
+|---------------|-------------------------------|-------------------------------------------------|
 | **Lifecycle** | Как часто изменяется документ | `Static`, `Semi-static`, `Dynamic`, `Immutable` |
 
 ### Formatting (Форматирование)

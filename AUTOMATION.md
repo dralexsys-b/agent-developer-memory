@@ -1,126 +1,126 @@
-# Automation
+# Automation (Автоматизация)
 
-**Status:** ACCEPTED  
-**Version:** 1.0  
-**Date:** 2026-06-18  
-**Authority:** Engineering Lead  
-**Maintainer:** Engineering Maintainer  
+**Status:** ACCEPTED
+**Version:** 1.0
+**Date:** 2026-06-18
+**Authority:** Engineering Lead
+**Maintainer:** Engineering Maintainer
 
-**Type:** Playbook (Layer 3: Engineering Knowledge)  
-**Primary Question:** "What is automated and how is automation organized?"  
-**Canonical Source for:** Automated scripts, CI/CD pipelines, automation structure, triggers  
-**Dependencies:** INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md, ENGINEERING_PLAYBOOK.md, RELEASE_PROCESS.md  
-**Dependents:** ENGINEERING_HISTORY.md  
-
----
-
-## Automation Principles
-
-The following principles guide automation decisions (see ENGINEERING_PLAYBOOK Principle #6):
-
-### When to Automate
-
-1. **After three repetitions** — if a command sequence has been executed manually three times, it must be automated
-2. **Error-prone operations** — operations frequently causing mistakes
-3. **Time-consuming tasks** — operations taking more than 5 minutes manually
-4. **Critical paths** — operations on release, deployment, or verification paths
-
-### What Not to Automate
-
-1. **One-time operations** — setup of new infrastructure, migrations
-2. **Exploratory tasks** — debugging, investigation
-3. **Decision-dependent operations** — requiring human judgment
-4. **Architectural decisions** — ADR creation, protocol changes
-
-### Verification Automation
-
-Verification automation defines how project verification is executed as a repeatable engineering process.
-
-1. **Provide a unified verification process** — verification is executed through a consistent automation workflow.
-2. **Coordinate verification stages** — automation runs the verification stages defined by the project.
-3. **Produce engineering evidence** — verification generates evidence for engineering decisions.
-4. **Fail predictably** — verification stops when a required stage fails.
-5. **Remain deterministic** — repeated execution produces consistent results.
-
-The concrete automation scripts, verification stages and execution order are documented in the corresponding sections of this document.
-
-**Engineering Invariant:** Verification automation must produce reproducible engineering evidence.
+**Type:** Playbook (Layer 3: Engineering Knowledge)
+**Primary Question:** "What is automated and how is automation organized?"
+**Canonical Source for:** Automated scripts, CI/CD pipelines, automation structure, triggers
+**Dependencies:** INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md, ENGINEERING_PLAYBOOK.md, RELEASE_PROCESS.md
+**Dependents:** ENGINEERING_HISTORY.md
 
 ---
 
-## Automation Registry
+## Automation Principles (Принципы автоматизации)
 
-The following automations exist in the project:
+Следующие принципы направляют решения по автоматизации (см. ENGINEERING_PLAYBOOK Principle #6):
 
-### Build Automations
+### When to Automate (Когда автоматизировать)
 
-| Automation | Purpose | Trigger | Repository |
-|------------|---------|---------|------------|
-| ROCm build automation | Build ROCm environment | Manual | Runtime |
-| llama.cpp build automation | Build llama.cpp with ROCm support | Manual | Runtime |
+1. **После трёх повторений** — если последовательность команд была выполнена вручную три раза, она должна быть автоматизирована
+2. **Операции, подверженные ошибкам** — операции, часто вызывающие ошибки
+3. **Временные затраты** — операции, занимающие более 5 минут вручную
+4. **Критические пути** — операции на путях релиза, развёртывания или верификации
 
-### Runtime Automations
+### What Not to Automate (Что не автоматизировать)
 
-| Automation | Purpose | Trigger | Repository |
-|------------|---------|---------|------------|
-| Runtime startup automation | Start inference services | Manual | Runtime |
-| Environment restoration | Restore runtime environment | Manual | Runtime |
+1. **Одноразовые операции** — настройка новой инфраструктуры, миграции
+2. **Исследовательские задачи** — отладка, исследование
+3. **Операции, зависящие от решений** — требующие человеческого суждения
+4. **Архитектурные решения** — создание ADR, изменения протоколов
 
-### Benchmark Automations
+### Verification Automation (Автоматизация верификации)
 
-| Automation | Purpose | Trigger | Repository |
-|------------|---------|---------|------------|
-| VRAM benchmark automation | Regression testing | Manual | Runtime |
+Автоматизация верификации определяет, как верификация проекта выполняется как повторяемый инженерный процесс.
 
-### Evidence Automations
+1. **Обеспечить единый процесс верификации** — верификация выполняется через согласованный рабочий процесс автоматизации.
+2. **Координировать стадии верификации** — автоматизация запускает стадии верификации, определённые проектом.
+3. **Производить инженерные доказательства** — верификация генерирует доказательства для инженерных решений.
+4. **Предсказуемо завершаться при ошибках** — верификация останавливается, когда обязательная стадия завершается с ошибкой.
+5. **Оставаться детерминированной** — повторное выполнение даёт согласованные результаты.
 
-| Automation | Purpose | Trigger | Repository |
-|------------|---------|---------|------------|
-| Evidence collection | Collect runtime logs | Post-test | Runtime |
+Конкретные скрипты автоматизации, стадии верификации и порядок выполнения документированы в соответствующих разделах этого документа.
 
-### Engineering Automations
+**Engineering Invariant:** Автоматизация верификации должна производить воспроизводимые инженерные доказательства.
 
-| Automation | Purpose | Trigger | Repository |
-|------------|---------|---------|------------|
-| Verification Pipeline | Validate project integrity before commits | Manual or pre-commit | Runtime |
-| Publish Workflow | Publish verified changes to remote | Post-verification | Runtime |
-| Shell Smoke Tests | Quick validation of script syntax and structure | Part of Verification Pipeline | Runtime |
+---
 
-These automations implement the engineering principles defined in ENGINEERING_PLAYBOOK.md.
+## Automation Registry (Реестр автоматизации)
 
-Implementation details belong to the runtime repository.
-This document defines the engineering concepts rather than specific implementations.
+Следующие автоматизации существуют в проекте:
 
-### Implementation Note
+### Build Automations (Автоматизации сборки)
 
-Each automation may consist of one or more scripts whose names may change over time.
-This registry describes the automation functionality, not specific file names.
-For current implementation details, see the runtime repository and its current project structure.
+| Automation (Автоматизация) | Purpose (Назначение)               | Trigger (Триггер) | Repository (Репозиторий) |
+|----------------------------|------------------------------------|-------------------|--------------------------|
+| ROCm build automation      | Сборка окружения ROCm              | Manual            | Runtime                  |
+| llama.cpp build automation | Сборка llama.cpp с поддержкой ROCm | Manual            | Runtime                  |
 
-### Planned Automations
+### Runtime Automations (Автоматизации Runtime)
 
-The following automations are planned but not yet implemented:
+| Automation (Автоматизация) | Purpose (Назначение)             | Trigger (Триггер) | Repository (Репозиторий) |
+|----------------------------|----------------------------------|-------------------|--------------------------|
+| Runtime startup automation | Запуск сервисов инференса        | Manual            | Runtime                  |
+| Environment restoration    | Восстановление окружения Runtime | Manual            | Runtime                  |
 
-| Automation | Purpose | Status |
-|------------|---------|--------|
-| Documentation validation | Validate documentation structure | PLANNED |
-| Cross-reference validation | Validate document links | PLANNED |
-| CI/CD pipeline | Automated testing and deployment | PLANNED |
+### Benchmark Automations (Автоматизации бенчмарков)
 
-### Note
+| Automation (Автоматизация) | Purpose (Назначение)       | Trigger (Триггер) | Repository (Репозиторий) |
+|----------------------------|----------------------------|-------------------|--------------------------|
+| VRAM benchmark automation  | Регрессионное тестирование | Manual            | Runtime                  |
 
-Registry reflects actual state of the project.
-When new automation is added, it must be registered here.
-When automation is removed or changed, registry must be updated.
+### Evidence Automations (Автоматизации доказательств)
+
+| Automation (Автоматизация) | Purpose (Назначение) | Trigger (Триггер) | Repository (Репозиторий) |
+|----------------------------|----------------------|-------------------|--------------------------|
+| Evidence collection        | Сбор логов Runtime   | Post-test         | Runtime                  |
+
+### Engineering Automations (Инженерные автоматизации)
+
+| Automation (Автоматизация)                   | Purpose (Назначение)                                          | Trigger (Триггер)           | Repository (Репозиторий) |
+|----------------------------------------------|---------------------------------------------------------------|-----------------------------|--------------------------|
+| Verification Pipeline (Конвейер верификации) | Валидация целостности проекта перед коммитами                 | Manual или pre-commit       | Runtime                  |
+| Publish Workflow                             | Публикация верифицированных изменений в удалённый репозиторий | Post-verification           | Runtime                  |
+| Shell Smoke Tests                            | Быстрая валидация синтаксиса и структуры скриптов             | Часть конвейера верификации | Runtime                  |
+
+Эти автоматизации реализуют инженерные принципы, определённые в ENGINEERING_PLAYBOOK.md.
+
+Детали реализации принадлежат репозиторию runtime.
+Этот документ определяет инженерные концепции, а не конкретные реализации.
+
+### Implementation Note (Примечание к реализации)
+
+Каждая автоматизация может состоять из одного или более скриптов, имена которых могут меняться со временем.
+Этот реестр описывает функциональность автоматизации, а не конкретные имена файлов.
+Для текущих деталей реализации см. репозиторий runtime и его текущую структуру проекта.
+
+### Planned Automations (Планируемые автоматизации)
+
+Следующие автоматизации запланированы, но ещё не реализованы:
+
+| Automation (Автоматизация) | Purpose (Назначение)                            | Status (Статус) |
+|----------------------------|-------------------------------------------------|-----------------|
+| Documentation validation   | Валидация структуры документации                | PLANNED         |
+| Cross-reference validation | Валидация ссылок документов                     | PLANNED         |
+| CI/CD pipeline             | Автоматизированное тестирование и развёртывание | PLANNED         |
+
+### Note (Примечание)
+
+Реестр отражает актуальное состояние проекта.
+Когда добавляется новая автоматизация, она должна быть зарегистрирована здесь.
+Когда автоматизация удаляется или изменяется, реестр должен быть обновлён.
 
 
 ---
 
-## Automation Structure
+## Automation Structure (Структура автоматизации)
 
-All automation scripts follow this structure:
+Все скрипты автоматизации следуют этой структуре:
 
-### Directory Layout
+### Directory Layout (Структура каталогов)
 
     agent-developer-runtime/
     ├── scripts/
@@ -131,63 +131,63 @@ All automation scripts follow this structure:
     │   └── collect_*.sh            — evidence collection
     └── automation/                 — (future) advanced automations
 
-### Naming Conventions
+### Naming Conventions (Соглашения об именовании)
 
-- Use `snake_case.sh` for shell scripts
-- Use `snake_case.py` for Python scripts
-- Use descriptive names that reflect purpose
-- Prefix with category if needed: `build_`, `start_`, `restore_`, `vram_`, `collect_`
+- Использовать `snake_case.sh` для shell скриптов
+- Использовать `snake_case.py` для Python скриптов
+- Использовать описательные имена, отражающие назначение
+- Префикс с категорией при необходимости: `build_`, `start_`, `restore_`, `vram_`, `collect_`
 
-### Script Requirements
+### Script Requirements (Требования к скриптам)
 
-Every automation script must:
+Каждый скрипт автоматизации должен:
 
-1. **Be idempotent** — running multiple times has same effect as running once
-2. **Generate evidence** — produce logs for audit trail
-3. **Fail fast** — exit on first error with clear message
-4. **Be documented** — header comment explaining purpose, usage, dependencies
-5. **Be testable** — can be run independently
-6. **Follow DOC_STANDARD** — documentation in header
+1. **Быть идемпотентным** — многократный запуск даёт тот же эффект, что и однократный
+2. **Генерировать доказательства** — производить логи для аудита
+3. **Быстро завершаться при ошибках** — выходить при первой ошибке с ясным сообщением
+4. **Быть документированным** — заголовочный комментарий, объясняющий назначение, использование, зависимости
+5. **Быть тестируемым** — может быть запущен независимо
+6. **Следовать DOC_STANDARD** — документация в заголовке
 
-### Verification Script Requirements
+### Verification Script Requirements (Требования к скриптам верификации)
 
-Verification scripts are one implementation of verification automation. Regardless of implementation, verification automation must remain deterministic, reproducible, and evidence-based.
+Скрипты верификации — это одна из реализаций автоматизации верификации. Независимо от реализации, автоматизация верификации должна оставаться детерминированной, воспроизводимой и основанной на доказательствах.
 
-Verification scripts should:
+Скрипты верификации должны:
 
-1. Execute verification stages in deterministic order.
-2. Stop immediately after a failed mandatory stage.
-3. Generate engineering evidence.
-4. Report clear diagnostics.
-5. Preserve reproducibility.
-6. Preserve project integrity — verification must not modify project artifacts except for explicitly defined verification outputs.
+1. Выполнять стадии верификации в детерминированном порядке.
+2. Немедленно останавливаться после неудачной обязательной стадии.
+3. Генерировать инженерные доказательства.
+4. Сообщать ясную диагностику.
+5. Сохранять воспроизводимость.
+6. Сохранять целостность проекта — верификация не должна изменять артефакты проекта, за исключением явно определённых выходов верификации.
 
-Concrete implementations of verification automation belong to the runtime repository.
+Конкретные реализации автоматизации верификации принадлежат репозиторию runtime.
 
-**Engineering Invariant:** Verification automation must be deterministic, reproducible, and generate engineering evidence.
+**Engineering Invariant:** Автоматизация верификации должна быть детерминированной, воспроизводимой и генерировать инженерные доказательства.
 
 ---
 
-## Adding New Automation
+## Adding New Automation (Добавление новой автоматизации)
 
-When adding new automation, follow this procedure:
+При добавлении новой автоматизации следуйте этой процедуре:
 
-### Procedure
+### Procedure (Процедура)
 
-1. **Verify principle applies** — confirm automation is needed (3+ repetitions, error-prone, time-consuming, critical path)
-2. **Check registry** — ensure similar automation doesn't exist
-3. **Choose location** — `scripts/` for simple scripts, `automation/` for complex ones
-4. **Follow naming conventions** — use `snake_case` with descriptive name
-5. **Implement script** — satisfy all script requirements
-6. **Generate evidence** — script must produce logs
-7. **Test script** — verify idempotence, error handling, output
-8. **Register in Automation Registry** — add entry to table in this document
-9. **Update CURRENT_CONTEXT.md** — if operational state changed
-10. **Commit with evidence** — include test logs
+1. **Убедиться, что принцип применяется** — подтвердить, что автоматизация нужна (3+ повторения, подвержена ошибкам, временные затраты, критический путь)
+2. **Проверить реестр** — убедиться, что похожая автоматизация не существует
+3. **Выбрать расположение** — `scripts/` для простых скриптов, `automation/` для сложных
+4. **Следовать соглашениям об именовании** — использовать `snake_case` с описательным именем
+5. **Реализовать скрипт** — удовлетворить всем требованиям к скриптам
+6. **Генерировать доказательства** — скрипт должен производить логи
+7. **Протестировать скрипт** — верифицировать идемпотентность, обработку ошибок, вывод
+8. **Зарегистрировать в Automation Registry** — добавить запись в таблицу в этом документе
+9. **Обновить CURRENT_CONTEXT.md** — если операционное состояние изменилось
+10. **Закоммитить с доказательствами** — включить логи тестов
 
-### Documentation Template
+### Documentation Template (Шаблон документации)
 
-Every automation script must include this header:
+Каждый скрипт автоматизации должен включать этот заголовок:
 
     #!/bin/bash
     # Purpose: [one-line description]
@@ -197,94 +197,93 @@ Every automation script must include this header:
     # Author: [role]
     # Date: [creation date]
 
-### Automation Verification
+### Automation Verification (Верификация автоматизации)
 
-Before a new automation is accepted into the project, verify that it:
+Перед тем как новая автоматизация будет принята в проект, верифицировать, что она:
 
-1. Satisfies the automation principles defined in this document.
-2. Produces reproducible engineering evidence.
-3. Fails predictably with clear diagnostics.
-4. Preserves project integrity.
-5. Is registered in the Automation Registry.
-6. Is documented according to DOC_STANDARD.
+1. Удовлетворяет принципам автоматизации, определённым в этом документе.
+2. Производит воспроизводимые инженерные доказательства.
+3. Предсказуемо завершается при ошибках с ясной диагностикой.
+4. Сохраняет целостность проекта.
+5. Зарегистрирована в Automation Registry.
+6. Документирована согласно DOC_STANDARD.
 
-Verification is part of the engineering acceptance process rather than a property of any specific implementation.
+Верификация является частью инженерного процесса приёмки, а не свойством конкретной реализации.
 
-**Engineering Invariant:** No automation is considered complete until it has been verified and documented.
-
----
-
-## Trigger Model
-
-Automations can be triggered by different mechanisms:
-
-### Existing Triggers
-
-**Manual execution:**
-- User runs script directly
-- Used for: build, test, evidence collection
-- Requires: user knowledge of script location and usage
-
-### Verification Triggers
-
-Verification automation can be triggered through multiple mechanisms, each serving a distinct engineering purpose:
-
-**Manual verification:**
-- Engineer runs verification workflow explicitly before commit or push
-- Used for: ad-hoc validation, debugging, pre-release checks
-- Provides: full control over timing and scope
-
-**Pre-commit verification:**
-- Verification may execute before a commit is created
-- Purpose: prevent broken or undocumented changes from entering history
-- Scope: fast validation (syntax, structure, documentation)
-
-**Pre-push verification:**
-- Verification may execute before changes are published to remote
-- Purpose: ensure remote repository only receives verified changes
-- Scope: comprehensive validation including publish workflow
-
-**CI verification:**
-- Verification may execute in continuous integration environment
-- Purpose: validate changes in clean, reproducible environment
-- Scope: full regression including cross-component checks
-
-Trigger selection depends on verification scope and engineering risk. Manual triggers suit exploratory work; automated triggers enforce invariants on critical paths.
-
-**Engineering Invariant:** Engineering artifacts progress only after successful verification.
-
-
-### Planned Triggers
-
-The following trigger mechanisms are planned but not yet implemented:
-
-**Git Hook triggers:**
-- Pre-commit: documentation validation
-- Post-commit: link validation
-- Pre-push: test suite
-
-**CI/CD triggers:**
-- On push to main: full test suite, build
-- On PR: subset of tests
-- On tag: release pipeline
-
-**Scheduled triggers:**
-- Cron jobs for routine maintenance
-- Periodic evidence collection
-- Scheduled backups
+**Engineering Invariant:** Ни одна автоматизация не считается завершённой, пока она не верифицирована и документирована.
 
 ---
 
-## End of Document
+## Trigger Model (Модель триггеров)
 
-This document defines the automation for the Agent Developer project.
+Автоматизации могут запускаться различными механизмами:
 
-It is the authoritative reference for:
-- Automation principles (when to automate, what not to automate)
-- Automation registry (existing and planned automations)
-- Automation structure (directory layout, naming, requirements)
-- Procedure for adding new automation
-- Trigger model (existing: manual; planned: git hooks, CI/CD, scheduled)
+### Existing Triggers (Существующие триггеры)
 
-All automation must conform to the rules defined herein.
+**Ручное выполнение:**
+- Пользователь запускает скрипт напрямую
+- Используется для: сборки, тестирования, сбора доказательств
+- Требует: знания пользователем расположения скрипта и его использования
 
+### Verification Triggers (Триггеры верификации)
+
+Автоматизация верификации может запускаться через несколько механизмов, каждый из которых служит отдельной инженерной цели:
+
+**Ручная верификация:**
+- Инженер явно запускает рабочий процесс верификации перед коммитом или push
+- Используется для: специальной валидации, отладки, проверок перед релизом
+- Обеспечивает: полный контроль над временем и областью применения
+
+**Pre-commit верификация:**
+- Верификация может выполняться перед созданием коммита
+- Назначение: предотвращение попадания сломанных или недокументированных изменений в историю
+- Область применения: быстрая валидация (синтаксис, структура, документация)
+
+**Pre-push верификация:**
+- Верификация может выполняться перед публикацией изменений в удалённый репозиторий
+- Назначение: обеспечение того, что удалённый репозиторий получает только верифицированные изменения
+- Область применения: комплексная валидация, включая workflow публикации
+
+**CI верификация:**
+- Верификация может выполняться в окружении непрерывной интеграции
+- Назначение: валидация изменений в чистом, воспроизводимом окружении
+- Область применения: полная регрессия, включая межкомпонентные проверки
+
+Выбор триггера зависит от области применения верификации и инженерного риска. Ручные триггеры подходят для исследовательской работы; автоматические триггеры обеспечивают соблюдение инвариантов на критических путях.
+
+**Engineering Invariant:** Инженерные артефакты продвигаются только после успешной верификации.
+
+
+### Planned Triggers (Планируемые триггеры)
+
+Следующие механизмы триггеров запланированы, но ещё не реализованы:
+
+**Git Hook триггеры:**
+- Pre-commit: валидация документации
+- Post-commit: валидация ссылок
+- Pre-push: набор тестов
+
+**CI/CD триггеры:**
+- При push в main: полный набор тестов, сборка
+- При PR: подмножество тестов
+- При tag: pipeline релиза
+
+**Запланированные триггеры:**
+- Cron задания для рутинного обслуживания
+- Периодический сбор доказательств
+- Запланированные резервные копии
+
+---
+
+## End of Document (Конец документа)
+
+Этот документ определяет автоматизацию для проекта Agent Developer.
+
+Это авторитетный справочник для:
+- Принципов автоматизации (когда автоматизировать, что не автоматизировать)
+- Реестра автоматизации (существующие и планируемые автоматизации)
+- Структуры автоматизации (структура каталогов, именование, требования)
+- Процедуры добавления новой автоматизации
+- Модели триггеров (существующие: ручные; планируемые: git hooks, CI/CD, запланированные)
+
+Вся автоматизация должна соответствовать правилам, определённым здесь.
