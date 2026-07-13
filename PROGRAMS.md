@@ -16,12 +16,13 @@
 
 ## Registry (Реестр)
 
-| Program (Программа)           | Status (Статус) | Started (Начало) | Completed (Завершение) | Goal (Цель программы)                                                 |
-|-------------------------------|-----------------|------------------|------------------------|-----------------------------------------------------------------------|
-| Engineering Knowledge v2.1    | Completed       | 2026-06-18       | 2026-06-28             | Синхронизация инженерных практик                                      |
-| Program Management Completion | Completed       | 2026-07-07       | 2026-07-09             | Завершение управления программами и закрытие административного долга  |
-| Runtime Phase 1               | Planned         | —                | —                      | Реализация ядра Runtime (Application, Infrastructure, Orchestrator)   |
-| Agent Developer Alpha         | Planned         | —                | —                      | Первый работающий агент                                               |
+| Program (Программа)                   | Status (Статус) | Started (Начало) | Completed (Завершение) | Goal (Цель программы)                                                                           |
+|---------------------------------------|-----------------|------------------|------------------------|-------------------------------------------------------------------------------------------------|
+| Engineering Knowledge v2.1            | Completed       | 2026-06-18       | 2026-06-28             | Синхронизация инженерных практик                                                                |
+| Program Management Completion         | Completed       | 2026-07-07       | 2026-07-09             | Завершение управления программами и закрытие административного долга                            |
+| Engineering Knowledge Localization v1 | Completed       | 2026-07-09       | 2026-07-13             | Локализация документации Engineering Knowledge на русский язык и формирование единого глоссария |
+| Runtime Phase 1                       | Planned         | —                | —                      | Реализация ядра Runtime (Application, Infrastructure, Orchestrator)                             |
+| Agent Developer Alpha                 | Planned         | —                | —                      | Первый работающий агент                                                                         |
 
 ---
 
