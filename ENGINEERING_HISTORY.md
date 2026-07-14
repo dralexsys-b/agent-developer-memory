@@ -1,291 +1,324 @@
-# Engineering History
+# Engineering History (Инженерная история)
 
-**Status:** ACCEPTED  
-**Version:** 1.0  
-**Date:** 2026-06-18  
-**Authority:** Engineering Lead  
-**Maintainer:** Engineering Maintainer  
+**Status:** ACCEPTED
+**Version:** 1.0
+**Date:** 2026-06-18
+**Authority:** Engineering Lead
+**Maintainer:** Engineering Maintainer
 
-**Type:** History (Layer 3: Engineering Knowledge)  
-**Primary Question:** "What have we learned?"  
-**Canonical Source for:** Lessons learned, post-mortems, retrospectives  
-**Dependencies:** INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md, ENGINEERING_PLAYBOOK.md  
-**Dependents:** None (terminal document)  
-**Lifecycle:** Dynamic (continuously updated as new lessons are learned)
-
----
-
-## Purpose
-
-This document serves as the authoritative repository for engineering lessons learned throughout the Agent Developer project.
-
-It captures:
-- **Lessons learned** — insights from development work
-- **Post-mortems** — analysis of incidents and failures
-- **Retrospectives** — periodic reviews of processes and practices
-
-The goal is to:
-1. Prevent repeating mistakes
-2. Share knowledge across the team
-3. Improve processes over time
-4. Build institutional memory
-
-This document is the authoritative reference for:
-- Purpose of engineering history documentation
-- Entry structure (required and optional fields)
-- Categories (lessons learned, post-mortems, retrospectives)
-- Writing guidelines (specific, actionable, honest, concise, timely)
-- Review process (draft, review, approval, update)
-
-All engineering lessons must be documented according to the structure defined herein.
+**Type:** History (Layer 3: Engineering Knowledge)
+**Primary Question:** "What have we learned?"
+**Canonical Source for:** Lessons learned, post-mortems, retrospectives
+**Dependencies:** INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md, ENGINEERING_PLAYBOOK.md
+**Dependents:** None
+**Lifecycle:** Dynamic
 
 ---
 
-## Entry Structure
+## Purpose (Назначение)
 
-Each entry in this document must follow a consistent structure:
+Этот документ служит авторитетным репозиторием для извлечённых инженерных уроков на протяжении всего проекта Agent Developer.
 
-### Required Fields
+Он фиксирует:
+- **Извлечённые уроки (Lessons Learned)** — инсайты из работы по разработке
+- **Пост-мортемы (Post-mortems)** — анализ инцидентов и неудач
+- **Ретроспективы (Retrospectives)** — периодические обзоры процессов и практик
 
-Every entry must include:
+Цель:
+1. Предотвратить повторение ошибок
+2. Делиться знаниями внутри команды
+3. Улучшать процессы со временем
+4. Создавать институциональную память
 
-1. **Date** — when the lesson was learned (YYYY-MM-DD)
-2. **Category** — type of entry (see Categories section)
-3. **Context** — what happened (brief description)
-4. **Lesson** — what was learned (key insight)
-5. **Action** — what should be done differently (if applicable)
-6. **Related Documents** — links to relevant documentation (if any)
+Этот документ является авторитетным справочником для:
+- Назначения документации инженерной истории
+- Структуры записи (обязательные и опциональные поля)
+- Категорий (извлечённые уроки, пост-мортемы, ретроспективы)
+- Руководства по написанию (конкретные, действенные, честные, лаконичные, своевременные)
+- Процесса рецензирования (черновик, рецензирование, одобрение, обновление)
 
-### Optional Fields
+Все инженерные уроки должны быть документированы согласно структуре, определённой здесь.
 
-- **Severity** — for post-mortems (Critical, High, Medium, Low)
-- **Impact** — what was affected
-- **Root Cause** — underlying cause (for post-mortems)
-- **Prevention** — how to prevent recurrence
+---
 
-### Format
+## Entry Structure (Структура записи)
 
-Entries use the following format:
+Каждая запись в этом документе должна следовать согласованной структуре:
 
-    ### [Date] [Category]: [Brief Title]
+### Required Fields (Обязательные поля)
 
-    **Context:** [What happened]
+Каждая запись должна включать:
 
-    **Lesson:** [What was learned]
+1. **Date (Дата)** — когда урок был извлечён (YYYY-MM-DD)
+2. **Category (Категория)** — тип записи (см. раздел Categories)
+3. **Context (Контекст)** — что произошло (краткое описание)
+4. **Lesson (Урок)** — что было изучено (ключевой инсайт)
+5. **Action (Действие)** — что следует делать иначе (если применимо)
+6. **Related Documents (Связанные документы)** — ссылки на релевантную документацию (если есть)
 
-    **Action:** [What should be done differently]
+### Optional Fields (Опциональные поля)
 
-    **Related:** [Links to relevant documents]
+- **Severity (Серьёзность)** — для пост-мортемов (Critical, High, Medium, Low)
+- **Impact (Влияние)** — что было затронуто
+- **Root Cause (Корневая причина)** — основная причина (для пост-мортемов)
+- **Prevention (Предотвращение)** — как предотвратить повторение
+
+### Format (Формат)
+
+Записи используют следующий формат:
+
+    ### [Date (Дата)] [Category (Категория)]: [Brief Title (Краткий заголовок)]
+
+    **Context (Контекст):** [Что произошло]
+
+    **Lesson (Урок):** [Что было изучено]
+
+    **Action (Действие):** [Что следует делать иначе]
+
+    **Related (Связанные документы):** [Ссылки на релевантные документы]
 
     ---
 
 
 ---
 
-## Categories
+## Categories (Категории)
 
-Entries are organized into the following categories:
+Записи организуются в следующие категории:
 
-### Lessons Learned
+### Lessons Learned (Извлечённые уроки)
 
-General insights from development work:
-- Technical discoveries
-- Process improvements
-- Tool usage insights
-- Architecture decisions
+Общие инсайты из работы по разработке:
+- Технические открытия
+- Улучшения процессов
+- Инсайты по использованию инструментов
+- Архитектурные решения
 
-**Example topics:**
-- "Discovered that ROCm requires specific environment variables"
-- "Learned that small commits are easier to review"
-- "Found that automated testing catches regressions early"
+**Примеры тем:**
+- "Обнаружено, что ROCm требует специфических переменных окружения"
+- "Изучено, что маленькие коммиты легче рецензировать"
+- "Обнаружено, что автоматизированное тестирование выявляет регрессии рано"
 
-### Post-Mortems
+### Post-Mortems (Пост-мортемы)
 
-Analysis of incidents and failures:
-- System crashes
-- Data loss
-- Performance degradation
-- Security incidents
+Анализ инцидентов и неудач:
+- Системные сбои
+- Потеря данных
+- Деградация производительности
+- Инциденты безопасности
 
-**Required additional fields:**
-- Severity
-- Impact
-- Root Cause
-- Prevention
+**Обязательные дополнительные поля:**
+- Severity (Серьёзность)
+- Impact (Влияние)
+- Root Cause (Корневая причина)
+- Prevention (Предотвращение)
 
-**Example topics:**
-- "Post-mortem: VRAM leak in llama.cpp server"
-- "Post-mortem: Documentation drift after refactoring"
-- "Post-mortem: Build failure due to missing dependency"
+**Примеры тем:**
+- "Пост-мортем: Утечка VRAM в сервере llama.cpp"
+- "Пост-мортем: Расхождение документации после рефакторинга"
+- "Пост-мортем: Сбой сборки из-за отсутствующей зависимости"
 
-### Retrospectives
+### Retrospectives (Ретроспективы)
 
-Periodic reviews of processes and practices:
-- Sprint retrospectives
-- Release retrospectives
-- Architecture reviews
-- Process improvements
+Периодические обзоры процессов и практик:
+- Ретроспективы спринтов
+- Ретроспективы релизов
+- Обзоры архитектуры
+- Улучшения процессов
 
-**Example topics:**
-- "Retrospective: Q2 2026 development process"
-- "Retrospective: v1.0 release process"
-- "Retrospective: Documentation workflow"
-
-
----
-
-## Writing Guidelines
-
-When writing entries, follow these principles:
-
-### Be Specific
-
-- Describe exactly what happened
-- Include relevant details (dates, versions, configurations)
-- Avoid vague statements
-
-### Be Actionable
-
-- Focus on what can be improved
-- Provide concrete next steps
-- Link to relevant documentation or issues
-
-### Be Honest
-
-- Admit mistakes openly
-- Don't blame individuals
-- Focus on systemic issues
-
-### Be Concise
-
-- Keep entries focused
-- Use bullet points for clarity
-- Avoid unnecessary details
-
-### Be Timely
-
-- Write entries soon after the event
-- Capture details while they're fresh
-- Update entries as more information becomes available
-
----
-
-## Review Process
-
-Entries go through the following review process:
-
-### Draft Phase
-
-1. Author creates entry following Entry Structure
-2. Author fills in all required fields
-3. Author links to related documents
-
-### Review Phase
-
-4. Engineering Lead reviews entry for:
-   - Completeness (all required fields present)
-   - Accuracy (facts are correct)
-   - Actionability (lessons are clear)
-   - Relevance (fits project scope)
-
-### Approval Phase
-
-5. Engineering Lead approves entry
-6. Entry is added to document
-7. Related documents are updated if needed
-
-### Update Phase
-
-8. Entry is updated as new information becomes available
-9. Actions are tracked and completed
-10. Entry is marked as resolved when actions are complete
+**Примеры тем:**
+- "Ретроспектива: Процесс разработки Q2 2026"
+- "Ретроспектива: Процесс релиза v1.0"
+- "Ретроспектива: Рабочий процесс документации"
 
 
 ---
 
-## Initial Entries
+## Writing Guidelines (Руководство по написанию)
 
-This section will contain lessons learned as they are documented.
+При написании записей следуйте этим принципам:
 
-### 2026-06-30 Lessons Learned: Documentation First established
+### Be Specific (Будьте конкретны)
 
-**Context:**
-During the engineering knowledge synchronization effort, the project formally established Documentation First as an engineering practice before continuing documentation development.
+- Опишите точно, что произошло
+- Включите релевантные детали (даты, версии, конфигурации)
+- Избегайте расплывчатых утверждений
 
-**Lesson:**
-Establishing engineering practices before expanding documentation provides a stable foundation for subsequent engineering decisions and reduces inconsistencies across documents.
+### Be Actionable (Будьте действенны)
 
-**Action:**
-Continue applying the Documentation First practice as defined in ENGINEERING_PLAYBOOK.md and update related documentation whenever the engineering process evolves.
+- Фокусируйтесь на том, что можно улучшить
+- Предоставьте конкретные следующие шаги
+- Ссылайтесь на релевантную документацию или задачи
 
-**Related:**
+### Be Honest (Будьте честны)
+
+- Открыто признавайте ошибки
+- Не обвиняйте отдельных людей
+- Фокусируйтесь на системных проблемах
+
+### Be Concise (Будьте лаконичны)
+
+- Держите записи сфокусированными
+- Используйте маркированные списки для ясности
+- Избегайте ненужных деталей
+
+### Be Timely (Будьте своевременны)
+
+- Пишите записи вскоре после события
+- Фиксируйте детали, пока они свежи
+- Обновляйте записи по мере поступления новой информации
+
+---
+
+## Review Process (Процесс рецензирования)
+
+Записи проходят следующий процесс рецензирования:
+
+### Draft Phase (Фаза черновика)
+
+1. Автор создаёт запись согласно Entry Structure
+2. Автор заполняет все обязательные поля
+3. Автор ссылается на связанные документы
+
+### Review Phase (Фаза рецензирования)
+
+4. Engineering Lead рецензирует запись на:
+   - Полноту (все обязательные поля присутствуют)
+   - Точность (факты корректны)
+   - Действенность (уроки ясны)
+   - Релевантность (соответствует области применения проекта)
+
+### Approval Phase (Фаза одобрения)
+
+5. Engineering Lead одобряет запись
+6. Запись добавляется в документ
+7. Связанные документы обновляются при необходимости
+
+### Update Phase (Фаза обновления)
+
+8. Запись обновляется по мере поступления новой информации
+9. Действия отслеживаются и завершаются
+10. Запись помечается как разрешённая, когда действия завершены
+
+
+---
+
+## Initial Entries (Начальные записи)
+
+Этот раздел содержит извлечённые уроки по мере их документирования.
+
+### 2026-06-30 Lessons Learned (Извлечённые уроки): Documentation First established
+
+**Context (Контекст):**
+Во время усилия по синхронизации инженерных знаний проект формально установил Documentation First как инженерную практику перед продолжением разработки документации.
+
+**Lesson (Урок):**
+Установление инженерных практик перед расширением документации обеспечивает стабильную основу для последующих инженерных решений и уменьшает несогласованности между документами.
+
+**Action (Действие):**
+Продолжать применять практику Documentation First, как определено в ENGINEERING_PLAYBOOK.md, и обновлять связанную документацию при эволюции инженерного процесса.
+
+**Related (Связанные документы):**
 ENGINEERING_PLAYBOOK.md (Phase 0 — Documentation First), DOC_STANDARD.md (Documentation Principles)
 
 ---
 
-### 2026-06-30 Lessons Learned: Verification Pipeline established
+### 2026-06-30 Lessons Learned (Извлечённые уроки): Verification Pipeline established
 
-**Context:**
-During the engineering knowledge synchronization effort, the project established a Verification Pipeline as a standard engineering practice for verifying engineering artifacts.
+**Context (Контекст):**
+Во время усилия по синхронизации инженерных знаний проект установил Verification Pipeline как стандартную инженерную практику для верификации инженерных артефактов.
 
-**Lesson:**
-Establishing explicit verification stages prevents integration failures and ensures consistency across engineering artifacts. Systematic verification catches issues earlier than ad-hoc testing.
+**Lesson (Урок):**
+Установление явных стадий верификации предотвращает сбои интеграции и обеспечивает согласованность между инженерными артефактами. Систематическая верификация выявляет проблемы раньше, чем ad hoc тестирование.
 
-**Action:**
-Continue applying the Verification Pipeline practice as defined in ENGINEERING_PLAYBOOK.md whenever engineering artifacts are prepared for integration.
+**Action (Действие):**
+Продолжать применять практику Verification Pipeline, как определено в ENGINEERING_PLAYBOOK.md, при подготовке инженерных артефактов для интеграции.
 
-**Related:**
+**Related (Связанные документы):**
 ENGINEERING_PLAYBOOK.md (Verification Pipeline), AUTOMATION.md (Verification Automation)
 
 ---
 
-### 2026-07-01 Lessons Learned: Engineering Automation established
+### 2026-07-01 Lessons Learned (Извлечённые уроки): Engineering Automation established
 
-**Context:**
-During the engineering knowledge synchronization effort, the project formally established an engineering automation model as the foundation for systematic verification of engineering artifacts.
+**Context (Контекст):**
+Во время усилия по синхронизации инженерных знаний проект формально установил модель инженерной автоматизации как основу для систематической верификации инженерных артефактов.
 
-**Lesson:**
-Establishing an engineering automation model provides a stable foundation for evolving verification practices while keeping engineering processes consistent and reproducible.
+**Lesson (Урок):**
+Установление модели инженерной автоматизации обеспечивает стабильную основу для эволюции практик верификации, сохраняя инженерные процессы согласованными и воспроизводимыми.
 
-**Action:**
-Continue evolving the engineering automation model as defined in AUTOMATION.md while preserving its engineering principles and invariants.
+**Action (Действие):**
+Продолжать развивать модель инженерной автоматизации, как определено в AUTOMATION.md, сохраняя её инженерные принципы и инварианты.
 
-**Related:**
+**Related (Связанные документы):**
 AUTOMATION.md (Verification Automation), ENGINEERING_PLAYBOOK.md (Verification Pipeline)
 
 ---
 
-### 2026-06-30 Lessons Learned: Evolution of Engineering Process
+### 2026-06-30 Lessons Learned (Извлечённые уроки): Evolution of Engineering Process
 
-**Context:**
-During the engineering knowledge synchronization effort, the Development Workflow was expanded to incorporate newly established engineering practices.
+**Context (Контекст):**
+Во время усилия по синхронизации инженерных знаний Development Workflow был расширен для включения вновь установленных инженерных практик.
 
-**Lesson:**
-Engineering processes evolve incrementally. Establishing new engineering practices requires integrating them into a coherent workflow so that documentation, verification, and automation remain consistent.
+**Lesson (Урок):**
+Инженерные процессы эволюционируют инкрементально. Установление новых инженерных практик требует их интеграции в согласованный рабочий процесс, чтобы документация, верификация и автоматизация оставались согласованными.
 
-**Action:**
-Continue evolving the Development Workflow as defined in ENGINEERING_PLAYBOOK.md, documenting workflow changes and applying the project's established verification practices.
+**Action (Действие):**
+Продолжать развивать Development Workflow, как определено в ENGINEERING_PLAYBOOK.md, документируя изменения рабочего процесса и применяя установленные практики верификации проекта.
 
-**Related:**
+**Related (Связанные документы):**
 ENGINEERING_PLAYBOOK.md (Development Workflow), AUTOMATION.md (Verification Automation)
 
 ---
 
-### 2026-07-09 Retrospective: Program Management Completion
+### 2026-07-09 Retrospective (Ретроспектива): Program Management Completion
 
-**Context:**
-Program Management Completion was executed from 2026-07-07 to 2026-07-09, establishing the program governance framework and closing administrative debt.
+**Context (Контекст):**
+Программа `Program Management Completion` была выполнена с 2026-07-07 по 2026-07-09, установив фреймворк управления программами и закрыв административный долг.
 
-**Lesson:**
-Incremental architecture review during program execution allows discovery of scope errors (such as unnecessary Portfolio and Registry commits) before they are implemented, preventing waste and maintaining document quality.
+**Lesson (Урок):**
+Инкрементальный обзор архитектуры во время выполнения программы позволяет обнаруживать ошибки области применения (такие как ненужные коммиты Portfolio и Registry) до их реализации, предотвращая отходы и поддерживая качество документов.
 
-**Action:**
-Apply the same incremental review approach to future programs, particularly Runtime Phase 1.
+**Action (Действие):**
+Применять тот же подход инкрементального обзора к будущим программам, особенно к программе `Runtime Phase 1`.
 
-**Related:**
+**Related (Связанные документы):**
 PROGRAM_MANAGEMENT.md, ADR 008 (Exclude Portfolio and Registry), decisions/016-closure.md
 
 ---
 
-## End of Document
 
+### 2026-07-13 Retrospective (Ретроспектива): Engineering Knowledge Localization v1
+
+**Context (Контекст):**
+В ходе выполнения Program (Программы) `Engineering Knowledge Localization v1` была выполнена локализация документации Engineering Knowledge на русский язык, обеспечено единообразное использование инженерной терминологии согласно `GLOSSARY.md` и проведено финальное Review (Рецензирование) согласованности перед официальным закрытием программы.
+
+**Lesson (Урок):**
+1. **Дисциплина важнее инструментов (Discipline Over Tooling):** Во время выполнения финального Review (Рецензирования) внимание постепенно смещалось с проверки результатов программы на разработку инструмента аудита. Возврат к ручному, сфокусированному Review позволил сохранить границы Frozen Program и избежать расширения области применения программы.
+
+2. **Классификация вспомогательных документов репозитория:** При обновлении README стало очевидно, что несколько вспомогательных документов репозитория не вписываются естественным образом в существующее представление архитектурных слоёв. Этот вопрос был намеренно не решён в рамках текущей программы и отложен для будущей программы архитектуры документации.
+
+3. **Ограничения эвристической валидации:** Финальная проверка согласованности выявила ограничения проверок документации на основе регулярных выражений. Было получено несколько ложных срабатываний, поскольку примеры и запланированные документы трактовались как реальные зависимости. Полученный опыт показывает, что будущие инструменты аудита документации будут значительно надёжнее при использовании структурированных метаданных вместо эвристического текстового поиска.
+
+**Action (Действие):**
+- Рассматривать архитектурные идеи, возникшие во время выполнения Program (Программы), как входящие элементы Backlog будущих программ.
+- При проектировании средств проверки документации использовать структурированные метаданные как основной источник информации.
+- Возвращать выполнение Program (Программы) к утверждённому Frozen Program при появлении работ, выходящих за пределы её области применения.
+
+**Related (Связанные документы):**
+README.md, DOCUMENTS.md, DOC_STANDARD.md, GLOSSARY.md, PROGRAMS.md
+
+---
+
+## End of Document (Конец документа)
+
+Этот документ является каноническим репозиторием извлечённых инженерных уроков проекта Agent Developer.
+
+Это авторитетный справочник для:
+- Структуры записей извлечённых уроков
+- Категорий (Lessons Learned — Извлечённые уроки, Post-Mortems — Пост-мортемы, Retrospectives — Ретроспективы)
+- Руководства по написанию записей
+- Процесса рецензирования и одобрения
+- Истории извлечённых уроков проекта
+
+Все инженерные уроки должны быть документированы согласно структуре, определённой здесь.

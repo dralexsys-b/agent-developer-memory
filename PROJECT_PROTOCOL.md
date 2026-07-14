@@ -1,51 +1,51 @@
-# Project Protocol
+# Project Protocol (Протокол проекта)
 
-**Status:** ACCEPTED  
-**Version:** 1.0  
-**Date:** 2026-06-18  
-**Authority:** Project Architect  
-**Maintainer:** Project Maintainer  
+**Status:** ACCEPTED
+**Version:** 1.0
+**Date:** 2026-06-18
+**Authority:** Project Architect
+**Maintainer:** Project Maintainer
 
-**Type:** Protocol (Layer 1: Project Identity)  
-**Primary Question:** "What is this project?"  
-**Canonical Source for:** Engineering Principles, Roles, Source of Truth hierarchy  
-**Dependencies:** INFORMATION_ARCHITECTURE.md (Layer 0)  
-**Dependents:** All other documents  
+**Type:** Protocol (Layer 1: Project Identity)
+**Primary Question:** "What is this project?"
+**Canonical Source for:** Engineering Principles, Roles, Source of Truth hierarchy
+**Dependencies:** INFORMATION_ARCHITECTURE.md (Layer 0)
+**Dependents:** All other documents
 
 ---
 
-## Project Overview
+## Project Overview (Обзор проекта)
 
-### Mission
+### Mission (Миссия)
 
-Agent-Developer exists to create a local, self-hosted AI system capable of autonomous software development through a deterministic, verifiable, and reproducible engineering process.
+Agent-Developer существует для создания локальной self-hosted AI-системы, способной к автономной разработке программного обеспечения через детерминированный, верифицируемый и воспроизводимый инженерный процесс.
 
-The project aims to prove that complex software systems can be built by AI agents working within strict engineering constraints, with full transparency and evidence-based decision making.
+Проект направлен на доказательство того, что сложные программные системы могут быть построены AI-агентами, работающими в рамках строгих инженерных ограничений, с полной прозрачностью и принятием решений на основе Evidence.
 
-### Vision
+### Vision (Видение)
 
-The long-term vision is a multi-agent system where:
+Долгосрочное видение — это multi-agent система, где:
 
-- Specialized agents (Developer, Tester, Architect, Reviewer) collaborate through well-defined protocols
-- Every architectural decision is documented as ADR
-- Every change is verified through evidence
-- The system can reproduce any previous state from evidence logs
-- Engineering knowledge accumulates and improves over time
+- Специализированные агенты (Developer, Tester, Architect, Reviewer) сотрудничают через чётко определённые протоколы
+- Каждое архитектурное решение документируется как ADR
+- Каждое изменение верифицируется через Evidence
+- Система может воспроизвести любое предыдущее состояние из логов Evidence
+- Инженерные знания накапливаются и улучшаются со временем
 
-### Scope
+### Scope (Область применения)
 
-**In scope:**
-- Local AI agent development on AMD hardware (ROCm + llama.cpp)
-- Deterministic orchestration pipelines (LangGraph)
-- Evidence-based engineering process
-- Architecture documentation and ADR system
-- Reproducible build and verification workflows
+**В области применения:**
+- Разработка локального AI-агента на оборудовании AMD (ROCm + llama.cpp)
+- Детерминированные orchestration pipelines (LangGraph)
+- Инженерный процесс на основе Evidence
+- Документация архитектуры и система ADR
+- Воспроизводимые рабочие процессы сборки и верификации
 
-**Out of scope:**
-- Dependence on proprietary cloud services as a required runtime component
-- Non-deterministic multi-agent swarms
-- Production deployment of AI-generated code without human approval
-- Real-time collaborative editing between multiple human developers
+**Вне области применения:**
+- Зависимость от проприетарных облачных сервисов как обязательного компонента Runtime
+- Недетерминированные multi-agent рои
+- Production deployment of AI-generated code
+- Совместное редактирование в реальном времени между несколькими разработчиками-людьми
 
 
 ---
@@ -61,166 +61,166 @@ The long-term vision is a multi-agent system where:
 До завершения формирования системы документации допускаются временные отклонения от принципа компактности документов, если это упрощает проектирование архитектуры и не нарушает установленные контракты документов.
 
 
-## Roles & Decision Authority
+## Roles & Decision Authority (Роли и полномочия на принятие решений)
 
-### Role Hierarchy
+### Role Hierarchy (Иерархия ролей)
 
-The project operates with three distinct roles, each with specific responsibilities and decision authority:
+В проекте используются три различные роли, каждая из которых имеет специфические обязанности и полномочия на принятие решений:
 
-#### Architect (ChatGPT)
+#### Architect (Архитектор) (ChatGPT)
 
-**Responsibilities:**
-- Defines project architecture and information structure
-- Approves architectural decisions (ADR)
-- Reviews and approves protocols and standards
-- Declares stable baselines and releases
-- Resolves architectural conflicts
+**Обязанности:**
+- Определяет архитектуру проекта и информационную структуру
+- Утверждает архитектурные решения (ADR)
+- Рецензирует и утверждает протоколы и стандарты
+- Объявляет стабильные Baseline и релизы
+- Разрешает архитектурные конфликты
 
-**Decision Authority:**
-- Architecture changes
-- Protocol modifications
-- ADR approval
-- Baseline declaration
-- Release approval
+**Полномочия на принятие решений:**
+- Изменения архитектуры
+- Модификации протоколов
+- Утверждение ADR
+- Объявление Baseline
+- Утверждение релиза
 
-#### Engineer (Qwen)
+#### Engineer (Инженер) (Qwen)
 
-**Responsibilities:**
-- Implements approved architecture according to protocols
-- Follows Engineering Playbook procedures
-- Generates evidence for all changes
-- Maintains documentation according to DOC_STANDARD
-- Requests clarification when architecture is ambiguous
+**Обязанности:**
+- Реализует утверждённую архитектуру согласно протоколам
+- Следует процедурам Engineering Playbook
+- Генерирует Evidence для всех изменений
+- Поддерживает документацию согласно DOC_STANDARD
+- Запрашивает разъяснения, когда архитектура неоднозначна
 
-**Decision Authority:**
-- Implementation details within approved architecture
-- Bug fixes (local patches)
-- Documentation updates (within scope)
-- Evidence generation
+**Полномочия на принятие решений:**
+- Детали реализации в рамках утверждённой архитектуры
+- Исправления ошибок (Local Patch)
+- Обновления документации (в пределах области применения)
+- Генерация Evidence
 
-**Constraint:**
-Qwen does NOT make architectural decisions independently. When encountering ambiguity, Qwen must request clarification from the Architect rather than introducing architectural changes.
+**Ограничение:**
+Qwen НЕ принимает архитектурные решения самостоятельно. При столкновении с неоднозначностью Qwen должен запросить разъяснения у Architect, а не вносить архитектурные изменения.
 
 #### Executor (User)
 
-**Responsibilities:**
-- Executes approved commands on the server
-- Validates evidence and test results
-- Provides final approval for irreversible operations
-- Manages infrastructure (hardware, network, storage)
+**Обязанности:**
+- Выполняет утверждённые команды на сервере
+- Валидирует Evidence и результаты тестов
+- Предоставляет финальное одобрение для необратимых операций
+- Управляет инфраструктурой (оборудование, сеть, хранилище)
 
-**Decision Authority:**
-- Command execution on server
-- Infrastructure management
-- Evidence validation
+**Полномочия на принятие решений:**
+- Выполнение команд на сервере
+- Управление инфраструктурой
+- Валидация Evidence
 
 ---
 
-### Decision Authority Matrix
+### Decision Authority Matrix (Матрица полномочий на принятие решений)
 
-| Decision Type | Architect | Engineer | Executor |
+| Тип решения | Architect | Engineer | Executor |
 |---|---|---|---|
-| Architecture changes | ✅ Approves | 📝 Proposes | ⚙️ Executes commands |
-| Protocol modifications | ✅ Approves | 📝 Proposes | ⚙️ Executes commands |
-| ADR creation | ✅ Approves | 📝 Drafts | 📋 Acknowledges |
-| Baseline declaration | ✅ Declares | 📝 Suggests | 📋 Acknowledges |
-| Release approval | ✅ Approves | 📝 Prepares | ⚙️ Executes commands |
-| Implementation details | 🔍 Reviews | ✅ Decides | ⚙️ Executes commands |
-| Bug fixes (local patches) | 🔍 Reviews | ✅ Decides | ⚙️ Executes commands |
-| Documentation updates | 🔍 Reviews | ✅ Decides | 📋 Acknowledges |
-| Evidence generation | 🔍 Reviews | ✅ Generates | ✅ Validates |
-| Command execution | N/A | N/A | ⚙️ Executes commands |
-| Infrastructure management | N/A | N/A | ✅ Decides |
+| Изменения архитектуры | ✅ Утверждает | 📝 Предлагает | ⚙️ Выполняет команды |
+| Модификации протоколов | ✅ Утверждает | 📝 Предлагает | ⚙️ Выполняет команды |
+| Создание ADR | ✅ Утверждает | 📝 Составляет | 📋 Принимает к сведению |
+| Объявление Baseline | ✅ Объявляет | 📝 Предлагает | 📋 Принимает к сведению |
+| Утверждение релиза | ✅ Утверждает | 📝 Подготавливает | ⚙️ Выполняет команды |
+| Детали реализации | 🔍 Рецензирует | ✅ Решает | ⚙️ Выполняет команды |
+| Исправления ошибок (Local Patch) | 🔍 Рецензирует | ✅ Решает | ⚙️ Выполняет команды |
+| Обновления документации | 🔍 Рецензирует | ✅ Решает | 📋 Принимает к сведению |
+| Генерация Evidence | 🔍 Рецензирует | ✅ Генерирует | ✅ Валидирует |
+| Выполнение команд | N/A | N/A | ⚙️ Выполняет команды |
+| Управление инфраструктурой | N/A | N/A | ✅ Решает |
 
 
-## Engineering Principles
+## Engineering Principles (Инженерные принципы)
 
-The following 12 principles guide all engineering decisions in the project. These are not rules, but philosophy — the foundation upon which all procedures are built.
+Следующие 12 принципов направляют все инженерные решения в проекте. Это не правила, а философия — фундамент, на котором строятся все процедуры.
 
-### 1. Evidence First
+### 1. Evidence First (Evidence прежде всего)
 
-Every claim must be backed by verifiable evidence.  
-No assumption is accepted without proof.  
-No "it should work" — only "here is the log showing it works."
+Каждое утверждение должно подкрепляться верифицируемым Evidence.
+Никакое предположение не принимается без доказательства.
+Никакого "это должно работать" — только "вот лог, показывающий, что это работает."
 
-### 2. ADR before Implementation
+### 2. ADR before Implementation (ADR перед реализацией)
 
-Architectural decisions are made before code is written.  
-Every significant design choice is documented as an ADR (Architecture Decision Record).  
-Implementation follows approved architecture, not the other way around.
+Архитектурные решения принимаются до написания кода.
+Каждый значимый выбор дизайна документируется как ADR (Architecture Decision Record).
+Реализация следует утверждённой архитектуре, а не наоборот.
 
-### 3. One Logical Change
+### 3. One Logical Change (Одно логическое изменение)
 
-One revision contains one logical change.  
-No batch changes. No "while I'm here, let me also fix..."  
-If multiple changes are needed, they are split into separate revisions.
+Одна ревизия содержит одно логическое изменение.
+Никаких пакетных изменений. Никаких "пока я здесь, давайте также исправлю..."
+Если требуется несколько изменений, они разделяются на отдельные ревизии.
 
-### 4. Local Patch before Rewrite
+### 4. Local Patch before Rewrite (Local Patch перед переписыванием)
 
-A local patch is always preferred over rewriting the entire file.  
-Full rebuilds are only permitted when architectural changes require them.  
-The principle: minimize change surface area.
+Local Patch всегда предпочтительнее переписывания всего файла.
+Полные пересборки разрешены только когда архитектурные изменения требуют их.
+Принцип: минимизировать площадь поверхности изменений.
 
-### 5. Facts over Assumptions
+### 5. Facts over Assumptions (Факты выше предположений)
 
-Facts from evidence are more important than assumptions made by any model or human.  
-When evidence contradicts expectation, trust the evidence.
+Факты из Evidence важнее предположений, сделанных любой моделью или человеком.
+Когда Evidence противоречит ожиданию, доверяйте Evidence.
 
-### 6. Automation after Repetition
+### 6. Automation after Repetition (Автоматизация после повторения)
 
-If a command sequence has been executed three times, it must be automated.  
-Manual repetition is a sign that automation is needed.  
-Evolution: manual command → copy-paste → script → utility.
+Если последовательность команд была выполнена три раза, она должна быть автоматизирована.
+Ручное повторение — признак того, что нужна автоматизация.
+Эволюция: ручная команда → copy-paste → скрипт → утилита.
 
-### 7. Architecture before Optimization
+### 7. Architecture before Optimization (Архитектура перед оптимизацией)
 
-First build a stable, correct architecture.  
-Then optimize.  
-Optimization without stable architecture leads to technical debt.
+Сначала постройте стабильную, корректную архитектуру.
+Затем оптимизируйте.
+Оптимизация без стабильной архитектуры ведёт к техническому долгу.
 
-### 8. Maintainability is a Feature
+### 8. Maintainability is a Feature (Поддерживаемость — это свойство)
 
-Code and documentation must be maintainable.  
-Complexity without justification is a bug.  
-Readability is more important than cleverness.
+Код и документация должны быть поддерживаемыми.
+Сложность без обоснования — это баг.
+Читаемость важнее хитрости.
 
-### 9. Reproducibility over Convenience
+### 9. Reproducibility over Convenience (Воспроизводимость выше удобства)
 
-Every result must be reproducible.  
-If you cannot reproduce it, you do not understand it.  
-Convenience shortcuts that break reproducibility are forbidden.
+Каждый результат должен быть воспроизводимым.
+Если вы не можете воспроизвести это, вы не понимаете это.
+Удобные сокращения, нарушающие воспроизводимость, запрещены.
 
-### 10. Small Verified Steps
+### 10. Small Verified Steps (Маленькие верифицированные шаги)
 
-Large changes are forbidden.  
-Large changes are made as a sequence of small, verified steps.  
-Each step is verified before proceeding to the next.
+Большие изменения запрещены.
+Большие изменения выполняются как последовательность маленьких, верифицированных шагов.
+Каждый шаг верифицируется перед переходом к следующему.
 
-### 11. Every Fact Has Exactly One Canonical Source
+### 11. Every Fact Has Exactly One Canonical Source (Каждый факт имеет ровно один Canonical Source)
 
-Every piece of information lives in exactly one document.  
-Other documents may reference it, but never duplicate it.  
-Duplication is an architectural error.
+Каждый фрагмент информации живёт ровно в одном документе.
+Другие документы могут ссылаться на него, но никогда не дублировать его.
+Дублирование — это архитектурная ошибка.
 
-### 12. Authority Flows Downward, Evidence Flows Upward
+### 12. Authority Flows Downward, Evidence Flows Upward (Authority передаётся вниз, Evidence передаётся вверх)
 
-Higher layers define rules for lower layers.  
-Lower layers cannot redefine higher-layer concepts.  
-Lower layers can only provide evidence that may inform higher-layer decisions.
+Высшие слои определяют правила для нижних слоёв.
+Нижние слои не могут переопределять концепции высших слоёв.
+Нижние слои могут только предоставлять Evidence, которое может информировать решения высших слоёв.
 
-Example: ENGINEERING_PLAYBOOK (Layer 3) cannot change PROJECT_PROTOCOL (Layer 1).  
-It can only reference PROJECT_PROTOCOL and provide evidence that may lead to changes at Layer 1.
+Пример: ENGINEERING_PLAYBOOK (Layer 3) не может изменить PROJECT_PROTOCOL (Layer 1).
+Он может только ссылаться на PROJECT_PROTOCOL и предоставлять Evidence, которое может привести к изменениям на Layer 1.
 
 
-## Source of Truth
+## Source of Truth (Источник истины)
 
-When multiple sources of information exist, conflicts may arise. This section defines which sources own which facts and how to resolve contradictions.
+Когда существует несколько источников информации, могут возникать конфликты. Этот раздел определяет, какие источники владеют какими фактами и как разрешать противоречия.
 
-### Canonical Sources
+### Canonical Sources (Канонические источники)
 
-Every fact in the project has exactly one Canonical Source — the unique document that owns it. Other documents may reference the fact, but never duplicate it.
+Каждый факт в проекте имеет ровно один Canonical Source — уникальный документ, который владеет им. Другие документы могут ссылаться на факт, но никогда не дублировать его.
 
-| Fact Domain | Canonical Source | Layer |
+| Область фактов | Canonical Source | Layer |
 |---|---|---|
 | Project identity, roles, principles | PROJECT_PROTOCOL.md | Layer 1 |
 | Current operational state | CURRENT_CONTEXT.md | Layer 2 |
@@ -234,124 +234,123 @@ Every fact in the project has exactly one Canonical Source — the unique docume
 | Release procedures | RELEASE_PROCESS.md | Layer 3 |
 | Automation rules | AUTOMATION.md | Layer 3 |
 | Engineering knowledge | ENGINEERING_HISTORY.md | Layer 3 |
-| Verification evidence | evidence/ | Layer 4 |
+| Verification Evidence | evidence/ | Layer 4 |
 
-### Conflict Resolution
+### Conflict Resolution (Разрешение конфликтов)
 
-When two sources of information contradict each other, follow this algorithm:
+Когда два источника информации противоречат друг другу, следуйте этому алгоритму:
 
-**Step 1: Identify the conflicting fact.**  
-Determine which specific piece of information is in dispute.
+**Шаг 1: Определите конфликтующий факт.**
+Определите, какой именно фрагмент информации находится в споре.
 
-**Step 2: Find the Canonical Source.**  
-Consult the table above. The document listed as Canonical Source for that fact domain is the authoritative owner.
+**Шаг 2: Найдите Canonical Source.**
+Обратитесь к таблице выше. Документ, указанный как Canonical Source для этой области фактов, является авторитетным владельцем.
 
-**Step 3: Trust the Canonical Source.**  
-If the Canonical Source exists and is current, its version of the fact is the truth. All other documents must be updated to conform.
+**Шаг 3: Доверяйте Canonical Source.**
+Если Canonical Source существует и актуален, его версия факта является истиной. Все остальные документы должны быть обновлены для соответствия.
 
-**Step 4: Apply priority hierarchy if Canonical Source is absent or outdated.**  
-If the fact has no clear Canonical Source, or the Canonical Source is clearly outdated, use the following priority (highest to lowest):
+**Шаг 4: Примените иерархию приоритетов, если Canonical Source отсутствует или устарел.**
+Если факт не имеет чёткого Canonical Source, или Canonical Source явно устарел, используйте следующий приоритет (от высшего к низшему):
 
-1. **Runtime Behavior** — the actual behavior of the system
-2. **Evidence** — logs, test results, benchmarks (Layer 4)
-3. **ADR** — approved architectural decisions
-4. **Documentation** — protocols, playbooks, standards
-5. **Conversation** — chat messages, verbal agreements
+1. **Runtime Behavior** — фактическое поведение системы
+2. **Evidence** — логи, результаты тестов, benchmarks (Layer 4)
+3. **ADR** — утверждённые архитектурные решения
+4. **Документация** — протоколы, Playbook, стандарты
+5. **Разговор** — сообщения в чате, устные соглашения
 
-**Step 5: Escalate if unresolved.**  
-If the conflict cannot be resolved by the above steps, escalate to the Architect (ChatGPT) for a decision. The Architect may:
-- Clarify the Canonical Source
-- Create a new ADR to resolve the ambiguity
-- Update the information architecture
+**Шаг 5: Эскалируйте, если не разрешено.**
+Если конфликт не может быть разрешён вышеуказанными шагами, эскалируйте к Architect (ChatGPT) для принятия решения. Architect может:
+- Разъяснить Canonical Source
+- Создать новый ADR для разрешения неоднозначности
+- Обновить информационную архитектуру
 
-**Principle:** Procedures (Layer 3) are never the source of truth. They describe how to act, but the truth comes from Core documents (Layers 1-2) and Evidence (Layer 4).
-
-
-## Documentation Map
-
-The project follows the information architecture defined in `INFORMATION_ARCHITECTURE.md` (Layer 0).
-
-For a complete registry of all project documents, see `DOCUMENTS.md` (planned document, Layer 2).
-
-### Document Types
-
-Every document belongs to one of the following types:
-
-- **Protocol** — defines rules of interaction and responsibilities
-- **Standard** — defines requirements for artifacts
-- **Playbook** — defines sequence of actions
-- **Architecture** — defines system structure
-- **Index** — helps find information (navigation)
-- **Registry** — authoritative inventory of project entities
-- **History** — records past events
-- **Context** — describes current state
-
-When creating a new document, first determine its type, then assign a name.
-
----
-
-## Repositories
-
-For the authoritative registry of project repositories, see `REPOSITORIES.md` (planned document, Layer 2).
-
-### Current Repositories
-
-- **agent-developer-memory** — documentation, ADR, evidence, protocols
-- **agent-developer-runtime** — source code, orchestrators, tools
-
-Each repository has a specific purpose and is managed according to the principles defined in this protocol.
+**Принцип:** Процедуры (Layer 3) никогда не являются источником истины. Они описывают, как действовать, но истина исходит из документов Layers 1–2 и Evidence (слой 4).
 
 
-## Document Lifecycle
+## Documentation Map (Карта документации)
 
-This document (PROJECT_PROTOCOL.md) is classified as **Static** according to the Knowledge Lifecycle defined in INFORMATION_ARCHITECTURE.md.
+Проект следует информационной архитектуре, определённой в `INFORMATION_ARCHITECTURE.md` (Layer 0).
 
-### Permitted Changes
+Для полного реестра всех документов проекта см. `DOCUMENTS.md` (планируемый документ, Layer 2).
 
-This document may be:
-- **Clarified** — improving wording without changing meaning
-- **Extended** — adding new sections when new architectural concerns arise
-- **Deprecated** — marked as superseded by a newer version
-- **Amended via appendix** — additional clarifications added at the end
+### Document Types (Типы документов)
 
-This document may NOT be:
-- **Completely rewritten** — if fundamental changes are needed, create PROJECT_PROTOCOL_V2.md
+Каждый документ принадлежит к одному из следующих типов:
 
-### Version Control
+- **Protocol** — определяет правила взаимодействия и ответственности
+- **Standard** — определяет требования к артефактам
+- **Playbook** — определяет последовательность действий
+- **Architecture** — определяет структуру системы
+- **Index** — помогает находить информацию (навигация)
+- **Registry** — авторитетный инвентарь сущностей проекта
+- **History** — записывает прошлые события
+- **Context** — описывает текущее состояние
 
-Changes to this document require approval from the Architect role.  
-All changes are tracked via git history.  
-Major structural changes require a new version number.
+При создании нового документа сначала определите его тип, затем назначьте имя.
 
 ---
 
-## Relationship to Other Documents
+## Repositories (Репозитории)
 
-This document (PROJECT_PROTOCOL.md) serves as the foundation for all other project documentation:
+Для авторитетного реестра репозиториев проекта см. `REPOSITORIES.md` (планируемый документ, Layer 2).
 
-- **INFORMATION_ARCHITECTURE.md** (Layer 0) — defines the structure in which this document lives
-- **CURRENT_CONTEXT.md** (Layer 2) — reflects current operational state in accordance with this protocol
-- **ENGINEERING_PLAYBOOK.md** (Layer 3) — defines engineering procedures following principles from this protocol
-- **All other documents** — must conform to the roles, principles, and source of truth hierarchy defined here
+### Current Repositories (Текущие репозитории)
 
-This document does NOT contain:
-- Current project status (see CURRENT_CONTEXT.md)
-- Engineering procedures (see ENGINEERING_PLAYBOOK.md)
-- Release procedures (see RELEASE_PROCESS.md)
-- Documentation standards (see DOC_STANDARD.md)
-- Specific architectural decisions (see ADR_INDEX.md)
+- **agent-developer-memory** — документация, ADR, Evidence, протоколы
+- **agent-developer-runtime** — исходный код, оркестраторы, инструменты
+
+Каждый репозиторий имеет специфическое назначение и управляется согласно принципам, определённым в этом протоколе.
+
+
+## Document Lifecycle (Жизненный цикл документа)
+
+Этот документ (PROJECT_PROTOCOL.md) классифицируется как **Static** согласно Knowledge Lifecycle, определённому в INFORMATION_ARCHITECTURE.md.
+
+### Permitted Changes (Разрешённые изменения)
+
+Этот документ может быть:
+- **Уточнён** — улучшение формулировок без изменения смысла
+- **Расширен** — добавление новых разделов, когда возникают новые архитектурные вопросы
+- **Помечен как DEPRECATED** — отмечен как заменённый более новой версией
+- **Дополнен через appendix** — дополнительные разъяснения добавляются в конце
+
+Этот документ НЕ может быть:
+- **Полностью переписан** — если требуются фундаментальные изменения, создайте PROJECT_PROTOCOL_V2.md
+
+### Version Control (Контроль версий)
+
+Изменения в этом документе требуют одобрения от роли Architect.
+Все изменения отслеживаются через историю git.
+Крупные структурные изменения требуют нового номера версии.
 
 ---
 
-## End of Document
+## Relationship to Other Documents (Связь с другими документами)
 
-This document defines the project identity, roles, engineering principles, and source of truth hierarchy for the Agent Developer project.
+Этот документ (PROJECT_PROTOCOL.md) служит основой для всей остальной документации проекта:
 
-It is the authoritative reference for:
-- Who makes which decisions
-- What principles guide engineering work
-- How to resolve conflicts between information sources
-- What this project is and what it is not
+- **INFORMATION_ARCHITECTURE.md** (Layer 0) — определяет структуру, в которой живёт этот документ
+- **CURRENT_CONTEXT.md** (Layer 2) — отражает текущее операционное состояние в соответствии с этим протоколом
+- **ENGINEERING_PLAYBOOK.md** (Layer 3) — определяет инженерные процедуры, следуя принципам из этого протокола
+- **Все остальные документы** — должны соответствовать ролям, принципам и иерархии Source of Truth, определённым здесь
 
-All other documents must conform to the framework established herein.
+Этот документ НЕ содержит:
+- Текущий статус проекта (см. CURRENT_CONTEXT.md)
+- Инженерные процедуры (см. ENGINEERING_PLAYBOOK.md)
+- Процедуры релиза (см. RELEASE_PROCESS.md)
+- Стандарты документации (см. DOC_STANDARD.md)
+- Конкретные архитектурные решения (см. ADR_INDEX.md)
 
+---
+
+## End of Document (Конец документа)
+
+Этот документ определяет идентичность проекта, роли, инженерные принципы и иерархию Source of Truth для проекта Agent Developer.
+
+Это авторитетный справочник для:
+- Кто принимает какие решения
+- Какие принципы направляют инженерную работу
+- Как разрешать конфликты между источниками информации
+- Что это за проект и чем он не является
+
+Все остальные документы должны соответствовать структуре, установленной здесь.

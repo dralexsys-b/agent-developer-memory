@@ -1,4 +1,4 @@
-# Program Management
+# Program Management (Управление программами)
 
 **Status:** ACCEPTED
 **Version:** 1.0
@@ -14,163 +14,163 @@
 
 ---
 
-## Purpose
+## Purpose (Назначение)
 
-This document defines the rules and processes for managing engineering programs in the Agent Developer project.
+Этот документ определяет правила и процессы управления инженерными программами в проекте Agent Developer.
 
-This document is the canonical source for engineering program governance within the Agent Developer project.
+Документ является каноническим источником для управления инженерными программами в проекте Agent Developer.
 
-It answers the question: **How do we manage engineering programs?**
+Настоящий документ отвечает на вопрос: **Как мы управляем инженерными программами?**
 
-This document does NOT define:
-- Specific programs (see PROGRAMS.md)
-- Individual program plans (each program has its own document)
-- Runtime architecture or implementation details
-- Engineering processes (see ENGINEERING_PLAYBOOK.md)
-- Project governance (defined by PROJECT_GOVERNANCE)
-
----
-
-## Scope
-
-This document defines:
-- What constitutes a program
-- Program lifecycle states
-- State transition rules
-- Governance rules for frozen programs
-- Backlog management
-- Review and retrospective requirements
-
-This document does NOT define:
-- Specific program content
-- Implementation details
-- Technical architecture
-- Day-to-day engineering practices
-- Project governance
+Этот документ НЕ определяет:
+- Конкретные программы (см. PROGRAMS.md)
+- Индивидуальные планы программ (каждая программа имеет свой собственный документ)
+- Архитектуру Runtime или детали реализации
+- Инженерные процессы (см. ENGINEERING_PLAYBOOK.md)
+- Управление проектом (определено PROJECT_GOVERNANCE)
 
 ---
 
-## Place in Architecture
+## Scope (Область применения)
 
-This document sits at the intersection of project governance and engineering execution:
+Этот документ определяет:
+- Что составляет программу
+- Состояния жизненного цикла программы
+- Правила перехода между состояниями
+- Правила управления для замороженных программ
+- Управление бэклогом
+- Требования к рецензированию и ретроспективе
+
+Этот документ НЕ определяет:
+- Конкретное содержание программы
+- Детали реализации
+- Техническую архитектуру
+- Ежедневные инженерные практики
+- Управление проектом
+
+---
+
+## Place in Architecture (Место в архитектуре)
+
+Этот документ находится на пересечении управления проектом и инженерного выполнения:
 
 PROJECT_GOVERNANCE
         ↓
 INFORMATION_ARCHITECTURE
         ↓
-PROGRAM_MANAGEMENT  ← this document
+PROGRAM_MANAGEMENT  ← этот документ
        ↙        ↘
-PROGRAMS.md   Individual Program Plans
+PROGRAMS.md   Индивидуальные планы программ
 
-**Relationship to other documents:**
+**Связь с другими документами:**
 
-- **PROJECT_GOVERNANCE** defines overall project authority and decision-making
-- **INFORMATION_ARCHITECTURE** defines how documentation is organized
-- **ENGINEERING_PLAYBOOK** defines how engineering work is performed
-- **PROGRAM_MANAGEMENT** defines how programs are managed through their lifecycle
-- **PROGRAMS.md** is the registry of all programs (governed by this document)
-- **Individual Program Plans** are governed by the rules defined here
+- **PROJECT_GOVERNANCE** определяет общую авторитетность проекта и принятие решений
+- **INFORMATION_ARCHITECTURE** определяет, как организована документация
+- **ENGINEERING_PLAYBOOK** определяет, как выполняется инженерная работа
+- **PROGRAM_MANAGEMENT** определяет, как программы управляются через их жизненный цикл
+- **PROGRAMS.md** — реестр всех программ, ведение которого регулируется настоящим документом
+- **Индивидуальные планы программ** регулируются правилами, определёнными здесь
 
-**Engineering Invariant:** Every engineering program follows the lifecycle defined in this document.
+**Engineering Invariant:** Каждая инженерная программа следует жизненному циклу, определённому в этом документе.
 
 ---
 
-## Terminology
+## Terminology (Терминология)
 
-### Program
+### Program (Программа)
 
 **Definition:**
-A Program is the highest-level planning unit used to organize a bounded engineering effort toward a single architectural goal.
+Программа — это высшая единица планирования, используемая для организации ограниченных инженерных усилий для достижения единой архитектурной цели.
 
 **Role:**
-Programs are the primary organizational unit used to plan, execute and evaluate engineering work. Every program operates under the governance rules defined in this document.
+Программы — это основная организационная единица, используемая для планирования, выполнения и оценки инженерной работы. Каждая программа действует согласно правилам управления, определённым в этом документе.
 
 ---
 
-### Program Plan
+### Program Plan (План программы)
 
 **Definition:**
-A Program Plan is the authoritative execution plan that defines how a program will be delivered, including its phases, milestones, commits, and exit criteria.
+План программы — это авторитетный план выполнения, который определяет, как программа будет доставлена, включая её фазы, контрольные точки, коммиты и критерии выхода.
 
 **Role:**
-The Program Plan serves as the authoritative engineering plan that defines how a program will be executed.
+План программы служит авторитетным инженерным планом, который определяет, как программа будет выполнена.
 
 ---
 
-### Phase
+### Phase (Фаза)
 
 **Definition:**
-A Phase divides a program into sequential engineering stages, each with a clear objective that must be completed before the next phase begins unless explicitly defined otherwise.
+Фаза делит программу на последовательные инженерные этапы, каждый с чёткой целью, которая должна быть завершена перед началом следующей фазы, если явно не определено иное.
 
 **Role:**
-Phases provide structure within a program, allowing work to be organized into coherent units with distinct objectives and deliverables.
+Фазы обеспечивают структуру внутри программы, позволяя организовать работу в связные единицы с чёткими целями и результатами.
 
 ---
 
-### Milestone
+### Milestone (Контрольная точка)
 
 **Definition:**
-A Milestone represents a formal engineering decision point or completion point that changes the state or progress of a program.
+Контрольная точка представляет собой формальную точку принятия инженерного решения или точку завершения, которая изменяет состояние или прогресс программы.
 
 **Role:**
-Milestones provide visibility into program progress and trigger state transitions. They represent binary achievements that mark significant points in the program lifecycle.
+Контрольные точки делают прогресс программы наблюдаемым и запускают переходы между состояниями. Они представляют бинарные достижения, которые отмечают значимые точки в жизненном цикле программы.
 
 ---
 
-### Backlog
+### Backlog (Бэклог)
 
 **Definition:**
-A Backlog is a collection of potential future programs and ideas that have not yet been committed to execution.
+Бэклог — это коллекция потенциальных будущих программ и идей, которые ещё не приняты к исполнению.
 
 **Role:**
-The Backlog serves as the input source for future programs, capturing ideas that may become programs in subsequent planning cycles. It is distinct from active programs.
+Бэклог служит источником новых программ, собирая идеи, которые могут стать программами в последующих циклах планирования. Он отличен от активных программ.
 
 ---
 
-### Review
+### Review (Рецензирование)
 
 **Definition:**
-A Review is a formal evaluation conducted at specific points in a program's lifecycle to assess progress, quality, and alignment with goals.
+Рецензирование — это формальная оценка, проводимая в определённых точках жизненного цикла программы для оценки прогресса, качества и соответствия целям.
 
 **Role:**
-Reviews provide governance checkpoints where decisions are made about program execution, scope adjustments, and risk management.
+Рецензирование обеспечивает точки контроля управления, где принимаются решения о выполнении программы, корректировках области применения и управлении рисками.
 
 ---
 
-### Retrospective
+### Retrospective (Ретроспектива)
 
 **Definition:**
-A Retrospective is a structured reflection conducted after program completion to capture lessons learned and improve future programs.
+Ретроспектива — это структурированное размышление, проводимое после завершения программы для документирования извлечённых уроков и улучшения будущих программ.
 
 **Role:**
-Retrospectives answer the question "What did we learn?" by systematically analyzing what went well, what could be improved, and what recommendations should inform future programs.
+Ретроспективы отвечают на вопрос "Что мы узнали?" путём систематического анализа того, что прошло хорошо, что можно было улучшить, и какие рекомендации должны информировать будущие программы.
 
 ---
 
 
 ---
 
-## Program Lifecycle
+## Program Lifecycle (Жизненный цикл программы)
 
-Every program progresses through a defined sequence of states from conception to completion.
+Каждая программа проходит через определённую последовательность состояний от концепции до завершения.
 
-### Lifecycle States
+### Lifecycle States (Состояния жизненного цикла)
 
-**Draft** — the program is being prepared.
+**Draft** — программа подготавливается.
 
-**Architecture Review** — the program is under architectural evaluation.
+**Architecture Review** — программа находится под архитектурной оценкой.
 
-**Frozen** — the program plan has been approved and frozen.
+**Frozen** — план программы был одобрен и заморожен.
 
-**In Progress** — the program is being executed.
+**In Progress** — программа выполняется.
 
-**Review** — the completed execution is being evaluated.
+**Review** — программа находится на этапе рецензирования.
 
-**Completed** — the program has completed its execution.
+**Completed** — программа завершила своё выполнение.
 
-**Archived** — the program is retained for historical reference.
+**Archived** — программа сохраняется для исторической справки.
 
-### Lifecycle Flow
+### Lifecycle Flow (Поток жизненного цикла)
 
 Draft
     ↓
@@ -188,13 +188,13 @@ Archived
 
 ---
 
-## Transition Rules
+## Transition Rules (Правила перехода)
 
-Programs may transition only through explicitly permitted lifecycle transitions.
+Программы могут переходить только через явно разрешённые переходы жизненного цикла.
 
-### Permitted Transitions
+### Permitted Transitions (Разрешённые переходы)
 
-The following transitions are permitted:
+Следующие переходы разрешены:
 
 - Draft → Architecture Review
 - Architecture Review → Frozen
@@ -204,91 +204,91 @@ The following transitions are permitted:
 - Review → In Progress
 - Completed → Archived
 
-### Prohibited Transitions
+### Prohibited Transitions (Запрещённые переходы)
 
-Transitions that bypass one or more required lifecycle states are prohibited.
+Переходы, которые обходят одно или более требуемых состояний жизненного цикла, запрещены.
 
-No transitions are permitted from the Archived state.
-
----
-
-## Frozen Plan Rule
-
-### Purpose
-
-Freezing a Program Plan ensures that planning and execution remain separate engineering activities. Once frozen, the Program Plan governs execution for the remainder of the program lifecycle.
-
-### Modification Rule
-
-A Frozen Program Plan is protected from modification throughout program execution. Its scope, phases, milestones, and exit criteria cannot be changed.
-
-### Critical Errors
-
-Critical errors discovered during execution do not invalidate the Frozen Plan rule. Their handling is governed by separate engineering rules.
-
-### New Ideas
-
-New ideas discovered during execution of a Frozen Program Plan are not incorporated into the current plan. They are recorded in the Backlog for future programs.
+Никакие переходы не разрешены из состояния Archived.
 
 ---
 
-## Single Active Program
+## Frozen Plan Rule (Правило замороженного плана)
 
-### Purpose
+### Purpose (Назначение)
 
-Restricting execution to a single active program ensures that engineering effort remains focused and that architectural changes are completed before new work begins.
+Замораживание плана программы обеспечивает, что планирование и выполнение остаются отдельными инженерными активностями. После заморозки план программы управляет выполнением на протяжении оставшегося жизненного цикла программы.
 
-### Rule
+### Modification Rule (Правило модификации)
 
-At any given time, only one program may be in the **In Progress** state.
+Замороженный план программы защищён от модификации на протяжении выполнения программы. Его область применения, фазы, контрольные точки и критерии выхода не могут быть изменены.
 
-### Engineering Invariant
+### Critical Errors (Критические ошибки)
 
-The project shall not execute more than one active program simultaneously.
+Критические ошибки, обнаруженные во время выполнения, не отменяют действие правила замороженного плана. Их обработка управляется отдельными инженерными правилами.
 
----
+### New Ideas (Новые идеи)
 
-## Backlog Management
-
-### Purpose
-
-The Backlog preserves engineering ideas without disrupting the execution of the active program. It separates future planning from current execution.
-
-### Rule
-
-Ideas that are not part of the current Program Plan shall be managed through the Backlog.
-
-### Engineering Invariant
-
-Every engineering idea outside the active Program Plan shall be managed through the Backlog.
+Новые идеи, обнаруженные во время выполнения замороженного плана программы, не включаются в текущий план. Они записываются в бэклог для будущих программ.
 
 ---
 
-## Program Evaluation
+## Single Active Program (Единственная активная программа)
 
-### Purpose
+### Purpose (Назначение)
 
-Formal evaluation points ensure that program progress and outcomes are assessed throughout the program lifecycle.
+Ограничение выполнения одной активной программой обеспечивает, что инженерные усилия остаются сосредоточенными и что архитектурные изменения завершаются перед началом новой работы.
 
-### Rule
+### Rule (Правило)
 
-Every program shall undergo a Review before transitioning to the Completed state.
+В любой момент времени только одна программа может находиться в состоянии **In Progress**.
 
-Every completed program shall undergo a Retrospective before transitioning to the Archived state.
+### Engineering Invariant (Инженерный инвариант)
 
-### Engineering Invariant
-
-A program shall not transition to Completed without a Review.
-
-A program shall not transition to Archived without a Retrospective.
+Проект не должен выполнять более одной активной программы одновременно.
 
 ---
 
-## Engineering Invariants
+## Backlog Management (Управление бэклогом)
 
-The following invariants govern program management at the project level. Invariants specific to individual policies are defined within their respective sections.
+### Purpose (Назначение)
 
-1. **One Program Per Goal** — every program shall have exactly one defined goal.
-2. **Review Informs Future Planning** — every completed Review shall produce findings that are recorded in the Backlog for future programs.
+Бэклог сохраняет инженерные идеи без нарушения выполнения активной программы. Он разделяет будущее планирование от текущего выполнения.
 
-## End of Document
+### Rule (Правило)
+
+Идеи, которые не являются частью текущего плана программы, должны управляться через бэклог.
+
+### Engineering Invariant (Инженерный инвариант)
+
+Каждая инженерная идея вне активного плана программы должна управляться через бэклог.
+
+---
+
+## Program Evaluation (Оценка программы)
+
+### Purpose (Назначение)
+
+Формальные точки оценки обеспечивают, что прогресс и результаты программы оцениваются на протяжении жизненного цикла программы.
+
+### Rule (Правило)
+
+Каждая программа должна пройти рецензирование перед переходом в состояние Completed.
+
+Каждая завершённая программа должна пройти ретроспективу перед переходом в состояние Archived.
+
+### Engineering Invariant (Инженерный инвариант)
+
+Программа не должна переходить в Completed без рецензирования.
+
+Программа не должна переходить в Archived без ретроспективы.
+
+---
+
+## Engineering Invariants (Инженерные инварианты)
+
+Следующие инварианты управляют управлением программами на уровне проекта. Инварианты, специфичные для отдельных политик, определены в их соответствующих разделах.
+
+1. **One Program Per Goal** — каждая программа должна иметь ровно одну определённую цель.
+2. **Review Informs Future Planning** — каждое завершённое рецензирование должно производить выводы, которые записываются в бэклог для будущих программ.
+
+## End of Document (Конец документа)

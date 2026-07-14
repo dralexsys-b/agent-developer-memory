@@ -1,4 +1,4 @@
-# Closure of 016.txt — Unfinished Branches
+# Closure of 016.txt — Unfinished Branches (Закрытие 016.txt — Незавершённые направления работы)
 
 **Date:** 2026-07-09
 **Status:** CLOSED
@@ -9,94 +9,94 @@
 
 ---
 
-## Background
+## Background (Предыстория)
 
-File `016.txt` documented five unfinished branches of work that were identified during the project history. This document provides the final administrative review of each branch, assigning a closure status.
-
----
-
-## Review of Each Unfinished Item
-
-### 1. Commit 5 as isolated printf fix
-
-**Original goal:** Create an isolated commit `fix(scripts): fix printf syntax error` for the `printf` fix in `verify.sh`.
-
-**Actual outcome:** The printf fix was applied but merged into a larger commit with Test 9 fixes.
-
-**Status:** **COMPLETED** (accepted as a one-time deviation)
-
-**Rationale:** The fix is applied and works. Creating a separate commit at this point would require rewriting history, which is not justified. This deviation is accepted and documented.
+Файл `016.txt` документировал пять незавершённых направлений работы, которые были выявлены в ходе истории проекта. Этот документ предоставляет окончательный административный обзор каждого направления с присвоением статуса закрытия.
 
 ---
 
-### 2. Architecture improvements to test_publish.sh
+## Review of Each Unfinished Item (Обзор каждого незавершённого элемента)
 
-**Original goal:** Implement eight improvements including trap cleanup, helper functions, validation, variable reset, comments, tab delimiter, git push -u origin HEAD, and symbolic-ref error handling.
+### 1. Commit 5 как изолированное исправление printf
 
-**Actual outcome:** Four improvements were applied (tab delimiter, origin_root separation, symbolic-ref check, cleanup_temp_repo with two arguments). Four improvements were not applied (trap, prepare_repo helper, setup_temp_repo validation, variable reset after cleanup).
+**Original goal:** Создать изолированный коммит `fix(scripts): fix printf syntax error` для исправления `printf` в `verify.sh`.
 
-**Status:** **PARTIALLY COMPLETED** — advanced improvements deferred to future maintenance
+**Actual outcome:** Исправление `printf` было применено, но объединено с более крупным коммитом с исправлениями Test 9.
 
-**Rationale:** The basic fixes are sufficient for current needs. The remaining improvements are not critical and can be addressed when the script is next modified.
+**Status:** **COMPLETED** (принято как единичное отклонение)
 
----
-
-### 3. Logical atomicity of Commit 6
-
-**Original goal:** Split Commit 6 into separate commits for `scripts/verify.sh` changes and documentation changes.
-
-**Actual outcome:** Seven files were committed together under `docs(runtime)`.
-
-**Status:** **REJECTED** — history not rewritten; accepted as one-time deviation
-
-**Rationale:** The user explicitly decided not to rewrite history. This is a one-time deviation from the "One Concept Per Commit" principle. Future commits must follow the principle.
+**Rationale:** Исправление применено и работает. Создание отдельного коммита на данном этапе потребовало бы переписывания истории, что не оправдано. Это отклонение принято и задокументировано.
 
 ---
 
-### 4. Documentation First for Layer 3
+### 2. Улучшения архитектуры test_publish.sh
 
-**Original goal:** Create `docs/specs/event_bus.md` specification before implementing Event Bus (following Documentation First principle).
+**Original goal:** Реализовать восемь улучшений, включая `trap` cleanup, вспомогательные функции, валидацию, сброс переменных, комментарии, разделитель `tab`, git push -u origin HEAD и обработку ошибок `symbolic-ref`.
 
-**Actual outcome:** Discussion was held, but no specification was created. Implementation has not yet started.
+**Actual outcome:** Четыре улучшения были применены (разделитель `tab`, разделение `origin_root`, проверка `symbolic-ref`, `cleanup_temp_repo` с двумя аргументами). Четыре улучшения не были применены (`trap`, вспомогательная функция `prepare_repo`, валидация `setup_temp_repo`, сброс переменных после очистки).
 
-**Status:** **MOVED** — will be addressed in Runtime Phase 1
+**Status:** **PARTIALLY COMPLETED** — продвинутые улучшения отложены до будущего обслуживания
 
-**Rationale:** Layer 3 (Runtime Implementation) is not yet active. The Event Bus specification will be created as part of Runtime Phase 1, following Documentation First principle.
-
----
-
-### 5. Engineering Playbook compliance
-
-**Original goal:** Ensure all Engineering Playbook practices are consistently applied (no markdown code fences, 4-space heredoc, Documentation First, TDD Red-Green-Refactor).
-
-**Actual outcome:** Most practices are now documented and enforced. Markdown code fences have been eliminated from responses. Heredoc formatting is consistent. The remaining practices are being followed in current work.
-
-**Status:** **COMPLETED** — practices are now documented and enforced
-
-**Rationale:** Engineering Playbook has been updated and is used as the reference for all engineering work. Violations are now treated as exceptions.
+**Rationale:** Базовых исправлений достаточно для текущих потребностей. Оставшиеся улучшения не критичны и могут быть рассмотрены при следующей модификации скрипта.
 
 ---
 
-## Summary
+### 3. Логическая атомарность Commit 6
 
-| Item | Status |
-|------|--------|
-| 1. Isolated printf fix | COMPLETED |
-| 2. test_publish.sh improvements | PARTIALLY COMPLETED |
-| 3. Atomicity of Commit 6 | REJECTED |
-| 4. Documentation First for Layer 3 | MOVED |
-| 5. Engineering Playbook compliance | COMPLETED |
+**Original goal:** Разделить Commit 6 на отдельные коммиты для изменений `scripts/verify.sh` и изменений документации.
 
----
+**Actual outcome:** Семь файлов были закоммичены вместе под `docs(runtime)`.
 
-## Conclusion
+**Status:** **REJECTED** — история не переписана; принято как единичное отклонение
 
-All items from `016.txt` have been reviewed and assigned a closure status. The file is now considered historical and no longer active. This document serves as the canonical record of the administrative closure.
-
-**Next steps:**
-- Proceed to Commit 11: Architecture Decision on Excluded Items (ADR for removing Portfolio and Registry)
-- Continue with Program Management Completion plan
+**Rationale:** Пользователь явно решил не переписывать историю. Это единичное отклонение от принципа `One Concept Per Commit` (Одна концепция на коммит). Будущие коммиты должны следовать этому принципу.
 
 ---
 
-**End of Document**
+### 4. Documentation First для Layer 3
+
+**Original goal:** Создать спецификацию `docs/specs/event_bus.md` перед реализацией Event Bus (следуя принципу Documentation First).
+
+**Actual outcome:** Обсуждение было проведено, но спецификация не создана. Реализация ещё не начата.
+
+**Status:** **MOVED** — будет выполнено в Runtime Phase 1
+
+**Rationale:** Layer 3 (Runtime Implementation) ещё не активен. Спецификация Event Bus будет создана в рамках Runtime Phase 1, следуя принципу Documentation First.
+
+---
+
+### 5. Соответствие Engineering Playbook
+
+**Original goal:** Обеспечить последовательное применение всех практик Engineering Playbook (без markdown code fences, 4-пробельный heredoc, Documentation First, TDD Red-Green-Refactor).
+
+**Actual outcome:** Большинство практик теперь задокументированы и применяются. Markdown code fences были устранены из ответов. Форматирование heredoc стало согласованным. Оставшиеся практики соблюдаются в текущей работе.
+
+**Status:** **COMPLETED** — практики теперь задокументированы и применяются
+
+**Rationale:** Engineering Playbook был обновлён и используется как эталон для всех инженерных работ. Нарушения теперь рассматриваются как исключения.
+
+---
+
+## Summary (Резюме)
+
+| Item (Элемент)                                                      | Status (Статус)       |
+|---------------------------------------------------------------------|-----------------------|
+| 1. Isolated printf fix (Изолированное исправление `printf`)         | COMPLETED             |
+| 2. test_publish.sh improvements (Улучшения `test_publish.sh`)       | PARTIALLY COMPLETED   |
+| 3. Atomicity of Commit 6 (Атомарность Commit 6)                     | REJECTED              |
+| 4. Documentation First for Layer 3                                  | MOVED                 |
+| 5. Engineering Playbook compliance (Соответствие Engineering Playbook) | COMPLETED          |
+
+---
+
+## Conclusion (Заключение)
+
+Все элементы из `016.txt` были рассмотрены и получили статус закрытия. Файл теперь считается историческим и более не активным. Этот документ служит канонической записью административного закрытия.
+
+**Next steps (Следующие шаги):**
+- Перейти к Commit 11: Architecture Decision on Excluded Items (ADR для удаления Portfolio и Registry)
+- Продолжить план `Program Management Completion`
+
+---
+
+**End of Document (Конец документа)**

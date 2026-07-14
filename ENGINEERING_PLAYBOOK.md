@@ -1,338 +1,337 @@
-# Engineering Playbook
+# Engineering Playbook (Инженерное руководство)
 
-**Status:** ACCEPTED  
-**Version:** 1.0  
-**Date:** 2026-06-18  
-**Authority:** Engineering Lead  
-**Maintainer:** Engineering Maintainer  
+**Status:** ACCEPTED
+**Version:** 1.0
+**Date:** 2026-06-18
+**Authority:** Engineering Lead
+**Maintainer:** Engineering Maintainer
 
-**Type:** Playbook (Layer 3: Engineering Knowledge)  
-**Primary Question:** "How do we develop this project?"  
-**Canonical Source for:** Development workflow, change procedures, best practices  
-**Dependencies:** INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md  
-**Dependents:** DOC_STANDARD.md, RELEASE_PROCESS.md, AUTOMATION.md  
-
----
-
-## Development Workflow
-
-The development workflow follows a structured process from idea to deployment:
-
-### Phase 0: Documentation First
-
-1. **Create specification** — document requirements before implementation
-2. **Define acceptance criteria** — what does "done" look like?
-3. **Identify dependencies** — what documents need updates?
-4. **Get approval** — Architect reviews specification before implementation begins
-
-### Phase 1: Planning
-
-1. **Identify the need** — what problem are we solving?
-2. **Check existing documentation** — does this conflict with PROJECT_PROTOCOL?
-3. **Create ADR if needed** — architectural decisions require ADR (see PROJECT_PROTOCOL Principle #2)
-4. **Define scope** — what changes are needed? (see Principle #3: One Logical Change)
-
-### Phase 2: Implementation
-
-1. **Follow PROJECT_PROTOCOL principles** — all 12 principles apply
-2. **Write tests first** — TDD Red Phase: failing tests define expected behavior
-3. **Make small changes** — one logical change per commit (Principle #3)
-4. **Prefer local patches** — minimize change surface area (Principle #4)
-5. **Implement minimal solution** — TDD Green Phase: simplest code that passes tests
-6. **Refactor** — TDD Refactor Phase: improve code while keeping tests green
-7. **Generate evidence** — logs, test results, benchmarks (Principle #1)
-
-### Phase 3: Verification
-
-1. **Run verification pipeline** — execute the project's mandatory verification process
-2. **Verify all checks pass** — implementation must satisfy verification requirements
-3. **Update affected documentation**
-4. **Create commit** — record the verified implementation
-5. **Push to repository** — after successful verification
-
-### Phase 4: Review
-
-1. **Request review** — from Architect or peer (detailed procedures are defined in the applicable project standards)
-2. **Address feedback** — make corrections if needed
-3. **Merge to main** — after approval
-4. **Update CURRENT_CONTEXT.md** — if operational state changed
-
+**Type:** Playbook (Layer 3: Engineering Knowledge)
+**Primary Question:** "How do we develop this project?"
+**Canonical Source for:** Development workflow, change procedures, best practices
+**Dependencies:** INFORMATION_ARCHITECTURE.md, PROJECT_PROTOCOL.md
+**Dependents:** DOC_STANDARD.md, RELEASE_PROCESS.md, AUTOMATION.md
 
 ---
 
-## Change Management
+## Development Workflow (Рабочий процесс разработки)
 
-All changes to the project must follow these procedures:
+Рабочий процесс разработки следует структурированному процессу от идеи до развёртывания:
 
-### Types of Changes
+### Phase 0: Documentation First (Фаза 0: Документация прежде всего)
 
-**Architectural Changes:**
-- Require ADR (Architecture Decision Record)
-- Must be approved by Architect role
-- May require updates to PROJECT_PROTOCOL or INFORMATION_ARCHITECTURE
-- Examples: new document types, layer restructuring, role changes
+1. **Создать спецификацию** — документировать требования перед реализацией
+2. **Определить критерии приёмки** — как выглядит "готово"?
+3. **Идентифицировать зависимости** — какие документы нуждаются в обновлении?
+4. **Получить одобрение** — Architect рецензирует спецификацию перед началом реализации
 
-**Implementation Changes:**
-- Follow approved architecture
-- Must be approved by Engineer role
-- Require evidence (logs, test results)
-- Examples: bug fixes, feature additions, refactoring
+### Phase 1: Planning (Фаза 1: Планирование)
 
-**Documentation Changes:**
-- Must conform to applicable project standards (when defined)
-- Require approval from document Authority
-- Examples: clarifications, corrections, extensions
+1. **Идентифицировать потребность** — какую проблему мы решаем?
+2. **Проверить существующую документацию** — противоречит ли это PROJECT_PROTOCOL?
+3. **Создать ADR при необходимости** — архитектурные решения требуют ADR (см. PROJECT_PROTOCOL Principle #2)
+4. **Определить область применения** — какие изменения необходимы? (см. Principle #3: One Logical Change)
 
-### Change Procedure
+### Phase 2: Implementation (Фаза 2: Реализация)
 
-1. **Identify change type** — architectural, implementation, or documentation
-2. **Check dependencies** — does this affect other documents?
-3. **Follow PROJECT_PROTOCOL principles** — all 12 principles apply
-4. **Make the change** — small, verified steps
-5. **Generate evidence** — logs, test results, benchmarks
-6. **Update affected documents** — if Canonical Source changed
-7. **Commit with clear message** — explain what and why
-8. **Push to repository** — with evidence attached
+1. **Следовать принципам PROJECT_PROTOCOL** — все 12 принципов применяются
+2. **Сначала написать тесты** — TDD Red Phase: падающие тесты определяют ожидаемое поведение
+3. **Делать маленькие изменения** — одно логическое изменение на коммит (Principle #3)
+4. **Предпочитать Local Patch (Локальный патч)** — минимизировать площадь поверхности изменений (Principle #4)
+5. **Реализовать минимальное решение** — TDD Green Phase: простейший код, проходящий тесты
+6. **Рефакторинг** — TDD Refactor Phase: улучшить код, сохраняя тесты зелёными
+7. **Сгенерировать Evidence (Доказательство)** — логи, результаты тестов, бенчмарки (Principle #1)
+
+### Phase 3: Verification (Фаза 3: Верификация)
+
+1. **Запустить Verification Pipeline (Конвейер верификации)** — выполнить обязательный процесс верификации проекта
+2. **Убедиться, что все проверки пройдены** — реализация должна удовлетворять требованиям верификации
+3. **Обновить затронутую документацию**
+4. **Создать коммит** — записать верифицированную реализацию
+5. **Отправить в репозиторий** — после успешной верификации
+
+### Phase 4: Review (Фаза 4: Рецензирование)
+
+1. **Запросить рецензирование** — от Architect или коллеги (детальные процедуры определены в применимых стандартах проекта)
+2. **Обработать обратную связь** — внести исправления при необходимости
+3. **Объединить в main** — после одобрения
+4. **Обновить CURRENT_CONTEXT.md** — если операционное состояние изменилось
 
 
 ---
 
-## Testing & Verification
+## Change Management (Управление изменениями)
 
-All changes must be verified before merging:
+Все изменения в проекте должны следовать этим процедурам:
 
-### General Principles
+### Types of Changes (Типы изменений)
 
-1. **Every change needs evidence** — logs, test results, benchmarks (Principle #1)
-2. **Reproducibility is mandatory** — if you can't reproduce it, you don't understand it (Principle #9)
-3. **Small verified steps** — verify each step before proceeding (Principle #10)
-4. **Facts over assumptions** — trust evidence, not expectations (Principle #5)
+**Архитектурные изменения:**
+- Требуют ADR (Architecture Decision Record)
+- Должны быть одобрены ролью Architect
+- Могут требовать обновлений PROJECT_PROTOCOL или INFORMATION_ARCHITECTURE
+- Примеры: новые типы документов, реструктуризация слоёв, изменения ролей
 
-### Verification Pipeline
+**Изменения реализации:**
+- Следуют утверждённой архитектуре
+- Должны быть одобрены ролью Engineer
+- Требуют доказательств (логи, результаты тестов)
+- Примеры: исправления ошибок, добавление функциональности, рефакторинг
 
-The verification pipeline is a mandatory process executed before every commit:
+**Изменения документации:**
+- Должны соответствовать применимым стандартам проекта (когда определены)
+- Требуют одобрения от Authority документа
+- Примеры: уточнения, исправления, расширения
 
-1. **Execute pipeline** — run all verification stages defined for the project
-2. **Verify success** — all stages must pass; partial success is not acceptable
-3. **Treat as mandatory** — verification cannot be skipped or bypassed
+### Change Procedure (Процедура изменений)
 
-The composition of the verification pipeline is defined by the project and may evolve over time. This playbook defines the requirement to perform verification, while project-specific engineering documents define the concrete verification stages.
-
-**Engineering Invariant:** Verification is mandatory. No exceptions.
-
-### Verification Stages
-
-Verification is composed of one or more stages defined by the project.
-
-Typical stages include:
-
-1. Code quality verification
-2. Static analysis
-3. Automated testing
-4. Public contract validation
-
-The exact set of stages is project-specific and may evolve over time.
-
-**Engineering Invariant:** Every verification stage defined by the project must complete successfully before changes are accepted.
-
-### Smoke Testing
-
-Smoke tests validate the public contract of the system:
-
-1. **Test public interface** — validate external behavior, not internal implementation
-2. **Protect public contract** — breaking changes require explicit approval
-3. **Ensure isolation** — tests must not modify system state
-4. **Use realistic scenarios** — test with actual project artifacts
-
-Smoke testing verifies that externally observable behavior remains consistent after change. The concrete implementation of smoke tests is project-specific.
-
-**Engineering Invariant:** Public contract is protected by smoke tests.
-
-### Testing Levels
-
-**Unit Testing:**
-- Test individual functions and modules
-- Verify correctness of implementation
-- Generate evidence (test logs)
-
-**Integration Testing:**
-- Test interaction between components
-- Verify end-to-end functionality
-- Generate evidence (integration logs)
-
-**Performance Testing:**
-- Test speed, memory usage, throughput
-- Verify performance requirements
-- Generate evidence (benchmark logs)
-
-### Evidence Requirements
-
-**For Implementation Changes:**
-- Test logs (unit, integration, performance)
-- Benchmark results (if applicable)
-- Reproduction steps
-
-**For Documentation Changes:**
-- Markdown validation (no syntax errors)
-- Link validation (all references work)
-- Consistency check (no contradictions)
-
-**For Architectural Changes:**
-- Impact assessment (which documents affected)
-- Migration plan (how to update existing documents)
-- Approval from Architect
+1. **Идентифицировать тип изменения** — архитектурное, реализация или документация
+2. **Проверить зависимости** — влияет ли это на другие документы?
+3. **Следовать принципам PROJECT_PROTOCOL** — все 12 принципов применяются
+4. **Внести изменение** — маленькие, верифицированные шаги
+5. **Сгенерировать доказательства** — логи, результаты тестов, бенчмарки
+6. **Обновить затронутые документы** — если Canonical Source изменился
+7. **Закоммитить с ясным сообщением** — объяснить что и почему
+8. **Отправить в репозиторий** — с приложенными доказательствами
 
 
 ---
 
-## Best Practices
+## Testing & Verification (Тестирование и верификация)
 
-### General Principles
+Все изменения должны быть верифицированы перед объединением:
 
-1. **Follow PROJECT_PROTOCOL** — all 12 principles apply
-2. **Make small changes** — one logical change per commit
-3. **Generate evidence** — every claim needs proof
-4. **Update documentation** — keep it in sync with code
-5. **Request review** — don't merge without approval
+### General Principles (Общие принципы)
 
-### Common Pitfalls
+1. **Каждое изменение нуждается в доказательствах** — логи, результаты тестов, бенчмарки (Principle #1)
+2. **Воспроизводимость обязательна** — если вы не можете воспроизвести это, вы не понимаете это (Principle #9)
+3. **Маленькие верифицированные шаги** — верифицировать каждый шаг перед переходом к следующему (Principle #10)
+4. **Факты выше предположений** — доверять доказательствам, а не ожиданиям (Principle #5)
 
-**Avoid:**
-- Large batch changes (break into small steps)
-- Duplicating facts (use Canonical Source)
-- Skipping evidence (every change needs proof)
-- Merging without review (always get approval)
-- Ignoring documentation (keep it up-to-date)
+### Verification Pipeline (Конвейер верификации)
 
-**Prefer:**
-- Local patches over rewrites
-- Small verified steps over large changes
-- Evidence over assumptions
-- Clear commit messages over vague ones
-- Consistent formatting over creative styles
+Конвейер верификации — это обязательный процесс, выполняемый перед каждым коммитом:
 
-### Shell Scripting Standards
+1. **Выполнить конвейер верификации** — запустить все стадии верификации, определённые для проекта
+2. **Убедиться в успехе** — все стадии должны пройти; частичный успех неприемлем
+3. **Рассматривать как обязательный** — верификация не может быть пропущена или обойдена
 
-Shell scripts should follow consistent engineering practices to ensure reliability, readability, and maintainability.
+Состав конвейера верификации определяется проектом и может эволюционировать со временем. Это руководство определяет требование выполнять верификацию, в то время как специфичные для проекта инженерные документы определяют конкретные стадии верификации.
 
-1. **Use an appropriate interpreter** — declare the required shell explicitly.
-2. **Fail predictably** — scripts should stop on unrecoverable errors.
-3. **Quote variable expansions** — avoid unintended word splitting and glob expansion.
-4. **Handle errors explicitly** — provide meaningful diagnostics for failures.
-5. **Design for idempotence** — repeated execution should produce a predictable result.
-6. **Manage temporary resources safely** — create and clean up temporary files reliably.
-7. **Document script purpose** — describe usage, dependencies, inputs and outputs.
+**Engineering Invariant:** Верификация обязательна. Без исключений.
 
-Project-specific implementation details (strict mode, shellcheck configuration, verify.sh, etc.) are documented in AUTOMATION.md.
+### Verification Stages (Стадии верификации)
 
-**Engineering Invariant:** Shell scripting practices must be applied consistently across the project.
+Верификация состоит из одной или более стадий, определённых проектом.
 
-#### Heredoc Usage
+Типичные стадии включают:
 
-Before creating a heredoc, determine the type of artifact being produced:
+1. Верификация качества кода
+2. Статический анализ
+3. Автоматизированное тестирование
+4. Валидация публичных контрактов
 
-1. **Code heredoc** — formatting follows the target programming language (e.g., indentation belongs to the generated code, not to the heredoc mechanism).
-2. **Text heredoc** — formatting follows the target document format (commit messages, Markdown, YAML, plain text).
-3. **The heredoc mechanism must never influence the formatting of the generated artifact.**
+Точный набор стадий специфичен для проекта и может эволюционировать со временем.
 
-Formatting rules apply to the generated artifact, not to the heredoc syntax itself.
+**Engineering Invariant:** Каждая стадия верификации, определённая проектом, должна успешно завершиться перед принятием изменений.
 
-### Git Workflow
+### Smoke Testing (Smoke Testing)
 
-Git history is part of the engineering documentation and must remain understandable over time.
+Smoke tests валидируют публичный контракт системы:
 
-1. **One engineering concept per commit** — each commit introduces one coherent engineering idea
-2. **Keep commits atomic** — changes should be reviewable and reversible
-3. **Write meaningful commit messages** — explain why the change exists, not only what changed
-4. **Review before publishing** — verify the working tree and review the diff before commit
-5. **Keep history clean** — avoid unrelated changes within the same commit
+1. **Тестировать публичный интерфейс** — валидировать внешнее поведение, а не внутреннюю реализацию
+2. **Защищать публичный контракт** — ломающие изменения требуют явного одобрения
+3. **Обеспечивать изоляцию** — тесты не должны изменять состояние системы
+4. **Использовать реалистичные сценарии** — тестировать с актуальными артефактами проекта
 
-Project-specific branching strategies and release procedures are documented in PROJECT_PROTOCOL.md and RELEASE_PROCESS.md.
+Smoke Testing верифицирует, что внешне наблюдаемое поведение остаётся согласованным после изменения. Конкретная реализация smoke tests специфична для проекта.
 
-**Engineering Invariant:** Git history must clearly communicate the evolution of the project.
+**Engineering Invariant:** Публичный контракт защищён smoke tests.
 
-### AI-Assisted Development
+### Testing Levels (Уровни тестирования)
 
-AI assistants are part of the engineering workflow and must be used responsibly.
+**Модульное тестирование:**
+- Тестировать отдельные функции и модули
+- Верифицировать корректность реализации
+- Генерировать доказательства (логи тестов)
 
-1. **Engineer owns decisions** — AI proposes, engineer reviews, approves and remains accountable.
-2. **Verify all AI output** — every AI-generated artifact must pass the project's verification process.
-3. **Document AI involvement when relevant** — if AI-assisted work establishes a new engineering practice or architectural decision, record it in the engineering knowledge base.
-4. **Maintain project context** — provide AI with sufficient architectural and engineering context before requesting changes.
-5. **Apply incremental integration** — integrate AI-generated changes through small, reviewable steps.
-6. **Challenge AI conclusions** — treat AI output as a proposal requiring engineering validation, not as authoritative truth.
+**Интеграционное тестирование:**
+- Тестировать взаимодействие между компонентами
+- Верифицировать сквозную функциональность
+- Генерировать доказательства (логи интеграции)
 
-**Engineering Invariant:** AI accelerates engineering work; responsibility and verification always remain with the engineer.
+**Тестирование производительности:**
+- Тестировать скорость, использование памяти, пропускную способность
+- Верифицировать требования производительности
+- Генерировать доказательства (логи бенчмарков)
 
-### Root Cause Analysis
+### Evidence Requirements (Требования к доказательствам)
 
-When problems occur, investigate the underlying cause before implementing a fix.
+**Для изменений реализации:**
+- Логи тестов (модульные, интеграционные, производительности)
+- Результаты бенчмарков (если применимо)
+- Шаги воспроизведения
 
-1. **Reproduce the problem** — establish a reliable reproduction scenario.
-2. **Collect evidence** — gather logs, outputs, benchmarks and observable facts.
-3. **Form hypotheses** — identify possible causes without assuming correctness.
-4. **Validate hypotheses** — eliminate incorrect explanations using evidence.
-5. **Fix the confirmed cause** — implement the smallest change that removes the verified root cause.
-6. **Prevent recurrence** — update tests, documentation or engineering practices when appropriate.
+**Для изменений документации:**
+- Валидация Markdown (нет синтаксических ошибок)
+- Валидация ссылок (все ссылки работают)
+- Проверка согласованности (нет противоречий)
 
-**Engineering Invariant:** Engineering decisions are based on verified causes, not on assumptions or symptoms.
+**Для архитектурных изменений:**
+- Оценка влияния (какие документы затронуты)
+- План миграции (как обновить существующие документы)
+- Одобрение от Architect
 
-### Engineering Invariants
-
-Engineering Invariants are fundamental rules that cannot be violated or negotiated. They form the foundation of the engineering process.
-
-1. **Documentation First** — no implementation without documentation update
-2. **One Concept Per Commit** — each commit introduces one coherent engineering idea
-3. **Evidence Required** — every claim needs proof (tests, logs, benchmarks)
-4. **Verification Pipeline Must Pass** — all verification stages must complete successfully
-5. **Review Before Merge** — no changes merged without approval
-6. **Small Verified Steps** — prefer incremental changes over large batches
-7. **Root Cause Over Symptoms** — fix the underlying cause, not visible effects
-8. **Engineer Accountable** — AI accelerates work, but engineer owns decisions
-
-These invariants apply to all engineering work regardless of scope, complexity, or timeline.
-
-**Engineering Invariant:** Invariants are non-negotiable. They define what engineering means in this project.
-
-### Tools & Automation
-
-**Use:**
-- Git for version control
-- Markdown for documentation
-- Logs for evidence
-- Scripts for automation (when repetition occurs)
-
-**Avoid:**
-- Manual repetition (automate after 3 times)
-- Unverified assumptions (generate evidence)
-- Complex workflows (keep it simple)
 
 ---
 
-## References
+## Best Practices (Лучшие практики)
 
-For detailed engineering procedures, see the following Layer 3 documents:
+### General Principles (Общие принципы)
 
-- **DOC_STANDARD.md** — documentation standards, formatting requirements, review checklists
-- **RELEASE_PROCESS.md** — release procedures, versioning, deployment steps
-- **AUTOMATION.md** — automated scripts, CI/CD pipelines, triggers
-- **ENGINEERING_HISTORY.md** — lessons learned, post-mortems, retrospectives
+1. **Следовать PROJECT_PROTOCOL** — все 12 принципов применяются
+2. **Делать маленькие изменения** — одно логическое изменение на коммит
+3. **Генерировать доказательства** — каждое утверждение нуждается в доказательстве
+4. **Обновлять документацию** — держать её синхронизированной с кодом
+5. **Запрашивать рецензирование** — не объединять без одобрения
 
-These documents are defined in INFORMATION_ARCHITECTURE.md and will be created according to the project roadmap.
+### Common Pitfalls (Типичные ошибки)
+
+**Избегать:**
+- Больших пакетных изменений (разбивать на маленькие шаги)
+- Дублирования фактов (использовать Canonical Source)
+- Пропуска доказательств (каждое изменение нуждается в доказательстве)
+- Объединения без рецензирования (всегда получать одобрение)
+- Игнорирования документации (держать её актуальной)
+
+**Предпочитать:**
+- Локальный патч перед переписыванием
+- Маленькие верифицированные шаги перед большими изменениями
+- Доказательства перед предположениями
+- Ясные сообщения коммитов перед неясными
+- Согласованное форматирование перед креативными стилями
+
+### Shell Scripting Standards (Стандарты shell скриптов)
+
+Shell скрипты должны следовать согласованным инженерным практикам для обеспечения надёжности, читаемости и поддерживаемости.
+
+1. **Использовать подходящий интерпретатор** — явно объявлять требуемый shell.
+2. **Предсказуемо завершаться при ошибках** — скрипты должны останавливаться при невосстановимых ошибках.
+3. **Заключать расширения переменных в кавычки** — избегать непреднамеренного разделения слов и glob expansion.
+4. **Явно обрабатывать ошибки** — предоставлять осмысленную диагностику для сбоев.
+5. **Проектировать для идемпотентности** — повторное выполнение должно давать предсказуемый результат.
+6. **Безопасно управлять временными ресурсами** — надёжно создавать и очищать временные файлы.
+7. **Документировать назначение скрипта** — описывать использование, зависимости, входы и выходы.
+
+Специфичные для проекта детали реализации (строгий режим, конфигурация shellcheck, verify.sh и т.д.) документированы в AUTOMATION.md.
+
+**Engineering Invariant:** Практики shell скриптов должны применяться согласованно на протяжении всего проекта.
+
+#### Heredoc Usage (Использование Heredoc)
+
+Перед созданием heredoc определить тип производимого артефакта:
+
+1. **Code heredoc** — форматирование следует целевому языку программирования (например, отступы принадлежат генерируемому коду, а не механизму heredoc).
+2. **Text heredoc** — форматирование следует целевому формату документа (сообщения коммитов, Markdown, YAML, простой текст).
+3. **Механизм heredoc никогда не должен влиять на форматирование генерируемого артефакта.**
+
+Правила форматирования применяются к генерируемому артефакту, а не к синтаксису heredoc.
+
+### Git Workflow (Рабочий процесс Git)
+
+История Git является частью инженерной документации и должна оставаться понятной со временем.
+
+1. **Одна инженерная концепция на коммит** — каждый коммит вводит одну связную инженерную идею
+2. **Держать коммиты атомарными** — изменения должны быть рецензируемыми и обратимыми
+3. **Писать осмысленные сообщения коммитов** — объяснять почему изменение существует, а не только что изменилось
+4. **Рецензировать перед публикацией** — верифицировать рабочее дерево и рецензировать diff перед коммитом
+5. **Держать историю чистой** — избегать несвязанных изменений в одном коммите
+
+Специфичные для проекта стратегии ветвления и процедуры релиза документированы в PROJECT_PROTOCOL.md и RELEASE_PROCESS.md.
+
+**Engineering Invariant:** История Git должна чётко коммуницировать эволюцию проекта.
+
+### AI-Assisted Development (Разработка с помощью AI)
+
+AI ассистенты являются частью инженерного рабочего процесса и должны использоваться ответственно.
+
+1. **Engineer владеет решениями** — AI предлагает, engineer рецензирует, одобряет и остаётся ответственным.
+2. **Верифицировать весь вывод AI** — каждый артефакт, сгенерированный AI, должен пройти процесс верификации проекта.
+3. **Документировать участие AI когда это релевантно** — если работа с помощью AI устанавливает новую инженерную практику или архитектурное решение, записать это в базу инженерных знаний.
+4. **Поддерживать контекст проекта** — предоставлять AI достаточный архитектурный и инженерный контекст перед запросом изменений.
+5. **Применять инкрементальную интеграцию** — интегрировать изменения, сгенерированные AI, через маленькие, рецензируемые шаги.
+6. **Оспаривать выводы AI** — рассматривать вывод AI как предложение, требующее инженерной валидации, а не как авторитетную истину.
+
+**Engineering Invariant:** AI ускоряет инженерную работу; ответственность и верификация всегда остаются за engineer.
+
+### Root Cause Analysis (Анализ корневой причины)
+
+Когда возникают проблемы, исследовать основную причину перед реализацией исправления.
+
+1. **Воспроизвести проблему** — установить надёжный сценарий воспроизведения.
+2. **Собрать доказательства** — собрать логи, выводы, бенчмарки и наблюдаемые факты.
+3. **Сформулировать гипотезы** — идентифицировать возможные причины без предположения корректности.
+4. **Валидировать гипотезы** — устранить неправильные объяснения используя доказательства.
+5. **Исправить подтверждённую причину** — реализовать наименьшее изменение, удаляющее верифицированную корневую причину.
+6. **Предотвратить повторение** — обновить тесты, документацию или инженерные практики когда это уместно.
+
+**Engineering Invariant:** Инженерные решения основаны на верифицированных причинах, а не на предположениях или симптомах.
+
+### Engineering Invariants (Инженерные инварианты)
+
+Инженерные инварианты — это фундаментальные правила, которые не могут быть нарушены или обсуждены. Они формируют фундамент инженерного процесса.
+
+1. **Documentation First** — никакой реализации без обновления документации
+2. **One Concept Per Commit** — каждый коммит вводит одну связную инженерную идею
+3. **Evidence Required** — каждое утверждение нуждается в доказательстве (тесты, логи, бенчмарки)
+4. **Verification Pipeline Must Pass** — все стадии верификации должны успешно завершиться
+5. **Review Before Merge** — никакие изменения не объединяются без одобрения
+6. **Small Verified Steps** — предпочитать инкрементальные изменения большим пакетам
+7. **Root Cause Over Symptoms** — исправлять основную причину, а не видимые эффекты
+8. **Engineer Accountable** — AI ускоряет работу, но engineer владеет решениями
+
+Эти инварианты применяются ко всей инженерной работе независимо от области применения, сложности или сроков.
+
+**Engineering Invariant:** Инварианты не обсуждаются. Они определяют, что значит инженерная работа в этом проекте.
+
+### Tools & Automation (Инструменты и автоматизация)
+
+**Использовать:**
+- Git для контроля версий
+- Markdown для документации
+- Логи для доказательств
+- Скрипты для автоматизации (когда происходит повторение)
+
+**Избегать:**
+- Ручного повторения (автоматизировать после 3 раз)
+- Неверифицированных предположений (генерировать доказательства)
+- Сложных рабочих процессов (держать простым)
 
 ---
 
-## End of Document
+## References (Ссылки)
 
-This document defines the engineering procedures for the Agent Developer project.
+Для детальных инженерных процедур см. следующие документы Layer 3:
 
-It is the authoritative reference for:
-- How to develop the project (general workflow)
-- How to manage changes (types and procedures)
-- How to test and verify (general principles)
-- Best practices and common pitfalls
+- **DOC_STANDARD.md** — стандарты документации, требования форматирования, чек-листы рецензирования
+- **RELEASE_PROCESS.md** — процедуры релиза, версионирование, шаги развёртывания
+- **AUTOMATION.md** — автоматизированные скрипты, CI/CD pipelines, триггеры
+- **ENGINEERING_HISTORY.md** — извлечённые уроки, post-mortems, ретроспективы
 
-For detailed procedures, see the Layer 3 documents listed in the References section.
+Эти документы определены в INFORMATION_ARCHITECTURE.md и будут созданы согласно дорожной карте проекта.
 
-All engineering work must conform to the procedures defined herein.
+---
 
+## End of Document (Конец документа)
+
+Этот документ определяет инженерные процедуры для проекта Agent Developer.
+
+Это авторитетный справочник для:
+- Как разрабатывать проект (общий рабочий процесс)
+- Как управлять изменениями (типы и процедуры)
+- Как тестировать и верифицировать (общие принципы)
+- Лучшие практики и типичные ошибки
+
+Для детальных процедур см. документы Layer 3, перечисленные в разделе References.
+
+Вся инженерная работа должна соответствовать процедурам, определённым здесь.
