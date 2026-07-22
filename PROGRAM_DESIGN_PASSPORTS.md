@@ -1,10 +1,10 @@
 # PROGRAM_DESIGN_PASSPORTS
 
-**Version:** v2.0
+**Version:** v2.2
 **Status:** ACTIVE
 **Type:** Standard / Repository Metadata
 **Canonical Source for:** Engineering Document Passports
-**Last Updated:** 2026-07-20
+**Last Updated:** 2026-07-22
 
 -------------------------------------------------------------------------------
 
@@ -2950,15 +2950,14 @@ DOCUMENT: PROGRAM_DESIGN.md
 ===============================================================================
 Назначение
 Детерминированный алгоритм построения замороженных инженерных программ (Frozen Programs), обеспечивающих сохранение согласованности Engineering Knowledge Repository.
-Является исполняемым стандартом для LLM и определяет 15-фазный pipeline проектирования программ.
-
+Является исполняемым стандартом для LLM и определяет 13-фазный pipeline проектирования программ, протокол исполнения и протокол версионирования результата.
 ---
 Основная ответственность
 Определяет:
-- PROGRAM_DESIGN_DATASET (набор входных данных для алгоритма);
-- Engineering Invariants алгоритма (Minimal Context Principle, Registry as Sole Source, Absence of Ambiguity Resolution, Metadata Requirements Not Actions, Self-Extension, Repository Consistency);
+- Execution Baseline (фиксированный набор входных данных для воспроизводимости исполнения);
+- Engineering Invariants алгоритма (Minimal Context Principle, Registry as Sole Source, Absence of Ambiguity Resolution, Metadata Requirements Not Actions, Self-Extension, Repository Consistency, Traceability, Baseline Immutability);
 - Preconditions запуска Pipeline;
-- 15 фаз алгоритма (PHASE 1 — PHASE 15):
+- 13 фаз алгоритма (PHASE 1 — PHASE 13):
   - PHASE 1: Program Definition Validation
   - PHASE 2: Repository Entry Discovery
   - PHASE 3: Missing Responsibilities Detection
@@ -2971,45 +2970,40 @@ DOCUMENT: PROGRAM_DESIGN.md
   - PHASE 10: Commit Planning
   - PHASE 11: Frozen Plan Validation
   - PHASE 12: Repository Metadata Requirements
-  - PHASE 13: Repository Metadata Synchronization
-  - PHASE 14: Program Proof
-  - PHASE 15: Freeze
+  - PHASE 13: Freeze
+- PART II: Engineering Revision and Publication Protocol (Engineering Revision, Publication Segments);
 - Change Trigger Catalog (Part III);
-- Frozen Program Output Contract (Part IV).
-
+- Frozen Program Output Contract (Part IV, включая Program Identity).
 ---
 Тип документа
 Standard / Algorithm.
 Исполняемый алгоритм для LLM.
-
 ---
 Основные разделы
 - Purpose
-- PROGRAM_DESIGN_DATASET
+- Registry Origin
+- Execution Baseline
 - Engineering Invariants
 - Preconditions
-- PART I: PROGRAM DESIGN PIPELINE (PHASE 1 — PHASE 15)
+- PART I: PROGRAM DESIGN PIPELINE (PHASE 1 — PHASE 13)
+- PART II: ENGINEERING REVISION AND PUBLICATION
 - PART III: CHANGE TRIGGER CATALOG
 - PART IV: FROZEN PROGRAM OUTPUT CONTRACT
-
 ---
 Входящие зависимости
 - PROGRAM_DESIGN_REGISTRY.md (используется как единственный источник знаний о репозитории)
-
 ---
 Исходящие зависимости
 Отсутствуют.
-Алгоритм не вводит новых документов, но требует обновления PROGRAM_DESIGN_REGISTRY через PHASE 13 (Repository Metadata Synchronization) после выполнения программы.
-
+Алгоритм не вводит новых документов, но формирует требования к обновлению PROGRAM_DESIGN_REGISTRY через PHASE 12 (Repository Metadata Requirements), которые включаются во Frozen Program и выполняются после реализации программы.
 ---
 Наблюдения
 Документ использует PROGRAM_DESIGN_REGISTRY как единственный источник информации о документах репозитория.
 PROGRAM_DESIGN не обращается к PROGRAM_DESIGN_PASSPORTS напрямую — только через Registry.
-Алгоритм детерминирован: каждый документ попадает в программу только после прохождения цепочки Scope Item → Canonical Responsibility → Proof → Dependency Closure → Change Planning.
-PHASE 13 не выполняет обновление Registry во время проектирования — она только формирует требования (Metadata Requirements), которые включаются во Frozen Program и выполняются после реализации программы.
-PHASE 14 формирует Program Proof — трассируемость от Scope Items до Completion Criteria через Change Records и Commits.
+Execution Baseline фиксирует неизменяемый набор входных данных на момент старта генерации программы. Любая модификация Baseline делает текущее исполнение недействительным и требует генерации новой программы с собственным Program ID и Revision 0.
+Engineering Revision относится к изменению инженерного содержания программы и сохраняет Program ID. Publication Segments относятся только к физическому способу публикации и не влияют на смысл программы.
+Алгоритм детерминирован: каждый документ попадает в программу только после прохождения цепочки Scope Item → Canonical Responsibility → Dependency Closure → Classification → Change Planning.
 Документ сам является элементом системы и подчиняется тем же правилам саморегистрации (Self-Extension Invariant).
-
 ---
 Открытые вопросы
 Отсутствуют.

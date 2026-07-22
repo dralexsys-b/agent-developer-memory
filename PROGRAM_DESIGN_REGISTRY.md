@@ -1,10 +1,10 @@
 # PROGRAM_DESIGN_REGISTRY
 
-**Version:** v2.0
+**Version:** v2.2
 **Status:** ACTIVE
 **Type:** Registry
 **Canonical Source for:** Runtime representation of repository documents for PROGRAM_DESIGN algorithm
-**Last Updated:** 2026-07-20
+**Last Updated:** 2026-07-22
 
 ---
 
@@ -1005,14 +1005,15 @@ structural_dependents: []
 ## PROGRAM_DESIGN.md
 
 canonical_responsibility:
-- Детерминированный алгоритм построения замороженных инженерных программ
-- 15-фазный pipeline проектирования программ
-- Change Trigger Catalog
-- Frozen Program Output Contract
-- Program Proof (трассируемость от Scope Items до Completion Criteria)
+  - Детерминированный алгоритм построения замороженных инженерных программ
+  - 13-фазный pipeline проектирования программ
+  - Execution Baseline Protocol
+  - Engineering Revision and Publication Protocol
+  - Change Trigger Catalog
+  - Frozen Program Output Contract
 
 structural_dependencies:
-- PROGRAM_DESIGN_REGISTRY.md
+  - PROGRAM_DESIGN_REGISTRY.md
 
 structural_dependents: []
 
