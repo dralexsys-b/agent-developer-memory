@@ -1015,7 +1015,8 @@ canonical_responsibility:
 structural_dependencies:
   - PROGRAM_DESIGN_REGISTRY.md
 
-structural_dependents: []
+structural_dependents:
+- PROGRAM_DESIGN_EXECUTION.md
 
 ---
 
@@ -1050,6 +1051,24 @@ structural_dependencies:
 
 structural_dependents:
   - PROGRAM_DESIGN.md
+
+---
+
+## PROGRAM_DESIGN_EXECUTION.md
+
+canonical_responsibility:
+- Модель детерминированного исполнения Approved Frozen Program
+- Execution Model (сущности, отношения, инварианты)
+- Core Concepts (Approved Frozen Program, Execution Plan, Execution Context, Execution Scope, Completion Conditions)
+- Execution Plan Specification (Required Sections, Invariants)
+- Lifecycle (States, Transitions, Immutability Rule)
+- Execution Plan Transition (Transition Rule, Context Inheritance)
+- Conformance criteria
+
+structural_dependencies:
+- PROGRAM_DESIGN.md
+
+structural_dependents: []
 
 ---
 

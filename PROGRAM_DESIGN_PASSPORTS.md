@@ -3009,6 +3009,82 @@ Engineering Revision относится к изменению инженерно
 Отсутствуют.
 
 ===============================================================================
+DOCUMENT: PROGRAM_DESIGN_EXECUTION.md
+===============================================================================
+Назначение
+Определяет модель детерминированного исполнения Approved Frozen Program через последовательность Execution Plan.
+Стандарт описывает не процесс исполнения, а модель исполнения: какие артефакты существуют, какими свойствами они обладают, как связаны между собой и при каких условиях происходит переход от одного к другому.
+Стандарт независим от исполнителя (человек, LLM, агент, CI/CD система) и среды исполнения (чат, IDE, терминал).
+
+---
+Основная ответственность
+Определяет:
+- Execution Model с двумя сущностями (Approved Frozen Program, Execution Plan);
+- Relations между сущностями (references, ordered sequence, identifies bounded scope);
+- Core Concepts (Approved Frozen Program, Execution Plan, Execution Context, Execution Scope, Completion Conditions);
+- Invariants (Program Immutability, Plan Immutability, Ordered Execution, Scope Isolation, Context Continuity);
+- Execution Plan Specification (Required Sections, Invariants);
+- Lifecycle (States, Transitions, Immutability Rule);
+- Execution Plan Transition (Transition Rule, Context Inheritance, Continuity Invariant);
+- Examples (Context Continuity, Single Execution Plan, Scope Isolation);
+- Conformance criteria.
+
+Стандарт разделён на две части:
+- PART I: CORE — стабильная аксиоматическая модель (сущности, отношения, инварианты);
+- PART II: EXTENSIONS — эволюционирующие контракты и спецификации.
+
+---
+Тип документа
+Standard / Execution Model.
+Инженерный стандарт модели исполнения программ.
+
+---
+Основные разделы
+- Purpose
+- Standard Scope
+- PART I: CORE
+  - Execution Model
+  - Core Concepts
+  - Invariants
+- PART II: EXTENSIONS
+  - Execution Plan Specification
+  - Lifecycle
+  - Execution Plan Transition
+  - Examples
+- Conformance
+
+---
+Входящие зависимости
+- PROGRAM_DESIGN.md (определяет Approved Frozen Program, который исполняется)
+
+---
+Исходящие зависимости
+Отсутствуют.
+Стандарт определяет модель исполнения, но не создаёт новых документов. Execution Plans создаются в соответствии с этим стандартом, но не являются частью самого стандарта.
+
+---
+Наблюдения
+Стандарт явно исключает из своей ответственности:
+- Engineering workflow или daily operational procedures;
+- Governance, approval authority, role definitions;
+- Repository management, Git commands, CI/CD pipelines;
+- Implementation procedures or document editing instructions.
+
+Эти аспекты определяются в ENGINEERING_PLAYBOOK и PROJECT_PROTOCOL.
+
+Ключевой архитектурный принцип — разделение на Stable Core и Evolvable Extensions:
+- Core содержит неизменяемые концепции, отношения, определения и инварианты;
+- Extensions содержит контракты, шаблоны, примеры и другие эволюционирующие элементы;
+- Core эволюционирует только через архитектурные ревизии;
+- Extensions могут эволюционировать независимо при сохранении совместимости с Core.
+
+Стандарт вводит концепцию Execution Context как свойства Execution Plan, а не отдельного артефакта, что устраняет дублирование и упрощает модель.
+
+---
+Открытые вопросы
+Отсутствуют.
+
+===============================================================================
 DOCUMENT: adr/INDEX.md
 ===============================================================================
 
